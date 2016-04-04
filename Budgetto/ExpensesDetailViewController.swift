@@ -15,6 +15,8 @@ class ExpensesDetailViewController: UIViewController, UIPickerViewDelegate, UIPi
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.view.setDefaultBackground()
+        
         let categoryPicker: UIPickerView = UIPickerView()
         categoryPicker.delegate = self
         categoryPicker.dataSource = self

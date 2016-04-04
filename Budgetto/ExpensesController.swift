@@ -12,6 +12,8 @@ class ExpensesController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.view.setDefaultBackground()
 
         // Do any additional setup after loading the view.
     }

@@ -40,7 +40,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="a29-rJ-PqO">
-                                        <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="a29-rJ-PqO" id="Jte-eF-Oms">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
@@ -115,11 +115,11 @@
             </objects>
             <point key="canvasLocation" x="1887" y="531"/>
         </scene>
-        <!--Udgifter-->
+        <!--Navigation Controller-->
         <scene sceneID="ESe-T6-2NK">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="XF5-u5-DHY" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Udgifter" id="xTK-wL-5zk"/>
+                    <tabBarItem key="tabBarItem" systemItem="search" id="xTK-wL-5zk"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ACX-ZM-8oW">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>

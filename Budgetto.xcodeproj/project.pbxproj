@@ -15,6 +15,8 @@
 		B4EC7A591CB29D9700B1F613 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4EC7A571CB29D9700B1F613 /* LaunchScreen.storyboard */; };
 		B4EC7A631CB29EBE00B1F613 /* ExpensesDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EC7A621CB29EBE00B1F613 /* ExpensesDetailViewController.swift */; };
 		B4EC7A651CB2A16D00B1F613 /* ExpensesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EC7A641CB2A16D00B1F613 /* ExpensesController.swift */; };
+		B4EC7A6A1CB2AEBB00B1F613 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EC7A691CB2AEBB00B1F613 /* UIColorExtension.swift */; };
+		B4EC7A6C1CB2B26300B1F613 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EC7A6B1CB2B26300B1F613 /* UIViewExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		B4EC7A5A1CB29D9700B1F613 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B4EC7A621CB29EBE00B1F613 /* ExpensesDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpensesDetailViewController.swift; sourceTree = "<group>"; };
 		B4EC7A641CB2A16D00B1F613 /* ExpensesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpensesController.swift; sourceTree = "<group>"; };
+		B4EC7A691CB2AEBB00B1F613 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		B4EC7A6B1CB2B26300B1F613 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +48,7 @@
 		B4EC7A3F1CB29D9700B1F613 = {
 			isa = PBXGroup;
 			children = (
+				B4EC7A661CB2AE5700B1F613 /* Extensions */,
 				B4EC7A4A1CB29D9700B1F613 /* Budgetto */,
 				B4EC7A491CB29D9700B1F613 /* Products */,
 			);
@@ -71,6 +76,15 @@
 				B4EC7A641CB2A16D00B1F613 /* ExpensesController.swift */,
 			);
 			path = Budgetto;
+			sourceTree = "<group>";
+		};
+		B4EC7A661CB2AE5700B1F613 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B4EC7A691CB2AEBB00B1F613 /* UIColorExtension.swift */,
+				B4EC7A6B1CB2B26300B1F613 /* UIViewExtension.swift */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,7 +162,9 @@
 				B4EC7A4C1CB29D9700B1F613 /* AppDelegate.swift in Sources */,
 				B4EC7A651CB2A16D00B1F613 /* ExpensesController.swift in Sources */,
 				B4EC7A631CB29EBE00B1F613 /* ExpensesDetailViewController.swift in Sources */,
+				B4EC7A6C1CB2B26300B1F613 /* UIViewExtension.swift in Sources */,
 				B4EC7A541CB29D9700B1F613 /* Budgetto.xcdatamodeld in Sources */,
+				B4EC7A6A1CB2AEBB00B1F613 /* UIColorExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,6 +316,7 @@
 				B4EC7A5F1CB29D9700B1F613 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
