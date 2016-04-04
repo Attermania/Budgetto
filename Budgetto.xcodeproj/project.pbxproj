@@ -13,6 +13,8 @@
 		B4EC7A541CB29D9700B1F613 /* Budgetto.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B4EC7A521CB29D9700B1F613 /* Budgetto.xcdatamodeld */; };
 		B4EC7A561CB29D9700B1F613 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4EC7A551CB29D9700B1F613 /* Assets.xcassets */; };
 		B4EC7A591CB29D9700B1F613 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4EC7A571CB29D9700B1F613 /* LaunchScreen.storyboard */; };
+		B4EC7A631CB29EBE00B1F613 /* ExpensesDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EC7A621CB29EBE00B1F613 /* ExpensesDetailViewController.swift */; };
+		B4EC7A651CB2A16D00B1F613 /* ExpensesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EC7A641CB2A16D00B1F613 /* ExpensesController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		B4EC7A551CB29D9700B1F613 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B4EC7A581CB29D9700B1F613 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B4EC7A5A1CB29D9700B1F613 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B4EC7A621CB29EBE00B1F613 /* ExpensesDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpensesDetailViewController.swift; sourceTree = "<group>"; };
+		B4EC7A641CB2A16D00B1F613 /* ExpensesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpensesController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +67,8 @@
 				B4EC7A571CB29D9700B1F613 /* LaunchScreen.storyboard */,
 				B4EC7A5A1CB29D9700B1F613 /* Info.plist */,
 				B4EC7A521CB29D9700B1F613 /* Budgetto.xcdatamodeld */,
+				B4EC7A621CB29EBE00B1F613 /* ExpensesDetailViewController.swift */,
+				B4EC7A641CB2A16D00B1F613 /* ExpensesController.swift */,
 			);
 			path = Budgetto;
 			sourceTree = "<group>";
@@ -140,6 +146,8 @@
 			files = (
 				B4EC7A4E1CB29D9700B1F613 /* ViewController.swift in Sources */,
 				B4EC7A4C1CB29D9700B1F613 /* AppDelegate.swift in Sources */,
+				B4EC7A651CB2A16D00B1F613 /* ExpensesController.swift in Sources */,
+				B4EC7A631CB29EBE00B1F613 /* ExpensesDetailViewController.swift in Sources */,
 				B4EC7A541CB29D9700B1F613 /* Budgetto.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
