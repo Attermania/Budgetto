@@ -7,15 +7,46 @@
 //
 
 import UIKit
+import CoreData
 
 class ExpensesController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
     @IBAction func returnedFromDetailView (segue : UIStoryboardSegue) {
-        print("Bla")
+        loadData()
     }
     
     @IBOutlet weak var expensesTableview: UITableView!
+    
+    var tableView = UITableView()
+    
+    let managedContext: NSManagedObjectContext! = (UIApplication.sharedApplication().delegate as? AppDelegate)?.managedObjectContext
+    
+    var expenses = [Expense]() {
+        didSet {
+            self.tableView.reloadData()
+        }
+    }
+    
+    func loadData() {
+        let request = NSFetchRequest(entityName: "Expense")
         
+        do {
+            let results = try managedContext.executeFetchRequest(request)
+            self.expenses = results as! [Expense]
+            
+        } catch {
+            print("error in loading \(error)")
+        }
+        
+        
+        for expense in expenses {
+            print(expense.amount)
+            print(expense.desc)
+            print(expense.date)
+            print()
+        }
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -23,6 +54,7 @@ class ExpensesController: UIViewController, UITableViewDelegate, UITableViewData
         expensesTableview.dataSource = self
         
         self.view.setDefaultBackground()
+        loadData()
 
         // Do any additional setup after loading the view.
     }
@@ -52,9 +84,14 @@ class ExpensesController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "createExpenseSegue" {
+            // let destVC = segue.destinationViewController as! ExpensesDetailViewController
+            
             print("Ny Udgift")
         }
         if segue.identifier == "editExpenseSegue" {
+            let destVC = segue.destinationViewController as! ExpensesDetailViewController
+            destVC.expenseBeingEdited = expenses[0]
+            
             print("Rediger Udgift")
         }
         

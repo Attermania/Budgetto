@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class ExpensesDetailViewController: UIViewController {
     
@@ -14,8 +15,9 @@ class ExpensesDetailViewController: UIViewController {
     @IBOutlet weak var amountTextfield: UITextField!
     @IBOutlet weak var dateTextfield: UITextField!
     
-    @IBAction func didTapExpenseButton(sender: AnyObject) {
-    }
+    var expenseBeingEdited: Expense?
+    
+    let managedContext: NSManagedObjectContext! = (UIApplication.sharedApplication().delegate as? AppDelegate)?.managedObjectContext
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +25,35 @@ class ExpensesDetailViewController: UIViewController {
         self.view.setDefaultBackground()
         
         // Do any additional setup after loading the view.
+    }
+    
+    @IBAction func didTapSave(sender: AnyObject) {
+        save()
+    }
+    
+    func save() {
+        let editing = expenseBeingEdited != nil
+        
+        if editing {
+            print("editing")
+        } else {
+            print("Creating")
+            
+            let expense = NSEntityDescription.insertNewObjectForEntityForName("Expense", inManagedObjectContext: managedContext) as! Expense
+            expense.desc = descriptionTextfield.text
+            expense.amount = Double(amountTextfield.text!)
+            expense.date = NSDate()
+            
+            do {
+                try managedContext.save()
+                print("saved")
+                
+            } catch let error as NSError {
+                print("Bug in saving \(error)")
+            }
+        }
+        
+        expenseBeingEdited = nil
     }
 
     override func didReceiveMemoryWarning() {
