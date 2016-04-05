@@ -8,21 +8,20 @@
 
 import UIKit
 
-class ExpensesDetailViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
-
-    @IBOutlet weak var categoryTextField: UITextField!
+class ExpensesDetailViewController: UIViewController {
+    
+    @IBOutlet weak var descriptionTextfield: UITextField!
+    @IBOutlet weak var amountTextfield: UITextField!
+    @IBOutlet weak var dateTextfield: UITextField!
+    
+    @IBAction func didTapExpenseButton(sender: AnyObject) {
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.view.setDefaultBackground()
         
-        let categoryPicker: UIPickerView = UIPickerView()
-        categoryPicker.delegate = self
-        categoryPicker.dataSource = self
-        
-        categoryTextField.inputView = categoryPicker
-
         // Do any additional setup after loading the view.
     }
 
@@ -31,17 +30,7 @@ class ExpensesDetailViewController: UIViewController, UIPickerViewDelegate, UIPi
         // Dispose of any resources that can be recreated.
     }
     
-    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return 3
-    }
     
-    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return "Hej"
-    }
     
 
     /*
