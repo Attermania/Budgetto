@@ -9,7 +9,9 @@
 import UIKit
 import CoreData
 
-class ExpensesController: UIViewController, UITableViewDelegate, UITableViewDataSource{
+class ExpensesController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    let cellSpacingHeight: CGFloat = 5
     
     @IBAction func returnedFromDetailView (segue : UIStoryboardSegue) {
         loadData()
@@ -52,6 +54,9 @@ class ExpensesController: UIViewController, UITableViewDelegate, UITableViewData
         
         expensesTableview.delegate = self
         expensesTableview.dataSource = self
+        // hides the default borders of the cells
+        expensesTableview.separatorColor = UIColor.clearColor()
+        //expensesTableview.registerClass(BudgettoCell.self, forCellReuseIdentifier: "cell1")
         
         self.view.setDefaultBackground()
         loadData()
@@ -67,19 +72,38 @@ class ExpensesController: UIViewController, UITableViewDelegate, UITableViewData
     //
     // Number of rows
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
-    }
-    
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
     
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 8
+    }
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("cell1", forIndexPath: indexPath)
-        cell.textLabel?.text = "Row \(indexPath.row)!"
+        let cell = tableView.dequeueReusableCellWithIdentifier("cell1", forIndexPath: indexPath) as! BudgettoCell
+        
+        
+
+        //print(cell)
         
         
         return cell
+    }
+    
+    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return cellSpacingHeight
+    }
+    
+//    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+//        return 40
+//    }
+    
+
+    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let v = UIView()
+        v.backgroundColor = UIColor.clearColor()
+        
+        return v
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

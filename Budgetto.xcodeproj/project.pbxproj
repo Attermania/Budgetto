@@ -21,6 +21,7 @@
 		B4EC7A651CB2A16D00B1F613 /* ExpensesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EC7A641CB2A16D00B1F613 /* ExpensesController.swift */; };
 		B4EC7A6A1CB2AEBB00B1F613 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EC7A691CB2AEBB00B1F613 /* UIColorExtension.swift */; };
 		B4EC7A6C1CB2B26300B1F613 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EC7A6B1CB2B26300B1F613 /* UIViewExtension.swift */; };
+		F9E9A32B1CB43FC600E10B2A /* BudgettoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E9A32A1CB43FC600E10B2A /* BudgettoCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		B4EC7A641CB2A16D00B1F613 /* ExpensesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpensesController.swift; sourceTree = "<group>"; };
 		B4EC7A691CB2AEBB00B1F613 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		B4EC7A6B1CB2B26300B1F613 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		F9E9A32A1CB43FC600E10B2A /* BudgettoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BudgettoCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 		B4EC7A4A1CB29D9700B1F613 /* Budgetto */ = {
 			isa = PBXGroup;
 			children = (
+				F9E9A32C1CB43FCB00E10B2A /* Model */,
 				B4EC7A4B1CB29D9700B1F613 /* AppDelegate.swift */,
 				B4EC7A4D1CB29D9700B1F613 /* ViewController.swift */,
 				B4EC7A4F1CB29D9700B1F613 /* Main.storyboard */,
@@ -105,6 +108,14 @@
 				B4EC7A6B1CB2B26300B1F613 /* UIViewExtension.swift */,
 			);
 			name = Extensions;
+			sourceTree = "<group>";
+		};
+		F9E9A32C1CB43FCB00E10B2A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F9E9A32A1CB43FC600E10B2A /* BudgettoCell.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -182,6 +193,7 @@
 				B4EC7A4E1CB29D9700B1F613 /* ViewController.swift in Sources */,
 				B4EC7A4C1CB29D9700B1F613 /* AppDelegate.swift in Sources */,
 				B4EC7A651CB2A16D00B1F613 /* ExpensesController.swift in Sources */,
+				F9E9A32B1CB43FC600E10B2A /* BudgettoCell.swift in Sources */,
 				B4EC7A631CB29EBE00B1F613 /* ExpensesDetailViewController.swift in Sources */,
 				B4CD632D1CB3B62700CEDD58 /* Income.swift in Sources */,
 				B4CD632C1CB3B62700CEDD58 /* Income+CoreDataProperties.swift in Sources */,
