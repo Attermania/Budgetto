@@ -22,6 +22,9 @@
 		B4EC7A6A1CB2AEBB00B1F613 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EC7A691CB2AEBB00B1F613 /* UIColorExtension.swift */; };
 		B4EC7A6C1CB2B26300B1F613 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EC7A6B1CB2B26300B1F613 /* UIViewExtension.swift */; };
 		F9E9A32B1CB43FC600E10B2A /* BudgettoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E9A32A1CB43FC600E10B2A /* BudgettoCell.swift */; };
+		F90067EA1CB3FD0A00B7075D /* TemplateTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90067E91CB3FD0A00B7075D /* TemplateTableViewController.swift */; };
+		F90067EC1CB402D500B7075D /* TemplateDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90067EB1CB402D500B7075D /* TemplateDetailViewController.swift */; };
+		F98C76031CB5203F00944144 /* TemplateAddEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98C76021CB5203F00944144 /* TemplateAddEditViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +45,9 @@
 		B4EC7A691CB2AEBB00B1F613 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		B4EC7A6B1CB2B26300B1F613 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		F9E9A32A1CB43FC600E10B2A /* BudgettoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BudgettoCell.swift; sourceTree = "<group>"; };
+		F90067E91CB3FD0A00B7075D /* TemplateTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TemplateTableViewController.swift; path = ../TemplateTableViewController.swift; sourceTree = "<group>"; };
+		F90067EB1CB402D500B7075D /* TemplateDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemplateDetailViewController.swift; sourceTree = "<group>"; };
+		F98C76021CB5203F00944144 /* TemplateAddEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemplateAddEditViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,7 +96,10 @@
 				F9E9A32C1CB43FCB00E10B2A /* Model */,
 				B4EC7A4B1CB29D9700B1F613 /* AppDelegate.swift */,
 				B4EC7A4D1CB29D9700B1F613 /* ViewController.swift */,
+				F90067E91CB3FD0A00B7075D /* TemplateTableViewController.swift */,
 				B4EC7A4F1CB29D9700B1F613 /* Main.storyboard */,
+				F98C76021CB5203F00944144 /* TemplateAddEditViewController.swift */,
+				F90067EB1CB402D500B7075D /* TemplateDetailViewController.swift */,
 				B4EC7A551CB29D9700B1F613 /* Assets.xcassets */,
 				B4EC7A571CB29D9700B1F613 /* LaunchScreen.storyboard */,
 				B4EC7A5A1CB29D9700B1F613 /* Info.plist */,
@@ -190,8 +199,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F98C76031CB5203F00944144 /* TemplateAddEditViewController.swift in Sources */,
 				B4EC7A4E1CB29D9700B1F613 /* ViewController.swift in Sources */,
 				B4EC7A4C1CB29D9700B1F613 /* AppDelegate.swift in Sources */,
+				F90067EC1CB402D500B7075D /* TemplateDetailViewController.swift in Sources */,
 				B4EC7A651CB2A16D00B1F613 /* ExpensesController.swift in Sources */,
 				F9E9A32B1CB43FC600E10B2A /* BudgettoCell.swift in Sources */,
 				B4EC7A631CB29EBE00B1F613 /* ExpensesDetailViewController.swift in Sources */,
@@ -200,6 +211,7 @@
 				B4CD632A1CB3B62700CEDD58 /* Expense+CoreDataProperties.swift in Sources */,
 				B4EC7A6C1CB2B26300B1F613 /* UIViewExtension.swift in Sources */,
 				B4CD632B1CB3B62700CEDD58 /* Expense.swift in Sources */,
+				F90067EA1CB3FD0A00B7075D /* TemplateTableViewController.swift in Sources */,
 				B4EC7A541CB29D9700B1F613 /* Budgetto.xcdatamodeld in Sources */,
 				B4EC7A6A1CB2AEBB00B1F613 /* UIColorExtension.swift in Sources */,
 			);
