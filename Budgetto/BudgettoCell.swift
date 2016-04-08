@@ -9,12 +9,14 @@
 import UIKit
 
 class BudgettoCell: UITableViewCell {
-
+    
+    @IBOutlet weak var descLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var amountLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        //setupLayout()
-
+        
     }
     
     required init(coder decoder: NSCoder) {
@@ -39,10 +41,6 @@ class BudgettoCell: UITableViewCell {
         selectView.frame.size.height = self.frame.size.height
         selectView.backgroundColor = UIColor(hexString: "#d8dcfe").colorWithAlphaComponent(0.50)
         self.selectedBackgroundView = selectView
-        
-
-
-        
     }
     
     override func setNeedsLayout() {

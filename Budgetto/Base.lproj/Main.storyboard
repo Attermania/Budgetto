@@ -100,6 +100,9 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <connections>
+                                            <outlet property="amountLabel" destination="8s0-be-fvH" id="lFX-yx-xas"/>
+                                            <outlet property="dateLabel" destination="Rxw-1O-iMZ" id="2Il-Ll-b3G"/>
+                                            <outlet property="descLabel" destination="88l-kd-jrK" id="GU7-8p-oiq"/>
                                             <segue destination="h54-oy-Iwc" kind="show" identifier="editExpenseSegue" id="m1h-f5-nei"/>
                                         </connections>
                                     </tableViewCell>
