@@ -19,13 +19,11 @@ class ExpensesController: UIViewController, UITableViewDelegate, UITableViewData
     
     @IBOutlet weak var expensesTableview: UITableView!
     
-    var tableView = UITableView()
-    
     let managedContext: NSManagedObjectContext! = (UIApplication.sharedApplication().delegate as? AppDelegate)?.managedObjectContext
     
     var expenses = [Expense]() {
         didSet {
-            self.tableView.reloadData()
+            self.expensesTableview.reloadData()
         }
     }
     
@@ -39,14 +37,6 @@ class ExpensesController: UIViewController, UITableViewDelegate, UITableViewData
         } catch {
             print("error in loading \(error)")
         }
-        
-        
-        for expense in expenses {
-            print(expense.amount)
-            print(expense.desc)
-            print(expense.date)
-            print()
-        }
     }
 
     override func viewDidLoad() {
@@ -54,14 +44,10 @@ class ExpensesController: UIViewController, UITableViewDelegate, UITableViewData
         
         expensesTableview.delegate = self
         expensesTableview.dataSource = self
-        // hides the default borders of the cells
         expensesTableview.separatorColor = UIColor.clearColor()
-        //expensesTableview.registerClass(BudgettoCell.self, forCellReuseIdentifier: "cell1")
         
         self.view.setDefaultBackground()
         loadData()
-
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -72,20 +58,23 @@ class ExpensesController: UIViewController, UITableViewDelegate, UITableViewData
     //
     // Number of rows
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return expenses.count
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 8
+        return 1
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell1", forIndexPath: indexPath) as! BudgettoCell
+        let expense = expenses[indexPath.row]
         
+        let amount = (expense.amount?.stringValue != nil ? expense.amount?.stringValue : "")!
         
-
-        //print(cell)
-        
+        cell.expense = expense
+        cell.descLabel.text = expense.desc
+        cell.amountLabel.text = "-" + amount + " kr"
+        cell.dateLabel.text = expense.formattedDate()
         
         return cell
     }
@@ -107,34 +96,22 @@ class ExpensesController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "createExpenseSegue" {
-            // let destVC = segue.destinationViewController as! ExpensesDetailViewController
-            
-            print("Ny Udgift")
-        }
         if segue.identifier == "editExpenseSegue" {
             let destVC = segue.destinationViewController as! ExpensesDetailViewController
-            destVC.expenseBeingEdited = expenses[0]
-            
-            print("Rediger Udgift")
+            destVC.expenseBeingEdited = expenses[expensesTableview.indexPathForSelectedRow!.row]
         }
         
     }
-
     
-    
-    
-   
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
     }
-    */
+    
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == UITableViewCellEditingStyle.Delete {
+            // numbers.removeAtIndex(indexPath.row)
+            // tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+        }
+    }
 
 }

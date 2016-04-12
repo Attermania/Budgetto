@@ -24,38 +24,50 @@ class ExpensesDetailViewController: UIViewController {
         
         self.view.setDefaultBackground()
         
-        // Do any additional setup after loading the view.
+        if(isEditingExepense()) {
+            descriptionTextfield.text = expenseBeingEdited?.desc
+            amountTextfield.text = expenseBeingEdited?.amount?.stringValue
+            dateTextfield.text = expenseBeingEdited?.formattedDate()
+        }
     }
     
     @IBAction func didTapSave(sender: AnyObject) {
         save()
     }
     
+    
     func save() {
-        let editing = expenseBeingEdited != nil
         
-        if editing {
-            print("editing")
+        if isEditingExepense() {
+            expenseBeingEdited!.desc = descriptionTextfield.text
+            expenseBeingEdited!.amount = Double(amountTextfield.text!)
+            expenseBeingEdited!.date = NSDate()
         } else {
-            print("Creating")
-            
             let expense = NSEntityDescription.insertNewObjectForEntityForName("Expense", inManagedObjectContext: managedContext) as! Expense
             expense.desc = descriptionTextfield.text
             expense.amount = Double(amountTextfield.text!)
             expense.date = NSDate()
-            
-            do {
-                try managedContext.save()
-                print("saved")
-                
-            } catch let error as NSError {
-                print("Bug in saving \(error)")
-            }
         }
         
+        do {
+            try managedContext.save()
+        } catch {}
+        
+        reset()
+    }
+    
+    func reset() {
         expenseBeingEdited = nil
+        
+        descriptionTextfield.text = ""
+        amountTextfield.text = ""
+        dateTextfield.text = ""
     }
 
+    func isEditingExepense() -> Bool {
+        return expenseBeingEdited != nil
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

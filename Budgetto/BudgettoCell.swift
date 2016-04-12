@@ -10,6 +10,7 @@ import UIKit
 
 class BudgettoCell: UITableViewCell {
     
+    var expense: Expense?
     @IBOutlet weak var descLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var amountLabel: UILabel!
@@ -21,7 +22,6 @@ class BudgettoCell: UITableViewCell {
     
     required init(coder decoder: NSCoder) {
         super.init(coder: decoder)!
-        print("init method")
         setupLayout()
     }
     
@@ -44,16 +44,15 @@ class BudgettoCell: UITableViewCell {
     }
     
     override func setNeedsLayout() {
-        print("setNeedsLayout")
-
+        
     }
     
     override func setNeedsUpdateConstraints() {
-        print("testing")
+        
     }
     
     override func layoutSubviews() {
-        print("layoutSubviews method")
+        
 
     }
     
