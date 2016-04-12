@@ -21,10 +21,10 @@
 		B4EC7A651CB2A16D00B1F613 /* ExpensesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EC7A641CB2A16D00B1F613 /* ExpensesController.swift */; };
 		B4EC7A6A1CB2AEBB00B1F613 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EC7A691CB2AEBB00B1F613 /* UIColorExtension.swift */; };
 		B4EC7A6C1CB2B26300B1F613 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EC7A6B1CB2B26300B1F613 /* UIViewExtension.swift */; };
-		F9E9A32B1CB43FC600E10B2A /* BudgettoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E9A32A1CB43FC600E10B2A /* BudgettoCell.swift */; };
 		F90067EA1CB3FD0A00B7075D /* TemplateTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90067E91CB3FD0A00B7075D /* TemplateTableViewController.swift */; };
 		F90067EC1CB402D500B7075D /* TemplateDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90067EB1CB402D500B7075D /* TemplateDetailViewController.swift */; };
 		F98C76031CB5203F00944144 /* TemplateAddEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98C76021CB5203F00944144 /* TemplateAddEditViewController.swift */; };
+		F9E9A32B1CB43FC600E10B2A /* BudgettoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E9A32A1CB43FC600E10B2A /* BudgettoCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,10 +44,10 @@
 		B4EC7A641CB2A16D00B1F613 /* ExpensesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpensesController.swift; sourceTree = "<group>"; };
 		B4EC7A691CB2AEBB00B1F613 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		B4EC7A6B1CB2B26300B1F613 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
-		F9E9A32A1CB43FC600E10B2A /* BudgettoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BudgettoCell.swift; sourceTree = "<group>"; };
 		F90067E91CB3FD0A00B7075D /* TemplateTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TemplateTableViewController.swift; path = ../TemplateTableViewController.swift; sourceTree = "<group>"; };
 		F90067EB1CB402D500B7075D /* TemplateDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemplateDetailViewController.swift; sourceTree = "<group>"; };
 		F98C76021CB5203F00944144 /* TemplateAddEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemplateAddEditViewController.swift; sourceTree = "<group>"; };
+		F9E9A32A1CB43FC600E10B2A /* BudgettoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BudgettoCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
