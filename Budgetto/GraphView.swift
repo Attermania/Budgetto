@@ -122,8 +122,7 @@ class GraphView: UIView {
         //draw the line on top of the clipped gradient
         graphPath.lineWidth = 2.0
         graphPath.stroke()
-        UIColor.whiteColor().colorWithAlphaComponent(0.1).setFill()
-        clippingPath.fill()
+
         
         //Draw the circles on top of graph stroke
         for i in 0..<graphPoints.count {
@@ -136,6 +135,9 @@ class GraphView: UIView {
                     size: CGSize(width: 5.0, height: 5.0)))
             circle.fill()
         }
+        // filling 
+        UIColor.whiteColor().colorWithAlphaComponent(0.1).setFill()
+        clippingPath.fill()
         
         
         
