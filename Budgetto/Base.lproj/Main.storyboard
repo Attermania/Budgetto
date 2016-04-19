@@ -167,9 +167,16 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="Finans" id="krf-Lp-b7N"/>
+                    <navigationItem key="navigationItem" title="Finans" id="krf-Lp-b7N">
+                        <barButtonItem key="rightBarButtonItem" image="calendar" id="lMj-Q2-Wg3" customClass="MonthSelectionButton" customModule="Budgetto" customModuleProvider="target">
+                            <connections>
+                                <action selector="test:" destination="7gm-BS-oir" id="yAP-8U-GZs"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="expensesTableview" destination="nYo-UL-vmc" id="u3R-BO-pxl"/>
+                        <outlet property="monthSelectionButton" destination="lMj-Q2-Wg3" id="Bta-nH-vnb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fWk-sp-OfZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -248,7 +255,7 @@
         <!--Finans-->
         <scene sceneID="ESe-T6-2NK">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="XF5-u5-DHY" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="XF5-u5-DHY" customClass="MainNavigationController" customModule="Budgetto" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Finans" image="expenses" id="xTK-wL-5zk"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ACX-ZM-8oW">
@@ -591,13 +598,14 @@
         </scene>
     </scenes>
     <resources>
+        <image name="calendar" width="22" height="22"/>
         <image name="expenses" width="24" height="24"/>
         <image name="overview" width="22" height="22"/>
         <image name="template" width="22" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="2Pn-ho-IfH"/>
         <segue reference="jTT-FG-ybn"/>
         <segue reference="ME0-zg-9HE"/>
-        <segue reference="2Pn-ho-IfH"/>
     </inferredMetricsTieBreakers>
 </document>

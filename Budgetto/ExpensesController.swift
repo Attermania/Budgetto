@@ -10,6 +10,12 @@ import UIKit
 import CoreData
 
 class ExpensesController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+
+    @IBOutlet weak var monthSelectionButton: MonthSelectionButton!
+    
+    @IBAction func test(sender: AnyObject) {
+        monthSelectionButton.showMonthPickerView(self)
+    }
     
     let cellSpacingHeight: CGFloat = 5
     
@@ -20,6 +26,8 @@ class ExpensesController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var expensesTableview: UITableView!
     
     let managedContext: NSManagedObjectContext! = (UIApplication.sharedApplication().delegate as? AppDelegate)?.managedObjectContext
+    
+
     
     var money = [Money]() {
         didSet {
@@ -41,6 +49,10 @@ class ExpensesController: UIViewController, UITableViewDelegate, UITableViewData
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        monthSelectionButton = appDelegate.monthSelectionButton
         
         expensesTableview.delegate = self
         expensesTableview.dataSource = self
