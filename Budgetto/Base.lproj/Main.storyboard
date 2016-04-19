@@ -25,7 +25,7 @@
             </objects>
             <point key="canvasLocation" x="-313" y="803"/>
         </scene>
-        <!--Indtægter / Udgifter-->
+        <!--Finans-->
         <scene sceneID="bil-y1-Mvc">
             <objects>
                 <viewController id="7gm-BS-oir" customClass="ExpensesController" customModule="Budgetto" customModuleProvider="target" sceneMemberID="viewController">
@@ -38,7 +38,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="45" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nYo-UL-vmc">
-                                <rect key="frame" x="5" y="0.0" width="590" height="465"/>
+                                <rect key="frame" x="5" y="0.0" width="590" height="476"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="465" id="HBM-fV-mdW"/>
@@ -48,7 +48,7 @@
                                         <rect key="frame" x="0.0" y="92" width="590" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="a29-rJ-PqO" id="Jte-eF-Oms">
-                                            <rect key="frame" x="0.0" y="0.0" width="590" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="590" height="44.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- 40000 DKK" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8s0-be-fvH">
@@ -62,10 +62,10 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="80R-MI-ux9">
-                                                    <rect key="frame" x="10" y="-2" width="229" height="49"/>
+                                                    <rect key="frame" x="10" y="-2" width="229" height="48"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meget lang tekst" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="88l-kd-jrK">
-                                                            <rect key="frame" x="0.0" y="0.0" width="229" height="25"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="229" height="24"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="24" id="bo3-xd-Zz1"/>
                                                                 <constraint firstAttribute="width" constant="229" id="jXX-4Z-rE4"/>
@@ -75,7 +75,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="05/04-2016" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rxw-1O-iMZ">
-                                                            <rect key="frame" x="0.0" y="25" width="229" height="24"/>
+                                                            <rect key="frame" x="0.0" y="24" width="229" height="24"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="24" id="ZcP-V4-UcE"/>
                                                             </constraints>
@@ -106,13 +106,18 @@
                                             <outlet property="amountLabel" destination="8s0-be-fvH" id="lFX-yx-xas"/>
                                             <outlet property="dateLabel" destination="Rxw-1O-iMZ" id="2Il-Ll-b3G"/>
                                             <outlet property="descLabel" destination="88l-kd-jrK" id="GU7-8p-oiq"/>
-                                            <segue destination="h54-oy-Iwc" kind="show" identifier="editExpenseSegue" id="m1h-f5-nei"/>
+                                            <segue destination="h54-oy-Iwc" kind="show" identifier="editExpenseOrIncomeSegue" id="m1h-f5-nei"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="HBM-fV-mdW"/>
+                                    </mask>
+                                </variation>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rRs-e5-qxq">
-                                <rect key="frame" x="30" y="475" width="540" height="30"/>
+                                <rect key="frame" x="10" y="481" width="580" height="30"/>
                                 <color key="backgroundColor" red="0.25490196078431371" green="0.48627450980392156" blue="0.68627450980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Ny Udgift">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -122,24 +127,30 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cx1-uR-Bx2">
-                                <rect key="frame" x="30" y="515" width="540" height="30"/>
-                                <color key="backgroundColor" red="0.25490196078431371" green="0.48627450980392156" blue="0.68627450980392157" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="10" y="516" width="580" height="30"/>
+                                <color key="backgroundColor" red="0.25490196079999999" green="0.48627450979999998" blue="0.68627450980000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Ny Indtægt">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="h54-oy-Iwc" kind="show" identifier="createIncomeSegue" id="ANm-nr-o0F"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="rRs-e5-qxq" secondAttribute="trailing" constant="10" id="0QF-4u-bfg"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="rRs-e5-qxq" secondAttribute="trailing" constant="-10" id="0QF-4u-bfg"/>
+                            <constraint firstItem="Cx1-uR-Bx2" firstAttribute="top" secondItem="rRs-e5-qxq" secondAttribute="bottom" constant="5" id="5co-KC-oI9"/>
                             <constraint firstAttribute="trailingMargin" secondItem="nYo-UL-vmc" secondAttribute="trailing" constant="-20" id="DvJ-35-obb"/>
                             <constraint firstItem="nYo-UL-vmc" firstAttribute="leading" secondItem="xHQ-cE-Sj7" secondAttribute="leading" constant="5" id="FQd-uN-QP4"/>
-                            <constraint firstItem="rRs-e5-qxq" firstAttribute="leading" secondItem="xHQ-cE-Sj7" secondAttribute="leadingMargin" constant="10" id="FWn-9m-lrF"/>
+                            <constraint firstItem="rRs-e5-qxq" firstAttribute="leading" secondItem="xHQ-cE-Sj7" secondAttribute="leadingMargin" constant="-10" id="FWn-9m-lrF"/>
                             <constraint firstItem="rRs-e5-qxq" firstAttribute="top" secondItem="nYo-UL-vmc" secondAttribute="bottom" constant="10" id="IvV-Gi-a3o"/>
                             <constraint firstAttribute="trailing" secondItem="nYo-UL-vmc" secondAttribute="trailing" id="JWD-Yr-aDz"/>
-                            <constraint firstItem="Cx1-uR-Bx2" firstAttribute="leading" secondItem="xHQ-cE-Sj7" secondAttribute="leadingMargin" constant="10" id="JcO-yx-avO"/>
+                            <constraint firstItem="Cx1-uR-Bx2" firstAttribute="leading" secondItem="xHQ-cE-Sj7" secondAttribute="leadingMargin" constant="-10" id="JcO-yx-avO"/>
                             <constraint firstItem="nYo-UL-vmc" firstAttribute="leading" secondItem="xHQ-cE-Sj7" secondAttribute="leading" id="bLJ-5Z-fHf"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Cx1-uR-Bx2" secondAttribute="trailing" constant="10" id="don-i3-Bsh"/>
+                            <constraint firstItem="bu9-9n-woS" firstAttribute="top" secondItem="Cx1-uR-Bx2" secondAttribute="bottom" constant="5" id="bYZ-nH-cOm"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Cx1-uR-Bx2" secondAttribute="trailing" constant="-10" id="don-i3-Bsh"/>
+                            <constraint firstItem="rRs-e5-qxq" firstAttribute="top" secondItem="nYo-UL-vmc" secondAttribute="bottom" constant="5" id="eqI-gz-NFr"/>
                             <constraint firstItem="nYo-UL-vmc" firstAttribute="leading" secondItem="xHQ-cE-Sj7" secondAttribute="leadingMargin" constant="-20" id="gH8-GV-C3R"/>
                             <constraint firstItem="Cx1-uR-Bx2" firstAttribute="top" secondItem="rRs-e5-qxq" secondAttribute="bottom" constant="10" id="tCw-ER-nRJ"/>
                             <constraint firstItem="nYo-UL-vmc" firstAttribute="top" secondItem="xHQ-cE-Sj7" secondAttribute="topMargin" id="vE7-YG-rAg"/>
@@ -151,10 +162,12 @@
                                 <exclude reference="JWD-Yr-aDz"/>
                                 <exclude reference="bLJ-5Z-fHf"/>
                                 <exclude reference="gH8-GV-C3R"/>
+                                <exclude reference="IvV-Gi-a3o"/>
+                                <exclude reference="tCw-ER-nRJ"/>
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="Indtægter / Udgifter" id="krf-Lp-b7N"/>
+                    <navigationItem key="navigationItem" title="Finans" id="krf-Lp-b7N"/>
                     <connections>
                         <outlet property="expensesTableview" destination="nYo-UL-vmc" id="u3R-BO-pxl"/>
                     </connections>
@@ -193,7 +206,7 @@
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rdh-NH-iib">
                                 <rect key="frame" x="10" y="150" width="580" height="30"/>
                                 <color key="backgroundColor" red="0.25490196079999999" green="0.48627450979999998" blue="0.68627450980000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Gem udgift">
+                                <state key="normal" title="Gem">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
@@ -229,11 +242,11 @@
             </objects>
             <point key="canvasLocation" x="1887" y="531"/>
         </scene>
-        <!--Indtægt / Udgift-->
+        <!--Finans-->
         <scene sceneID="ESe-T6-2NK">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="XF5-u5-DHY" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Indtægt / Udgift" image="expenses" id="xTK-wL-5zk"/>
+                    <tabBarItem key="tabBarItem" title="Finans" image="expenses" id="xTK-wL-5zk"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ACX-ZM-8oW">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -378,7 +391,7 @@
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="G6c-50-yHD" id="ebN-T0-2Nh">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
@@ -580,8 +593,8 @@
         <image name="template" width="22" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Ibj-r9-gpE"/>
-        <segue reference="m1h-f5-nei"/>
-        <segue reference="xdL-c4-Pbl"/>
+        <segue reference="jTT-FG-ybn"/>
+        <segue reference="ME0-zg-9HE"/>
+        <segue reference="2Pn-ho-IfH"/>
     </inferredMetricsTieBreakers>
 </document>

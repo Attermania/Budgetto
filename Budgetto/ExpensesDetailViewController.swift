@@ -16,6 +16,11 @@ class ExpensesDetailViewController: UIViewController {
     @IBOutlet weak var dateTextfield: UITextField!
     
     var expenseBeingEdited: Expense?
+    var incomeBeingEdited: Income?
+    var incomeBeingCreated = false
+    var expenseBeingCreated = false
+    
+    var titleForView = ""
     
     let managedContext: NSManagedObjectContext! = (UIApplication.sharedApplication().delegate as? AppDelegate)?.managedObjectContext
     
@@ -24,10 +29,22 @@ class ExpensesDetailViewController: UIViewController {
         
         self.view.setDefaultBackground()
         
-        if(isEditingExepense()) {
+        if isEditingExepense() {
             descriptionTextfield.text = expenseBeingEdited?.desc
             amountTextfield.text = expenseBeingEdited?.amount?.stringValue
-            dateTextfield.text = expenseBeingEdited?.formattedDate()
+            title = titleForView
+            //dateTextfield.text = expenseBeingEdited?.formattedDate()
+        }
+        if isEditingIncome() {
+            descriptionTextfield.text = incomeBeingEdited?.desc
+            amountTextfield.text = incomeBeingEdited?.amount?.stringValue
+            title = titleForView
+        }
+        if incomeBeingCreated == true {
+            title = titleForView
+        }
+        if expenseBeingCreated == true {
+            title = titleForView
         }
     }
     
@@ -41,16 +58,26 @@ class ExpensesDetailViewController: UIViewController {
         if isEditingExepense() {
             expenseBeingEdited!.desc = descriptionTextfield.text
             expenseBeingEdited!.amount = Double(amountTextfield.text!)
-            expenseBeingEdited!.date = NSDate()
-        } else {
+            //expenseBeingEdited!.date = NSDate()
+        } else  if expenseBeingCreated == true {
             let expense = NSEntityDescription.insertNewObjectForEntityForName("Expense", inManagedObjectContext: managedContext) as! Expense
             expense.desc = descriptionTextfield.text
             expense.amount = Double(amountTextfield.text!)
-            expense.date = NSDate()
+            //expense.date = NSDate()
+        }
+        
+        if isEditingIncome() {
+            incomeBeingEdited?.desc = descriptionTextfield.text
+            incomeBeingEdited?.amount = Double(amountTextfield.text!)
+        } else if incomeBeingCreated == true {
+            let income = NSEntityDescription.insertNewObjectForEntityForName("Income", inManagedObjectContext: managedContext) as! Income
+            income.desc = descriptionTextfield.text
+            income.amount = Double(amountTextfield.text!)
         }
         
         do {
             try managedContext.save()
+            print("Saved")
         } catch {}
         
         reset()
@@ -66,6 +93,14 @@ class ExpensesDetailViewController: UIViewController {
 
     func isEditingExepense() -> Bool {
         return expenseBeingEdited != nil
+    }
+    
+    func isEditingIncome() -> Bool {
+        return incomeBeingEdited != nil
+    }
+    
+    func isIncomeBeingCreated() -> Bool {
+        return incomeBeingCreated
     }
     
     override func didReceiveMemoryWarning() {

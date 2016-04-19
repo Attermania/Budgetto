@@ -1,5 +1,5 @@
 //
-//  Income+CoreDataProperties.swift
+//  Money+CoreDataProperties.swift
 //  Budgetto
 //
 //  Created by Thomas Attermann on 18/04/2016.
@@ -12,7 +12,10 @@
 import Foundation
 import CoreData
 
-extension Income {
+extension Money {
 
+    @NSManaged var desc: String?
+    @NSManaged var amount: NSNumber?
+    @NSManaged var date: String?
 
 }

@@ -21,18 +21,18 @@ class ExpensesController: UIViewController, UITableViewDelegate, UITableViewData
     
     let managedContext: NSManagedObjectContext! = (UIApplication.sharedApplication().delegate as? AppDelegate)?.managedObjectContext
     
-    var expenses = [Expense]() {
+    var money = [Money]() {
         didSet {
             self.expensesTableview.reloadData()
         }
     }
     
     func loadData() {
-        let request = NSFetchRequest(entityName: "Expense")
+        let request = NSFetchRequest(entityName: "Money")
         
         do {
             let results = try managedContext.executeFetchRequest(request)
-            self.expenses = results as! [Expense]
+            self.money = results as! [Money]
             
         } catch {
             print("error in loading \(error)")
@@ -58,7 +58,7 @@ class ExpensesController: UIViewController, UITableViewDelegate, UITableViewData
     //
     // Number of rows
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return expenses.count
+        return money.count
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -67,14 +67,29 @@ class ExpensesController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell1", forIndexPath: indexPath) as! BudgettoCell
-        let expense = expenses[indexPath.row]
+        let chosenMoney = money[indexPath.row]
         
-        let amount = (expense.amount?.stringValue != nil ? expense.amount?.stringValue : "")!
+        let amount = (chosenMoney.amount?.stringValue != nil ? chosenMoney.amount?.stringValue : "")!
         
-        cell.expense = expense
-        cell.descLabel.text = expense.desc
-        cell.amountLabel.text = "-" + amount + " kr"
-        cell.dateLabel.text = expense.formattedDate()
+//        cell.expense = chosenMoney
+//        cell.descLabel.text = expense.desc
+//        cell.amountLabel.text = "-" + amount + " kr"
+//        cell.dateLabel.text = expense.formattedDate()
+        
+        if chosenMoney is Expense {
+            cell.descLabel.text = chosenMoney.desc
+            cell.amountLabel.text = " - " + amount + " kr"
+        }
+        
+        if chosenMoney is Income {
+            cell.descLabel.text = chosenMoney.desc
+            cell.amountLabel.text = " + " + amount + " kr"
+            let amountInNumbers = Int(amount)
+            if amountInNumbers >= 0 {
+                cell.amountLabel.textColor = UIColor.greenColor()
+            }
+            
+        }
         
         return cell
     }
@@ -96,9 +111,29 @@ class ExpensesController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "editExpenseSegue" {
-            let destVC = segue.destinationViewController as! ExpensesDetailViewController
-            destVC.expenseBeingEdited = expenses[expensesTableview.indexPathForSelectedRow!.row]
+        let destVC = segue.destinationViewController as! ExpensesDetailViewController
+
+        if segue.identifier == "editExpenseOrIncomeSegue" {
+            // Editing an expense
+            if money[expensesTableview.indexPathForSelectedRow!.row] is Expense {
+                destVC.expenseBeingEdited = money[expensesTableview.indexPathForSelectedRow!.row] as! Expense
+                destVC.titleForView = "Rediger Udgift"
+            }
+            // Editing an income
+            if money[expensesTableview.indexPathForSelectedRow!.row] is Income {
+                destVC.incomeBeingEdited = money[expensesTableview.indexPathForSelectedRow!.row] as! Income
+                destVC.titleForView = "Rediger indtægt"
+            }
+        }
+        // Creating an income
+        if segue.identifier == "createIncomeSegue" {
+            destVC.incomeBeingCreated = true
+            destVC.titleForView = "Opret indtægt"
+        }
+        // Creating an income
+        if segue.identifier == "createExpenseSegue" {
+            destVC.expenseBeingCreated = true
+            destVC.titleForView = "Opret udgift"
         }
         
     }

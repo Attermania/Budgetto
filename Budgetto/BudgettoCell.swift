@@ -11,6 +11,7 @@ import UIKit
 class BudgettoCell: UITableViewCell {
     
     var expense: Expense?
+    var income: Income?
     @IBOutlet weak var descLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var amountLabel: UILabel!

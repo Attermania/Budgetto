@@ -2,7 +2,7 @@
 //  Expense.swift
 //  Budgetto
 //
-//  Created by Jens Herlevsen on 05/04/2016.
+//  Created by Thomas Attermann on 18/04/2016.
 //  Copyright © 2016 SJT. All rights reserved.
 //
 
@@ -10,7 +10,7 @@ import Foundation
 import CoreData
 
 
-class Expense: NSManagedObject {
+class Expense: Money {
 
 // Insert code here to add functionality to your managed object subclass
 

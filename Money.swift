@@ -1,5 +1,5 @@
 //
-//  Income.swift
+//  Money.swift
 //  Budgetto
 //
 //  Created by Thomas Attermann on 18/04/2016.
@@ -10,7 +10,7 @@ import Foundation
 import CoreData
 
 
-class Income: Money {
+class Money: NSManagedObject {
 
 // Insert code here to add functionality to your managed object subclass
 
