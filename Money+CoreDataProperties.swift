@@ -2,7 +2,7 @@
 //  Money+CoreDataProperties.swift
 //  Budgetto
 //
-//  Created by Thomas Attermann on 18/04/2016.
+//  Created by Thomas Attermann on 19/04/2016.
 //  Copyright © 2016 SJT. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -14,8 +14,20 @@ import CoreData
 
 extension Money {
 
-    @NSManaged var desc: String?
     @NSManaged var amount: NSNumber?
-    @NSManaged var date: String?
+    @NSManaged var date: NSDate?
+    @NSManaged var desc: String?
+    
+    func formattedDate() -> String {
+        let formatter = NSDateFormatter()
+        formatter.dateFormat = "dd/MM-YYYY"
+        return formatter.stringFromDate(date!)
+    }
+    
+    func stringToDate(date : String) -> NSDate {
+        let formatter = NSDateFormatter()
+        formatter.dateFormat = "dd/MM-YYYY"
+        return formatter.dateFromString(date)!
+    }
 
 }

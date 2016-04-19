@@ -79,11 +79,13 @@ class ExpensesController: UIViewController, UITableViewDelegate, UITableViewData
         if chosenMoney is Expense {
             cell.descLabel.text = chosenMoney.desc
             cell.amountLabel.text = " - " + amount + " kr"
+            cell.dateLabel.text = chosenMoney.formattedDate()
         }
         
         if chosenMoney is Income {
             cell.descLabel.text = chosenMoney.desc
             cell.amountLabel.text = " + " + amount + " kr"
+            cell.dateLabel.text = chosenMoney.formattedDate()
             let amountInNumbers = Int(amount)
             if amountInNumbers >= 0 {
                 cell.amountLabel.textColor = UIColor.greenColor()

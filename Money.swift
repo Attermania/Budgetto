@@ -2,7 +2,7 @@
 //  Money.swift
 //  Budgetto
 //
-//  Created by Thomas Attermann on 18/04/2016.
+//  Created by Thomas Attermann on 19/04/2016.
 //  Copyright © 2016 SJT. All rights reserved.
 //
 

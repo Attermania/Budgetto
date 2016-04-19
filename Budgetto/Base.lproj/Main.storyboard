@@ -202,6 +202,9 @@
                                 <rect key="frame" x="10" y="110" width="580" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="textfieldEditingDate:" destination="h54-oy-Iwc" eventType="editingDidBegin" id="Egj-gg-BcT"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rdh-NH-iib">
                                 <rect key="frame" x="10" y="150" width="580" height="30"/>

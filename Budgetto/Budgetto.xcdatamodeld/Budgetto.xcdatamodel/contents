@@ -4,12 +4,12 @@
     <entity name="Income" representedClassName=".Income" parentEntity="Money" syncable="YES"/>
     <entity name="Money" representedClassName=".Money" isAbstract="YES" syncable="YES">
         <attribute name="amount" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
-        <attribute name="date" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Money" positionX="-63" positionY="-18" width="128" height="90"/>
         <element name="Expense" positionX="-54" positionY="18" width="128" height="45"/>
         <element name="Income" positionX="-36" positionY="27" width="128" height="45"/>
+        <element name="Money" positionX="-63" positionY="-18" width="128" height="90"/>
     </elements>
 </model>

@@ -20,12 +20,12 @@
 		F90067EA1CB3FD0A00B7075D /* TemplateTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90067E91CB3FD0A00B7075D /* TemplateTableViewController.swift */; };
 		F90067EC1CB402D500B7075D /* TemplateDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90067EB1CB402D500B7075D /* TemplateDetailViewController.swift */; };
 		F94E2C411CC3E7DC00CDC502 /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94E2C401CC3E7DC00CDC502 /* GraphView.swift */; };
-		F960A4DD1CC43F17008D5B1E /* Money+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F960A4D71CC43F17008D5B1E /* Money+CoreDataProperties.swift */; };
-		F960A4DE1CC43F17008D5B1E /* Money.swift in Sources */ = {isa = PBXBuildFile; fileRef = F960A4D81CC43F17008D5B1E /* Money.swift */; };
 		F960A4DF1CC43F17008D5B1E /* Expense+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F960A4D91CC43F17008D5B1E /* Expense+CoreDataProperties.swift */; };
 		F960A4E01CC43F17008D5B1E /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = F960A4DA1CC43F17008D5B1E /* Expense.swift */; };
 		F960A4E11CC43F17008D5B1E /* Income+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F960A4DB1CC43F17008D5B1E /* Income+CoreDataProperties.swift */; };
 		F960A4E21CC43F17008D5B1E /* Income.swift in Sources */ = {isa = PBXBuildFile; fileRef = F960A4DC1CC43F17008D5B1E /* Income.swift */; };
+		F960A4E71CC63449008D5B1E /* Money+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F960A4E51CC63449008D5B1E /* Money+CoreDataProperties.swift */; };
+		F960A4E81CC63449008D5B1E /* Money.swift in Sources */ = {isa = PBXBuildFile; fileRef = F960A4E61CC63449008D5B1E /* Money.swift */; };
 		F98C76031CB5203F00944144 /* TemplateAddEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98C76021CB5203F00944144 /* TemplateAddEditViewController.swift */; };
 		F9E9A32B1CB43FC600E10B2A /* BudgettoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E9A32A1CB43FC600E10B2A /* BudgettoCell.swift */; };
 /* End PBXBuildFile section */
@@ -46,12 +46,12 @@
 		F90067E91CB3FD0A00B7075D /* TemplateTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TemplateTableViewController.swift; path = ../TemplateTableViewController.swift; sourceTree = "<group>"; };
 		F90067EB1CB402D500B7075D /* TemplateDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemplateDetailViewController.swift; sourceTree = "<group>"; };
 		F94E2C401CC3E7DC00CDC502 /* GraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
-		F960A4D71CC43F17008D5B1E /* Money+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Money+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		F960A4D81CC43F17008D5B1E /* Money.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Money.swift; sourceTree = "<group>"; };
 		F960A4D91CC43F17008D5B1E /* Expense+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Expense+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		F960A4DA1CC43F17008D5B1E /* Expense.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Expense.swift; sourceTree = "<group>"; };
 		F960A4DB1CC43F17008D5B1E /* Income+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Income+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		F960A4DC1CC43F17008D5B1E /* Income.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Income.swift; sourceTree = "<group>"; };
+		F960A4E51CC63449008D5B1E /* Money+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Money+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		F960A4E61CC63449008D5B1E /* Money.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Money.swift; sourceTree = "<group>"; };
 		F98C76021CB5203F00944144 /* TemplateAddEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemplateAddEditViewController.swift; sourceTree = "<group>"; };
 		F9E9A32A1CB43FC600E10B2A /* BudgettoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BudgettoCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -77,8 +77,8 @@
 		B4EC7A3F1CB29D9700B1F613 = {
 			isa = PBXGroup;
 			children = (
-				F960A4D71CC43F17008D5B1E /* Money+CoreDataProperties.swift */,
-				F960A4D81CC43F17008D5B1E /* Money.swift */,
+				F960A4E51CC63449008D5B1E /* Money+CoreDataProperties.swift */,
+				F960A4E61CC63449008D5B1E /* Money.swift */,
 				F960A4D91CC43F17008D5B1E /* Expense+CoreDataProperties.swift */,
 				F960A4DA1CC43F17008D5B1E /* Expense.swift */,
 				F960A4DB1CC43F17008D5B1E /* Income+CoreDataProperties.swift */,
@@ -213,19 +213,19 @@
 				B4EC7A4E1CB29D9700B1F613 /* ViewController.swift in Sources */,
 				F960A4E11CC43F17008D5B1E /* Income+CoreDataProperties.swift in Sources */,
 				F960A4E21CC43F17008D5B1E /* Income.swift in Sources */,
-				F960A4DE1CC43F17008D5B1E /* Money.swift in Sources */,
+				F960A4E71CC63449008D5B1E /* Money+CoreDataProperties.swift in Sources */,
 				B4EC7A4C1CB29D9700B1F613 /* AppDelegate.swift in Sources */,
 				F90067EC1CB402D500B7075D /* TemplateDetailViewController.swift in Sources */,
 				B4EC7A651CB2A16D00B1F613 /* ExpensesController.swift in Sources */,
 				F9E9A32B1CB43FC600E10B2A /* BudgettoCell.swift in Sources */,
 				B4EC7A631CB29EBE00B1F613 /* ExpensesDetailViewController.swift in Sources */,
 				F94E2C411CC3E7DC00CDC502 /* GraphView.swift in Sources */,
+				F960A4E81CC63449008D5B1E /* Money.swift in Sources */,
 				B4EC7A6C1CB2B26300B1F613 /* UIViewExtension.swift in Sources */,
 				F90067EA1CB3FD0A00B7075D /* TemplateTableViewController.swift in Sources */,
 				F960A4DF1CC43F17008D5B1E /* Expense+CoreDataProperties.swift in Sources */,
 				B4EC7A541CB29D9700B1F613 /* Budgetto.xcdatamodeld in Sources */,
 				B4EC7A6A1CB2AEBB00B1F613 /* UIColorExtension.swift in Sources */,
-				F960A4DD1CC43F17008D5B1E /* Money+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
