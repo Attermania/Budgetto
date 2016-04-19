@@ -116,12 +116,12 @@ class ExpensesController: UIViewController, UITableViewDelegate, UITableViewData
         if segue.identifier == "editExpenseOrIncomeSegue" {
             // Editing an expense
             if money[expensesTableview.indexPathForSelectedRow!.row] is Expense {
-                destVC.expenseBeingEdited = money[expensesTableview.indexPathForSelectedRow!.row] as! Expense
+                destVC.expenseBeingEdited = money[expensesTableview.indexPathForSelectedRow!.row] as? Expense
                 destVC.titleForView = "Rediger Udgift"
             }
             // Editing an income
             if money[expensesTableview.indexPathForSelectedRow!.row] is Income {
-                destVC.incomeBeingEdited = money[expensesTableview.indexPathForSelectedRow!.row] as! Income
+                destVC.incomeBeingEdited = money[expensesTableview.indexPathForSelectedRow!.row] as? Income
                 destVC.titleForView = "Rediger indtægt"
             }
         }
