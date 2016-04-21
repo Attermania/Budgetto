@@ -21,6 +21,8 @@
 		B4EC7A6C1CB2B26300B1F613 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EC7A6B1CB2B26300B1F613 /* UIViewExtension.swift */; };
 		F90067EA1CB3FD0A00B7075D /* TemplateTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90067E91CB3FD0A00B7075D /* TemplateTableViewController.swift */; };
 		F90067EC1CB402D500B7075D /* TemplateDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90067EB1CB402D500B7075D /* TemplateDetailViewController.swift */; };
+		F93255131CC983F00001F3CD /* MonthView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F93255121CC983F00001F3CD /* MonthView.xib */; };
+		F93255151CC9849B0001F3CD /* MonthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93255141CC9849B0001F3CD /* MonthView.swift */; };
 		F94E2C411CC3E7DC00CDC502 /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94E2C401CC3E7DC00CDC502 /* GraphView.swift */; };
 		F960A4DF1CC43F17008D5B1E /* Expense+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F960A4D91CC43F17008D5B1E /* Expense+CoreDataProperties.swift */; };
 		F960A4E01CC43F17008D5B1E /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = F960A4DA1CC43F17008D5B1E /* Expense.swift */; };
@@ -53,6 +55,8 @@
 		B4EC7A6B1CB2B26300B1F613 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		F90067E91CB3FD0A00B7075D /* TemplateTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TemplateTableViewController.swift; path = ../TemplateTableViewController.swift; sourceTree = "<group>"; };
 		F90067EB1CB402D500B7075D /* TemplateDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemplateDetailViewController.swift; sourceTree = "<group>"; };
+		F93255121CC983F00001F3CD /* MonthView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MonthView.xib; sourceTree = "<group>"; };
+		F93255141CC9849B0001F3CD /* MonthView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthView.swift; sourceTree = "<group>"; };
 		F94E2C401CC3E7DC00CDC502 /* GraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
 		F960A4D91CC43F17008D5B1E /* Expense+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Expense+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		F960A4DA1CC43F17008D5B1E /* Expense.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Expense.swift; sourceTree = "<group>"; };
@@ -95,8 +99,6 @@
 				F960A4E61CC63449008D5B1E /* Money.swift */,
 				B457B0B51CC91D7300EC35EE /* Month+CoreDataProperties.swift */,
 				B457B0B61CC91D7300EC35EE /* Month.swift */,
-				F960A4D71CC43F17008D5B1E /* Money+CoreDataProperties.swift */,
-				F960A4D81CC43F17008D5B1E /* Money.swift */,
 				F960A4D91CC43F17008D5B1E /* Expense+CoreDataProperties.swift */,
 				F960A4DA1CC43F17008D5B1E /* Expense.swift */,
 				F960A4DB1CC43F17008D5B1E /* Income+CoreDataProperties.swift */,
@@ -135,6 +137,8 @@
 				F94E2C401CC3E7DC00CDC502 /* GraphView.swift */,
 				F98ED73F1CC636C30013111A /* MainNavigationController.swift */,
 				F98ED7431CC639F10013111A /* MonthSelectionButton.swift */,
+				F93255121CC983F00001F3CD /* MonthView.xib */,
+				F93255141CC9849B0001F3CD /* MonthView.swift */,
 			);
 			path = Budgetto;
 			sourceTree = "<group>";
@@ -218,6 +222,7 @@
 				B4EC7A591CB29D9700B1F613 /* LaunchScreen.storyboard in Resources */,
 				B4EC7A561CB29D9700B1F613 /* Assets.xcassets in Resources */,
 				B4EC7A511CB29D9700B1F613 /* Main.storyboard in Resources */,
+				F93255131CC983F00001F3CD /* MonthView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -234,9 +239,9 @@
 				F960A4E11CC43F17008D5B1E /* Income+CoreDataProperties.swift in Sources */,
 				F960A4E21CC43F17008D5B1E /* Income.swift in Sources */,
 				F9D430CC1CC91A60009CED27 /* Template.swift in Sources */,
+				F93255151CC9849B0001F3CD /* MonthView.swift in Sources */,
 				F960A4E71CC63449008D5B1E /* Money+CoreDataProperties.swift in Sources */,
 				F98ED7441CC639F10013111A /* MonthSelectionButton.swift in Sources */,
-				F960A4DE1CC43F17008D5B1E /* Money.swift in Sources */,
 				B4EC7A4C1CB29D9700B1F613 /* AppDelegate.swift in Sources */,
 				F90067EC1CB402D500B7075D /* TemplateDetailViewController.swift in Sources */,
 				B457B0B81CC91D7300EC35EE /* Month.swift in Sources */,

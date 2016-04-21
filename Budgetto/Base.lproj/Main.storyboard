@@ -18,7 +18,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="XF5-u5-DHY" kind="relationship" relationship="viewControllers" id="zS7-lF-QKk"/>
-                        <segue destination="lw2-y3-1kh" kind="relationship" relationship="viewControllers" id="EGV-gk-RUL"/>
+                        <segue destination="mCD-2W-dXf" kind="relationship" relationship="viewControllers" id="EGV-gk-RUL"/>
                         <segue destination="0YG-TJ-FZl" kind="relationship" relationship="viewControllers" id="NMK-bI-BdM"/>
                     </connections>
                 </tabBarController>
@@ -49,7 +49,7 @@
                                         <rect key="frame" x="0.0" y="92" width="590" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="a29-rJ-PqO" id="Jte-eF-Oms">
-                                            <rect key="frame" x="0.0" y="0.0" width="590" height="44.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="590" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- 40000 DKK" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8s0-be-fvH">
@@ -171,7 +171,7 @@
                     <navigationItem key="navigationItem" title="Finans" id="krf-Lp-b7N">
                         <barButtonItem key="rightBarButtonItem" image="calendar" id="lMj-Q2-Wg3" customClass="MonthSelectionButton" customModule="Budgetto" customModuleProvider="target">
                             <connections>
-                                <action selector="test:" destination="7gm-BS-oir" id="yAP-8U-GZs"/>
+                                <action selector="didTapMonthSelectionButton:" destination="7gm-BS-oir" id="1pz-ZL-pWt"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -272,7 +272,7 @@
             </objects>
             <point key="canvasLocation" x="411" y="551"/>
         </scene>
-        <!--Overblik-->
+        <!--View Controller-->
         <scene sceneID="3yb-Fm-TE1">
             <objects>
                 <viewController id="lw2-y3-1kh" customClass="ViewController" customModule="Budgetto" customModuleProvider="target" sceneMemberID="viewController">
@@ -379,15 +379,22 @@
                             <constraint firstItem="Ixo-la-nnA" firstAttribute="centerX" secondItem="RQk-Cg-Kuw" secondAttribute="centerX" id="HtA-9R-hbB"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Overblik" image="overview" id="HL2-2g-Ob0"/>
+                    <navigationItem key="navigationItem" id="zdB-1z-d6O">
+                        <barButtonItem key="rightBarButtonItem" image="calendar" id="coI-gS-sHi" customClass="MonthSelectionButton" customModule="Budgetto" customModuleProvider="target">
+                            <connections>
+                                <action selector="didTabMonthSelectionButton:" destination="lw2-y3-1kh" id="Qfi-uy-pfl"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="containerView" destination="Ixo-la-nnA" id="XjK-xd-j9G"/>
                         <outlet property="graphView" destination="w7L-fa-YUq" id="4LK-3Y-rzy"/>
+                        <outlet property="monthSelectionButton" destination="coI-gS-sHi" id="Mn3-O3-vUi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="abt-Qo-x2X" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="411" y="1227"/>
+            <point key="canvasLocation" x="1223" y="1227"/>
         </scene>
         <!--Skabeloner-->
         <scene sceneID="mnN-7K-gwU">
@@ -402,7 +409,7 @@
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="G6c-50-yHD" id="ebN-T0-2Nh">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
@@ -623,6 +630,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A2w-zD-v5w" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="411" y="1910"/>
+        </scene>
+        <!--Overblik-->
+        <scene sceneID="kBa-ME-WVi">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mCD-2W-dXf" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Overblik" image="overview" id="HL2-2g-Ob0"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="m76-Oc-FsC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="lw2-y3-1kh" kind="relationship" relationship="rootViewController" id="jA8-hE-s4G"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Q1a-Qp-UgT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="411" y="1227"/>
         </scene>
     </scenes>
     <resources>

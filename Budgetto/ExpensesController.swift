@@ -13,9 +13,10 @@ class ExpensesController: UIViewController, UITableViewDelegate, UITableViewData
 
     @IBOutlet weak var monthSelectionButton: MonthSelectionButton!
     
-    @IBAction func test(sender: AnyObject) {
+    @IBAction func didTapMonthSelectionButton(sender: AnyObject) {
         monthSelectionButton.showMonthPickerView(self)
     }
+    
     
     let cellSpacingHeight: CGFloat = 5
     

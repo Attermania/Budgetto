@@ -10,29 +10,41 @@ import UIKit
 
 class MonthSelectionButton: UIBarButtonItem, UIPickerViewDelegate, UIPickerViewDataSource {
     
+    static var monthSelectionView: MonthView?
+    static var isVisible = false
 
     func showMonthPickerView(source: AnyObject) {
         
-        if let expensesController = source as? ExpensesController {
+        if MonthSelectionButton.monthSelectionView == nil {
             
-            let view = expensesController.view
+            let keyWindow = UIApplication.sharedApplication().keyWindow
+            MonthSelectionButton.monthSelectionView = MonthView.instanceFromNib() as? MonthView
             
-            let picker = UIPickerView()
-            picker.backgroundColor = UIColor.whiteColor()
-            picker.delegate = self
-            picker.dataSource = self
-            UIApplication.sharedApplication().keyWindow!.addSubview(picker)
-            UIApplication.sharedApplication().keyWindow!.bringSubviewToFront(picker)
-
-            picker.translatesAutoresizingMaskIntoConstraints = false
+            UIApplication.sharedApplication().keyWindow?.addSubview(MonthSelectionButton.monthSelectionView!)
+            UIApplication.sharedApplication().keyWindow?.bringSubviewToFront(MonthSelectionButton.monthSelectionView!)
             
-            let pinBottom = NSLayoutConstraint(item: picker, attribute: .Bottom, relatedBy: .Equal, toItem: view, attribute: .Bottom, multiplier: 1, constant: 0)
-            let pinLeft = NSLayoutConstraint(item: picker, attribute: .LeadingMargin, relatedBy: .Equal, toItem: view, attribute: .LeadingMargin, multiplier: 1, constant: -15)
-            let pinRight = NSLayoutConstraint(item: picker, attribute: .TrailingMargin, relatedBy: .Equal, toItem: view, attribute: .TrailingMargin, multiplier: 1, constant: 15)
+            MonthSelectionButton.monthSelectionView!.translatesAutoresizingMaskIntoConstraints = false
+            
+            let pinBottom = NSLayoutConstraint(item: MonthSelectionButton.monthSelectionView!, attribute: .Bottom, relatedBy: .Equal, toItem: keyWindow, attribute: .Bottom, multiplier: 1, constant: 0)
+            let pinLeft = NSLayoutConstraint(item: MonthSelectionButton.monthSelectionView!, attribute: .LeadingMargin, relatedBy: .Equal, toItem: keyWindow, attribute: .LeadingMargin, multiplier: 1, constant: 0)
+            let pinRight = NSLayoutConstraint(item: MonthSelectionButton.monthSelectionView!, attribute: .TrailingMargin, relatedBy: .Equal, toItem: keyWindow, attribute: .TrailingMargin, multiplier: 1, constant: 0)
             
             NSLayoutConstraint.activateConstraints([pinBottom, pinLeft, pinRight])
-
+            MonthSelectionButton.isVisible = true
+            
+            return
         }
+        
+        if MonthSelectionButton.isVisible {
+            MonthSelectionButton.monthSelectionView?.hidden = true
+            MonthSelectionButton.isVisible = false
+        }
+        else {
+            MonthSelectionButton.monthSelectionView?.hidden = false
+            MonthSelectionButton.isVisible = true
+        }
+
+
     }
     
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
