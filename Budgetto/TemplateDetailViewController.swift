@@ -7,8 +7,19 @@
 //
 
 import UIKit
+import CoreData
 
 class TemplateDetailViewController: UIViewController {
+    
+    let managedContext: NSManagedObjectContext! = (UIApplication.sharedApplication().delegate as? AppDelegate)?.managedObjectContext
+
+    var createNewTemplate = false
+    
+    //var temporaryTemplate = nil
+    
+    @IBOutlet weak var templateNameTextfield: UITextField!
+    
+    var templateBeingEdited: Template?
     
     var titleForWindow = ""
     
@@ -22,6 +33,14 @@ class TemplateDetailViewController: UIViewController {
         self.view.setDefaultBackground()
         
         self.title = titleForWindow
+        
+        templateNameTextfield.text = templateBeingEdited?.title
+        
+        print(createNewTemplate)
+        
+        if createNewTemplate == true {
+                //temporaryTemplate =
+        }
 
         // Do any additional setup after loading the view.
     }
@@ -31,15 +50,21 @@ class TemplateDetailViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func save() {
+        
+        let income = NSEntityDescription.insertNewObjectForEntityForName("Template", inManagedObjectContext: managedContext) as! Template
+        income.title = templateNameTextfield.text
+        
+        do {
+            try managedContext.save()
+            print("Saved")
+        } catch {}
+        
     }
-    */
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        save()
+    }
+
 
 }

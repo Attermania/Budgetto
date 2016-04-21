@@ -7,21 +7,36 @@
 //
 
 import UIKit
+import CoreData
 
 class TemplateTableViewController: UITableViewController {
     
+    @IBOutlet var templateTableview: UITableView!
+    
+    let managedContext: NSManagedObjectContext! = (UIApplication.sharedApplication().delegate as? AppDelegate)?.managedObjectContext
+    
+    var templates = [Template]() {
+        didSet {
+            self.templateTableview.reloadData()
+        }
+    }
+    
     @IBAction func returnedFromTemplateDetailVC (segue:UIStoryboardSegue) {
+        self.loadData()
+        self.tableView.reloadData()
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        templateTableview.delegate = self
+        templateTableview.dataSource = self
 
         self.view.setDefaultBackground()
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        self.loadData()
+        
+        //save()
     }
 
     override func didReceiveMemoryWarning() {
@@ -38,16 +53,16 @@ class TemplateTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 3
+        return templates.count
     }
-
     
+    
+    // Fill tableview with templates
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-
         let cell = tableView.dequeueReusableCellWithIdentifier("templateCell", forIndexPath: indexPath)
-        cell.textLabel?.text = "Row \(indexPath.row)!"
-        
-
+        if !templates.isEmpty {
+            cell.textLabel?.text = templates[indexPath.row].title
+        }
         return cell
     }
     
@@ -57,12 +72,39 @@ class TemplateTableViewController: UITableViewController {
         if segue.identifier == "createTemplateSegue" {
             print("new")
             destVC.titleForWindow = "Ny skabelon"
+            destVC.createNewTemplate = true
         }
         if segue.identifier == "editTemplateSegue" {
             print("edit")
             destVC.titleForWindow = "Rediger skabelon"
+            destVC.templateBeingEdited = templates[templateTableview.indexPathForSelectedRow!.row]
         }
     }
+    
+    func loadData() {
+        let request = NSFetchRequest(entityName: "Template")
+        
+        do {
+            let results = try managedContext.executeFetchRequest(request)
+            self.templates = results as! [Template]
+            
+        } catch {
+            print("error in loading \(error)")
+        }
+    }
+    
+    func save() {
+        
+        let income = NSEntityDescription.insertNewObjectForEntityForName("Template", inManagedObjectContext: managedContext) as! Template
+        income.title = "Bankroll Mafia"
+        
+        do {
+            try managedContext.save()
+            print("Saved")
+        } catch {}
+        
+    }
+
     
 
     /*
