@@ -7,9 +7,15 @@
         <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
+    <entity name="Month" representedClassName=".Month" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
+        <relationship name="expenses" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Expense" syncable="YES"/>
+        <relationship name="incomes" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Income" syncable="YES"/>
+    </entity>
     <elements>
         <element name="Expense" positionX="-54" positionY="18" width="128" height="45"/>
         <element name="Income" positionX="-36" positionY="27" width="128" height="45"/>
         <element name="Money" positionX="-63" positionY="-18" width="128" height="90"/>
+        <element name="Month" positionX="-45" positionY="9" width="128" height="90"/>
     </elements>
 </model>
