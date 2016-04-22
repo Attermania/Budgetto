@@ -12,7 +12,7 @@ class MonthView: UIView, UIPickerViewDelegate, UIPickerViewDataSource {
 
     
     var years = [2014, 2016]
-    var months:[[String]] = [["Januar","Marts"], ["Juni", "December"]]
+    var months:[[String]] = [["Januar","Marts"], ["Januar", "Marts", "Maj", "Juni", "December"]]
     var currentYear = 0
     @IBOutlet weak var pickerView: UIPickerView!
     

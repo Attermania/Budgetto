@@ -25,11 +25,12 @@ class MonthSelectionButton: UIBarButtonItem, UIPickerViewDelegate, UIPickerViewD
             
             MonthSelectionButton.monthSelectionView!.translatesAutoresizingMaskIntoConstraints = false
             
+            let heightConstraint = NSLayoutConstraint(item: MonthSelectionButton.monthSelectionView!, attribute: NSLayoutAttribute.Height, relatedBy: NSLayoutRelation.Equal, toItem: nil, attribute: NSLayoutAttribute.NotAnAttribute, multiplier: 1, constant: 200)
             let pinBottom = NSLayoutConstraint(item: MonthSelectionButton.monthSelectionView!, attribute: .Bottom, relatedBy: .Equal, toItem: keyWindow, attribute: .Bottom, multiplier: 1, constant: 0)
             let pinLeft = NSLayoutConstraint(item: MonthSelectionButton.monthSelectionView!, attribute: .LeadingMargin, relatedBy: .Equal, toItem: keyWindow, attribute: .LeadingMargin, multiplier: 1, constant: 0)
             let pinRight = NSLayoutConstraint(item: MonthSelectionButton.monthSelectionView!, attribute: .TrailingMargin, relatedBy: .Equal, toItem: keyWindow, attribute: .TrailingMargin, multiplier: 1, constant: 0)
             
-            NSLayoutConstraint.activateConstraints([pinBottom, pinLeft, pinRight])
+            NSLayoutConstraint.activateConstraints([pinBottom, pinLeft, pinRight, heightConstraint])
             MonthSelectionButton.isVisible = true
             
             return
