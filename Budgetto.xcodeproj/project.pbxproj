@@ -19,6 +19,7 @@
 		B4EC7A651CB2A16D00B1F613 /* ExpensesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EC7A641CB2A16D00B1F613 /* ExpensesController.swift */; };
 		B4EC7A6A1CB2AEBB00B1F613 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EC7A691CB2AEBB00B1F613 /* UIColorExtension.swift */; };
 		B4EC7A6C1CB2B26300B1F613 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EC7A6B1CB2B26300B1F613 /* UIViewExtension.swift */; };
+		B4F60B071CCA4D4F005B4862 /* NSDateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F60B061CCA4D4F005B4862 /* NSDateExtension.swift */; };
 		F90067EA1CB3FD0A00B7075D /* TemplateTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90067E91CB3FD0A00B7075D /* TemplateTableViewController.swift */; };
 		F90067EC1CB402D500B7075D /* TemplateDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90067EB1CB402D500B7075D /* TemplateDetailViewController.swift */; };
 		F93255131CC983F00001F3CD /* MonthView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F93255121CC983F00001F3CD /* MonthView.xib */; };
@@ -53,6 +54,7 @@
 		B4EC7A641CB2A16D00B1F613 /* ExpensesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpensesController.swift; sourceTree = "<group>"; };
 		B4EC7A691CB2AEBB00B1F613 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		B4EC7A6B1CB2B26300B1F613 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		B4F60B061CCA4D4F005B4862 /* NSDateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateExtension.swift; sourceTree = "<group>"; };
 		F90067E91CB3FD0A00B7075D /* TemplateTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TemplateTableViewController.swift; path = ../TemplateTableViewController.swift; sourceTree = "<group>"; };
 		F90067EB1CB402D500B7075D /* TemplateDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemplateDetailViewController.swift; sourceTree = "<group>"; };
 		F93255121CC983F00001F3CD /* MonthView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MonthView.xib; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 			children = (
 				B4EC7A691CB2AEBB00B1F613 /* UIColorExtension.swift */,
 				B4EC7A6B1CB2B26300B1F613 /* UIViewExtension.swift */,
+				B4F60B061CCA4D4F005B4862 /* NSDateExtension.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -243,6 +246,7 @@
 				F960A4E71CC63449008D5B1E /* Money+CoreDataProperties.swift in Sources */,
 				F98ED7441CC639F10013111A /* MonthSelectionButton.swift in Sources */,
 				B4EC7A4C1CB29D9700B1F613 /* AppDelegate.swift in Sources */,
+				B4F60B071CCA4D4F005B4862 /* NSDateExtension.swift in Sources */,
 				F90067EC1CB402D500B7075D /* TemplateDetailViewController.swift in Sources */,
 				B457B0B81CC91D7300EC35EE /* Month.swift in Sources */,
 				B4EC7A651CB2A16D00B1F613 /* ExpensesController.swift in Sources */,

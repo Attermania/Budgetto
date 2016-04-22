@@ -41,25 +41,24 @@ class ExpensesDetailViewController: UIViewController {
         
         self.view.setDefaultBackground()
         
-        if isEditingExepense() {
+        if isEditingExpense() {
             descriptionTextfield.text = expenseBeingEdited?.desc
             amountTextfield.text = expenseBeingEdited?.amount?.stringValue
             title = titleForView
             dateTextfield.text = expenseBeingEdited?.formattedDate()
-        }
-        if isEditingIncome() {
+            
+            return
+        } else if isEditingIncome() {
             descriptionTextfield.text = incomeBeingEdited?.desc
             amountTextfield.text = incomeBeingEdited?.amount?.stringValue
             title = titleForView
             dateTextfield.text = incomeBeingEdited?.formattedDate()
-
+            
+            return
         }
-        if incomeBeingCreated == true {
-            title = titleForView
-        }
-        if expenseBeingCreated == true {
-            title = titleForView
-        }
+        
+        dateTextfield.text = NSDate().formattedDate()
+        title = titleForView
     }
     
     @IBAction func didTapSave(sender: AnyObject) {
@@ -85,7 +84,7 @@ class ExpensesDetailViewController: UIViewController {
     
     func save() {
         
-        if isEditingExepense() {
+        if isEditingExpense() {
             expenseBeingEdited!.desc = descriptionTextfield.text
             expenseBeingEdited!.amount = Double(amountTextfield.text!)
             expenseBeingEdited!.date = selectedDate
@@ -123,7 +122,7 @@ class ExpensesDetailViewController: UIViewController {
         dateTextfield.text = ""
     }
 
-    func isEditingExepense() -> Bool {
+    func isEditingExpense() -> Bool {
         return expenseBeingEdited != nil
     }
     
