@@ -40,6 +40,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print("error in loading \(error)")
         }
     }
+    
+    // Find path to sqlite file
+    func applicationDirectoryPath() -> String {
+        return NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true).last! as String
+    }
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
