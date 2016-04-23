@@ -7,15 +7,12 @@
 //
 
 import UIKit
-import CoreData
 
 class TemplateDetailViewController: UIViewController {
     
-    let managedContext: NSManagedObjectContext! = (UIApplication.sharedApplication().delegate as? AppDelegate)?.managedObjectContext
+    let dao = DAO.instance
 
     var createNewTemplate = false
-    
-    //var temporaryTemplate = nil
     
     @IBOutlet weak var templateNameTextfield: UITextField!
     
@@ -35,14 +32,6 @@ class TemplateDetailViewController: UIViewController {
         self.title = titleForWindow
         
         templateNameTextfield.text = templateBeingEdited?.title
-        
-        print(createNewTemplate)
-        
-        if createNewTemplate == true {
-                //temporaryTemplate =
-        }
-
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -51,15 +40,10 @@ class TemplateDetailViewController: UIViewController {
     }
     
     func save() {
+        let template = dao.createTemplate()
+        template.title = templateNameTextfield.text
         
-        let income = NSEntityDescription.insertNewObjectForEntityForName("Template", inManagedObjectContext: managedContext) as! Template
-        income.title = templateNameTextfield.text
-        
-        do {
-            try managedContext.save()
-            print("Saved")
-        } catch {}
-        
+        dao.save()
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

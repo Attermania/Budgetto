@@ -7,9 +7,10 @@
 //
 
 import UIKit
-import CoreData
 
 class ExpensesDetailViewController: UIViewController {
+    
+    let dao = DAO.instance
     
     @IBOutlet weak var descriptionTextfield: UITextField!
     @IBOutlet weak var amountTextfield: UITextField!
@@ -33,8 +34,6 @@ class ExpensesDetailViewController: UIViewController {
     var titleForView = ""
     
     var selectedDate = NSDate()
-    
-    let managedContext: NSManagedObjectContext! = (UIApplication.sharedApplication().delegate as? AppDelegate)?.managedObjectContext
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -88,8 +87,8 @@ class ExpensesDetailViewController: UIViewController {
             expenseBeingEdited!.desc = descriptionTextfield.text
             expenseBeingEdited!.amount = Double(amountTextfield.text!)
             expenseBeingEdited!.date = selectedDate
-        } else  if expenseBeingCreated == true {
-            let expense = NSEntityDescription.insertNewObjectForEntityForName("Expense", inManagedObjectContext: managedContext) as! Expense
+        } else  if expenseBeingCreated {
+            let expense = dao.createExpense()
             expense.desc = descriptionTextfield.text
             expense.amount = Double(amountTextfield.text!)
             expense.date = selectedDate
@@ -99,17 +98,14 @@ class ExpensesDetailViewController: UIViewController {
             incomeBeingEdited?.desc = descriptionTextfield.text
             incomeBeingEdited?.amount = Double(amountTextfield.text!)
             incomeBeingEdited?.date = selectedDate
-        } else if incomeBeingCreated == true {
-            let income = NSEntityDescription.insertNewObjectForEntityForName("Income", inManagedObjectContext: managedContext) as! Income
+        } else if incomeBeingCreated {
+            let income = dao.createIncome()
             income.desc = descriptionTextfield.text
             income.amount = Double(amountTextfield.text!)
             income.date = selectedDate
         }
         
-        do {
-            try managedContext.save()
-            print("Saved")
-        } catch {}
+        dao.save()
         
         reset()
     }
@@ -130,26 +126,9 @@ class ExpensesDetailViewController: UIViewController {
         return incomeBeingEdited != nil
     }
     
-    func isIncomeBeingCreated() -> Bool {
-        return incomeBeingCreated
-    }
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

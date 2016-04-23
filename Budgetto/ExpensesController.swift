@@ -7,16 +7,16 @@
 //
 
 import UIKit
-import CoreData
 
 class ExpensesController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    let dao = DAO.instance
+    
     @IBOutlet weak var monthSelectionButton: MonthSelectionButton!
     
     @IBAction func didTapMonthSelectionButton(sender: AnyObject) {
         monthSelectionButton.showMonthPickerView(self)
     }
-    
     
     let cellSpacingHeight: CGFloat = 5
     
@@ -26,10 +26,6 @@ class ExpensesController: UIViewController, UITableViewDelegate, UITableViewData
     
     @IBOutlet weak var expensesTableview: UITableView!
     
-    let managedContext: NSManagedObjectContext! = (UIApplication.sharedApplication().delegate as? AppDelegate)?.managedObjectContext
-    
-
-    
     var money = [Money]() {
         didSet {
             self.expensesTableview.reloadData()
@@ -37,15 +33,7 @@ class ExpensesController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func loadData() {
-        let request = NSFetchRequest(entityName: "Money")
-        
-        do {
-            let results = try managedContext.executeFetchRequest(request)
-            self.money = results as! [Money]
-            
-        } catch {
-            print("error in loading \(error)")
-        }
+        self.money = dao.getAllMoney()
     }
 
     override func viewDidLoad() {
@@ -84,11 +72,6 @@ class ExpensesController: UIViewController, UITableViewDelegate, UITableViewData
         
         let amount = (chosenMoney.amount?.stringValue != nil ? chosenMoney.amount?.stringValue : "")!
         
-//        cell.expense = chosenMoney
-//        cell.descLabel.text = expense.desc
-//        cell.amountLabel.text = "-" + amount + " kr"
-//        cell.dateLabel.text = expense.formattedDate()
-        
         if chosenMoney is Expense {
             cell.descLabel.text = chosenMoney.desc
             cell.amountLabel.text = " - " + amount + " kr"
@@ -112,11 +95,6 @@ class ExpensesController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return cellSpacingHeight
     }
-    
-//    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-//        return 40
-//    }
-    
 
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let v = UIView()
@@ -141,12 +119,12 @@ class ExpensesController: UIViewController, UITableViewDelegate, UITableViewData
             }
         }
         // Creating an income
-        if segue.identifier == "createIncomeSegue" {
+        else if segue.identifier == "createIncomeSegue" {
             destVC.incomeBeingCreated = true
             destVC.titleForView = "Opret indtægt"
         }
         // Creating an income
-        if segue.identifier == "createExpenseSegue" {
+        else if segue.identifier == "createExpenseSegue" {
             destVC.expenseBeingCreated = true
             destVC.titleForView = "Opret udgift"
         }

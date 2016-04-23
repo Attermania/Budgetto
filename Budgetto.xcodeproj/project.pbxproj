@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B41B0FB71CCB926800FDA0F9 /* DAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41B0FB61CCB926800FDA0F9 /* DAO.swift */; };
 		B457B0B71CC91D7300EC35EE /* Month+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B457B0B51CC91D7300EC35EE /* Month+CoreDataProperties.swift */; };
 		B457B0B81CC91D7300EC35EE /* Month.swift in Sources */ = {isa = PBXBuildFile; fileRef = B457B0B61CC91D7300EC35EE /* Month.swift */; };
 		B4EC7A4C1CB29D9700B1F613 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EC7A4B1CB29D9700B1F613 /* AppDelegate.swift */; };
@@ -40,6 +41,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B41B0FB61CCB926800FDA0F9 /* DAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAO.swift; sourceTree = "<group>"; };
 		B457B0B51CC91D7300EC35EE /* Month+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Month+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		B457B0B61CC91D7300EC35EE /* Month.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Month.swift; sourceTree = "<group>"; };
 		B4EC7A481CB29D9700B1F613 /* Budgetto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Budgetto.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -115,6 +117,14 @@
 			path = Budgetto;
 			sourceTree = "<group>";
 		};
+		B41B0FB81CCB927700FDA0F9 /* DAO */ = {
+			isa = PBXGroup;
+			children = (
+				B41B0FB61CCB926800FDA0F9 /* DAO.swift */,
+			);
+			name = DAO;
+			sourceTree = "<group>";
+		};
 		B4CD632E1CB3B63100CEDD58 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -144,6 +154,7 @@
 				B41B0FB41CCB8EE000FDA0F9 /* Controllers */,
 				B41B0FB51CCB8FB500FDA0F9 /* Views */,
 				B4EC7A491CB29D9700B1F613 /* Products */,
+				B41B0FB81CCB927700FDA0F9 /* DAO */,
 			);
 			sourceTree = "<group>";
 		};
@@ -241,6 +252,7 @@
 				F960A4E01CC43F17008D5B1E /* Expense.swift in Sources */,
 				F98C76031CB5203F00944144 /* TemplateAddEditViewController.swift in Sources */,
 				B4EC7A4E1CB29D9700B1F613 /* ViewController.swift in Sources */,
+				B41B0FB71CCB926800FDA0F9 /* DAO.swift in Sources */,
 				F960A4E11CC43F17008D5B1E /* Income+CoreDataProperties.swift in Sources */,
 				F960A4E21CC43F17008D5B1E /* Income.swift in Sources */,
 				F9D430CC1CC91A60009CED27 /* Template.swift in Sources */,
