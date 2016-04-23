@@ -16,6 +16,18 @@ extension NSDate {
         return formatter.stringFromDate(self)
     }
     
+    func year() -> String {
+        let formatter = NSDateFormatter()
+        formatter.dateFormat = "YYYY"
+        return formatter.stringFromDate(self)
+    }
+    
+    func month() -> String {
+        let formatter = NSDateFormatter()
+        formatter.dateFormat = "MMMM"
+        return formatter.stringFromDate(self)
+    }
+    
     static func stringToDate(date : String) -> NSDate {
         let formatter = NSDateFormatter()
         formatter.dateFormat = "dd/MM-YYYY"

@@ -10,7 +10,7 @@ import UIKit
 
 class MonthSelectionButton: UIBarButtonItem, UIPickerViewDelegate, UIPickerViewDataSource {
     
-    static var monthSelectionView: MonthView?
+    static var monthSelectionView: MonthViewController?
     static var isVisible = false
 
     func showMonthPickerView(source: AnyObject) {
@@ -18,7 +18,7 @@ class MonthSelectionButton: UIBarButtonItem, UIPickerViewDelegate, UIPickerViewD
         if MonthSelectionButton.monthSelectionView == nil {
             
             let keyWindow = UIApplication.sharedApplication().keyWindow
-            MonthSelectionButton.monthSelectionView = MonthView.instanceFromNib() as? MonthView
+            MonthSelectionButton.monthSelectionView = MonthViewController.instanceFromNib() as? MonthViewController
             
             UIApplication.sharedApplication().keyWindow?.addSubview(MonthSelectionButton.monthSelectionView!)
             UIApplication.sharedApplication().keyWindow?.bringSubviewToFront(MonthSelectionButton.monthSelectionView!)

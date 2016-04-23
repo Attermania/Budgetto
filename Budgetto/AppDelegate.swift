@@ -14,31 +14,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     
+    let dao = DAO.instance
+    
     let monthSelectionButton = MonthSelectionButton()
     
-    var currentMonth: Month?
-    
     func loadMonth() {
-        let request = NSFetchRequest(entityName: "Month")
-        request.sortDescriptors = [NSSortDescriptor(key: "date", ascending: false)]
-        request.fetchLimit = 1
-        
-        do {
-            var results = try managedObjectContext.executeFetchRequest(request)
+        var latestMonth = dao.getLatestMonth()
             
-            if results.isEmpty {
-                let month = NSEntityDescription.insertNewObjectForEntityForName("Month", inManagedObjectContext: managedObjectContext) as! Month
-                month.date = NSDate()
-                
-                try managedObjectContext.save()
-                results.append(month)
-            }
+        if latestMonth == nil {
+            let newMonth = dao.createMonth()
+            newMonth.date = NSDate()
             
-            self.currentMonth = (results as! [Month])[0]
-            
-        } catch {
-            print("error in loading \(error)")
+            dao.save()
+            latestMonth = newMonth
         }
+            
+        MonthViewController.selectedMonth = latestMonth
     }
     
     // Find path to sqlite file
@@ -49,6 +40,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         loadMonth()
+        
+         print(applicationDirectoryPath())
         
         return true
     }

@@ -14,7 +14,7 @@ class DAO {
     
     static let instance = DAO()
     
-    let managedContext: NSManagedObjectContext! = (UIApplication.sharedApplication().delegate as? AppDelegate)?.managedObjectContext
+    var managedContext: NSManagedObjectContext! = (UIApplication.sharedApplication().delegate as? AppDelegate)?.managedObjectContext
     
     func getAllTemplates() -> [Template] {
         do {
@@ -30,6 +30,45 @@ class DAO {
         } catch {}
         
         return []
+    }
+    
+    func getAllMonths() -> [Month] {
+        
+        let request = NSFetchRequest(entityName: "Month")
+        request.sortDescriptors = [NSSortDescriptor(key: "date", ascending: true)]
+        
+        do {
+            return try managedContext.executeFetchRequest( request ) as! [Month]
+        } catch {}
+        
+        return []
+    }
+    
+    func getLatestMonth() -> Month? {
+        if (managedContext == nil) {
+            managedContext = (UIApplication.sharedApplication().delegate as? AppDelegate)?.managedObjectContext
+        }
+        
+        let request = NSFetchRequest(entityName: "Month")
+        request.sortDescriptors = [NSSortDescriptor(key: "date", ascending: false)]
+        request.fetchLimit = 1
+        
+        do {
+            let results = try managedContext.executeFetchRequest(request)
+            
+            if results.count > 0 {
+                return (results as! [Month])[0]
+            }
+            
+        } catch {
+            print("error in loading \(error)")
+        }
+        
+        return nil
+    }
+    
+    func createMonth() -> Month {
+        return NSEntityDescription.insertNewObjectForEntityForName("Month", inManagedObjectContext: managedContext) as! Month
     }
     
     func createTemplate() -> Template {
