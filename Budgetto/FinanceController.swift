@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ExpensesController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class FinanceController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     let dao = DAO.instance
     
@@ -104,7 +104,7 @@ class ExpensesController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let destVC = segue.destinationViewController as! ExpensesDetailViewController
+        let destVC = segue.destinationViewController as! FinanceDetailViewController
 
         if segue.identifier == "editExpenseOrIncomeSegue" {
             // Editing an expense

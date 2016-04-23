@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ExpensesDetailViewController: UIViewController {
+class FinanceDetailViewController: UIViewController {
     
     let dao = DAO.instance
     
@@ -23,7 +23,7 @@ class ExpensesDetailViewController: UIViewController {
         
         sender.inputView = datePickerView
         
-        datePickerView.addTarget(self, action: #selector(ExpensesDetailViewController.datePickerValueChanged), forControlEvents: UIControlEvents.ValueChanged)
+        datePickerView.addTarget(self, action: #selector(FinanceDetailViewController.datePickerValueChanged), forControlEvents: UIControlEvents.ValueChanged)
     }
     
     var expenseBeingEdited: Expense?

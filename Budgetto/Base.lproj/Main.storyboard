@@ -29,7 +29,7 @@
         <!--Finans-->
         <scene sceneID="bil-y1-Mvc">
             <objects>
-                <viewController id="7gm-BS-oir" customClass="ExpensesController" customModule="Budgetto" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="7gm-BS-oir" customClass="FinanceController" customModule="Budgetto" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="z8o-iG-8tt"/>
                         <viewControllerLayoutGuide type="bottom" id="bu9-9n-woS"/>
@@ -184,10 +184,10 @@
             </objects>
             <point key="canvasLocation" x="1217" y="531"/>
         </scene>
-        <!--Expenses Detail View Controller-->
+        <!--Finance Detail View Controller-->
         <scene sceneID="LVN-tY-Ta0">
             <objects>
-                <viewController id="h54-oy-Iwc" customClass="ExpensesDetailViewController" customModule="Budgetto" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="h54-oy-Iwc" customClass="FinanceDetailViewController" customModule="Budgetto" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="eK2-sk-QHh"/>
                         <viewControllerLayoutGuide type="bottom" id="LvA-2I-YnB"/>
