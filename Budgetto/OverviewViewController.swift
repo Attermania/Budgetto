@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class OverviewViewController: UIViewController {
     
     @IBOutlet weak var monthSelectionButton: MonthSelectionButton!
     

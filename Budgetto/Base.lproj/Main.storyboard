@@ -272,10 +272,10 @@
             </objects>
             <point key="canvasLocation" x="411" y="551"/>
         </scene>
-        <!--View Controller-->
+        <!--Overview View Controller-->
         <scene sceneID="3yb-Fm-TE1">
             <objects>
-                <viewController id="lw2-y3-1kh" customClass="ViewController" customModule="Budgetto" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="lw2-y3-1kh" customClass="OverviewViewController" customModule="Budgetto" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="c4i-gq-bnB"/>
                         <viewControllerLayoutGuide type="bottom" id="Bj8-T6-TIy"/>
