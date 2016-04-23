@@ -1,5 +1,5 @@
 //
-//  Month+CoreDataProperties.swift
+//  Finance+CoreDataProperties.swift
 //  Budgetto
 //
 //  Created by Jens Herlevsen on 23/04/2016.
@@ -12,9 +12,12 @@
 import Foundation
 import CoreData
 
-extension Month {
+extension Finance {
 
+    @NSManaged var amount: NSNumber?
     @NSManaged var date: NSDate?
-    @NSManaged var finances: Finance?
+    @NSManaged var desc: String?
+    @NSManaged var template: Template?
+    @NSManaged var month: Month?
 
 }

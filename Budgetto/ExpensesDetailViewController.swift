@@ -44,14 +44,14 @@ class ExpensesDetailViewController: UIViewController {
             descriptionTextfield.text = expenseBeingEdited?.desc
             amountTextfield.text = expenseBeingEdited?.amount?.stringValue
             title = titleForView
-            dateTextfield.text = expenseBeingEdited?.formattedDate()
+            dateTextfield.text = expenseBeingEdited?.date?.formattedDate()
             
             return
         } else if isEditingIncome() {
             descriptionTextfield.text = incomeBeingEdited?.desc
             amountTextfield.text = incomeBeingEdited?.amount?.stringValue
             title = titleForView
-            dateTextfield.text = incomeBeingEdited?.formattedDate()
+            dateTextfield.text = incomeBeingEdited?.date?.formattedDate()
             
             return
         }

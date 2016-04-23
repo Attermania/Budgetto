@@ -2,7 +2,7 @@
 //  Income+CoreDataProperties.swift
 //  Budgetto
 //
-//  Created by Thomas Attermann on 18/04/2016.
+//  Created by Jens Herlevsen on 23/04/2016.
 //  Copyright © 2016 SJT. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu

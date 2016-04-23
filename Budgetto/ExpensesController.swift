@@ -26,14 +26,14 @@ class ExpensesController: UIViewController, UITableViewDelegate, UITableViewData
     
     @IBOutlet weak var expensesTableview: UITableView!
     
-    var money = [Money]() {
+    var finances = [Finance]() {
         didSet {
             self.expensesTableview.reloadData()
         }
     }
     
     func loadData() {
-        self.money = dao.getAllMoney()
+        self.finances = dao.getAllFinances()
     }
 
     override func viewDidLoad() {
@@ -59,7 +59,7 @@ class ExpensesController: UIViewController, UITableViewDelegate, UITableViewData
     //
     // Number of rows
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return money.count
+        return finances.count
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -68,20 +68,20 @@ class ExpensesController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell1", forIndexPath: indexPath) as! BudgettoCell
-        let chosenMoney = money[indexPath.row]
+        let finance = finances[indexPath.row]
         
-        let amount = (chosenMoney.amount?.stringValue != nil ? chosenMoney.amount?.stringValue : "")!
+        let amount = (finance.amount?.stringValue != nil ? finance.amount?.stringValue : "")!
         
-        if chosenMoney is Expense {
-            cell.descLabel.text = chosenMoney.desc
+        if finance is Expense {
+            cell.descLabel.text = finance.desc
             cell.amountLabel.text = " - " + amount + " kr"
-            cell.dateLabel.text = chosenMoney.formattedDate()
+            cell.dateLabel.text = finance.date?.formattedDate()
         }
         
-        if chosenMoney is Income {
-            cell.descLabel.text = chosenMoney.desc
+        if finance is Income {
+            cell.descLabel.text = finance.desc
             cell.amountLabel.text = " + " + amount + " kr"
-            cell.dateLabel.text = chosenMoney.formattedDate()
+            cell.dateLabel.text = finance.date?.formattedDate()
             let amountInNumbers = Int(amount)
             if amountInNumbers >= 0 {
                 cell.amountLabel.textColor = UIColor.greenColor()
@@ -108,13 +108,13 @@ class ExpensesController: UIViewController, UITableViewDelegate, UITableViewData
 
         if segue.identifier == "editExpenseOrIncomeSegue" {
             // Editing an expense
-            if money[expensesTableview.indexPathForSelectedRow!.row] is Expense {
-                destVC.expenseBeingEdited = money[expensesTableview.indexPathForSelectedRow!.row] as? Expense
+            if finances[expensesTableview.indexPathForSelectedRow!.row] is Expense {
+                destVC.expenseBeingEdited = finances[expensesTableview.indexPathForSelectedRow!.row] as? Expense
                 destVC.titleForView = "Rediger Udgift"
             }
             // Editing an income
-            if money[expensesTableview.indexPathForSelectedRow!.row] is Income {
-                destVC.incomeBeingEdited = money[expensesTableview.indexPathForSelectedRow!.row] as? Income
+            if finances[expensesTableview.indexPathForSelectedRow!.row] is Income {
+                destVC.incomeBeingEdited = finances[expensesTableview.indexPathForSelectedRow!.row] as? Income
                 destVC.titleForView = "Rediger indtægt"
             }
         }

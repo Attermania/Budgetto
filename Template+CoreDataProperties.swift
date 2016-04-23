@@ -2,7 +2,7 @@
 //  Template+CoreDataProperties.swift
 //  Budgetto
 //
-//  Created by Thomas Attermann on 21/04/2016.
+//  Created by Jens Herlevsen on 23/04/2016.
 //  Copyright © 2016 SJT. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -15,7 +15,6 @@ import CoreData
 extension Template {
 
     @NSManaged var title: String?
-    @NSManaged var expenses: Expense?
-    @NSManaged var incomes: Income?
+    @NSManaged var finances: Finance?
 
 }
