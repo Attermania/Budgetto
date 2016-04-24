@@ -23,10 +23,6 @@ class MonthViewController: UIView, UIPickerViewDelegate, UIPickerViewDataSource 
     var currentYear = 0
     @IBOutlet weak var pickerView: UIPickerView!
     
-    @IBAction func addMonth(sender: AnyObject) {
-        
-    }
-    
     @IBAction func didSelectDone(sender: AnyObject) {
         self.hidden = true
         MonthSelectionButton.isVisible = false

@@ -17,12 +17,6 @@
                         <constraint firstAttribute="height" constant="44" id="6hA-5Z-Zkk"/>
                     </constraints>
                     <items>
-                        <barButtonItem width="10" style="plain" systemItem="fixedSpace" id="Lsp-WX-owI"/>
-                        <barButtonItem systemItem="add" id="qFb-dQ-su3">
-                            <connections>
-                                <action selector="addMonth:" destination="iN0-l3-epB" id="DjQ-EI-yD3"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="Gp3-vS-68S"/>
                         <barButtonItem systemItem="done" id="Rnc-Bx-YHD">
                             <connections>
