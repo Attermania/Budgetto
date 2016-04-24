@@ -16,6 +16,27 @@ class FinanceDetailViewController: UIViewController {
     @IBOutlet weak var amountTextfield: UITextField!
     @IBOutlet weak var dateTextfield: UITextField!
     
+    @IBAction func amountTextFieldDidChange(sender: AnyObject) {
+        formatAmount()
+    }
+    
+    private func formatAmount() {
+        if amountTextfield.text == nil || amountTextfield.text == "" {
+            return
+        }
+        
+        let textFieldText = amountTextfield.text!.stringByReplacingOccurrencesOfString(
+            ".",
+            withString: ""
+        )
+        
+        let formatter:NSNumberFormatter = NSNumberFormatter()
+        formatter.numberStyle = NSNumberFormatterStyle.DecimalStyle
+        let formattedOutput = formatter.stringFromNumber(Int(textFieldText)!)
+        
+        amountTextfield.text = formattedOutput
+    }
+    
     @IBAction func textfieldEditingDate(sender: UITextField) {
         let datePickerView:UIDatePicker = UIDatePicker()
         
@@ -46,12 +67,16 @@ class FinanceDetailViewController: UIViewController {
             title = titleForView
             dateTextfield.text = expenseBeingEdited?.date?.formattedDate()
             
+            formatAmount()
+            
             return
         } else if isEditingIncome() {
             descriptionTextfield.text = incomeBeingEdited?.desc
             amountTextfield.text = incomeBeingEdited?.amount?.stringValue
             title = titleForView
             dateTextfield.text = incomeBeingEdited?.date?.formattedDate()
+            
+            formatAmount()
             
             return
         }
@@ -82,27 +107,28 @@ class FinanceDetailViewController: UIViewController {
     
     
     func save() {
+        let amount = Double( amountTextfield.text!.stringByReplacingOccurrencesOfString(".", withString: "") )
         
         if isEditingExpense() {
             expenseBeingEdited!.desc = descriptionTextfield.text
-            expenseBeingEdited!.amount = Double(amountTextfield.text!)
+            expenseBeingEdited!.amount = amount
             expenseBeingEdited!.date = selectedDate
         } else  if expenseBeingCreated {
             let expense = dao.createExpense()
             expense.desc = descriptionTextfield.text
-            expense.amount = Double(amountTextfield.text!)
+            expense.amount = amount
             expense.date = selectedDate
             expense.month = MonthViewController.selectedMonth
         }
         
         if isEditingIncome() {
             incomeBeingEdited?.desc = descriptionTextfield.text
-            incomeBeingEdited?.amount = Double(amountTextfield.text!)
+            incomeBeingEdited?.amount = amount
             incomeBeingEdited?.date = selectedDate
         } else if incomeBeingCreated {
             let income = dao.createIncome()
             income.desc = descriptionTextfield.text
-            income.amount = Double(amountTextfield.text!)
+            income.amount = amount
             income.date = selectedDate
             income.month = MonthViewController.selectedMonth
         }
