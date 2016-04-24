@@ -92,6 +92,7 @@ class FinanceDetailViewController: UIViewController {
             expense.desc = descriptionTextfield.text
             expense.amount = Double(amountTextfield.text!)
             expense.date = selectedDate
+            expense.month = MonthViewController.selectedMonth
         }
         
         if isEditingIncome() {
@@ -103,6 +104,7 @@ class FinanceDetailViewController: UIViewController {
             income.desc = descriptionTextfield.text
             income.amount = Double(amountTextfield.text!)
             income.date = selectedDate
+            income.month = MonthViewController.selectedMonth
         }
         
         dao.save()

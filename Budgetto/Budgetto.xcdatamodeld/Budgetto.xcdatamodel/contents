@@ -11,16 +11,16 @@
     <entity name="Income" representedClassName=".Income" parentEntity="Finance" syncable="YES"/>
     <entity name="Month" representedClassName=".Month" syncable="YES">
         <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
-        <relationship name="finances" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Finance" inverseName="month" inverseEntity="Finance" syncable="YES"/>
+        <relationship name="finances" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Finance" inverseName="month" inverseEntity="Finance" syncable="YES"/>
     </entity>
     <entity name="Template" representedClassName=".Template" syncable="YES">
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="finances" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Finance" inverseName="template" inverseEntity="Finance" syncable="YES"/>
+        <relationship name="finances" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Finance" inverseName="template" inverseEntity="Finance" syncable="YES"/>
     </entity>
     <elements>
         <element name="Expense" positionX="-54" positionY="18" width="128" height="45"/>
-        <element name="Income" positionX="-36" positionY="27" width="128" height="45"/>
         <element name="Finance" positionX="-63" positionY="-18" width="128" height="120"/>
+        <element name="Income" positionX="-36" positionY="27" width="128" height="45"/>
         <element name="Month" positionX="-45" positionY="9" width="128" height="75"/>
         <element name="Template" positionX="-45" positionY="9" width="128" height="75"/>
     </elements>

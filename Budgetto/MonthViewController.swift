@@ -12,6 +12,8 @@ class MonthViewController: UIView, UIPickerViewDelegate, UIPickerViewDataSource 
 
     static var selectedMonth: Month?
     
+    var currentView: ReloadView?
+    
     let dao = DAO.instance
     
     var monthDictionary:[String: [Month]] = [:]
@@ -28,6 +30,8 @@ class MonthViewController: UIView, UIPickerViewDelegate, UIPickerViewDataSource 
     @IBAction func didSelectDone(sender: AnyObject) {
         self.hidden = true
         MonthSelectionButton.isVisible = false
+        
+        currentView?.reloadView()
     }
     
     
@@ -71,6 +75,10 @@ class MonthViewController: UIView, UIPickerViewDelegate, UIPickerViewDataSource 
             }
             
             self.monthDictionary[year!]?.append(month)
+            
+            for finance in month.finances! {
+                print(finance)
+            }
         }
         
         for (key, value) in self.monthDictionary {

@@ -33,18 +33,24 @@ class MonthSelectionButton: UIBarButtonItem, UIPickerViewDelegate, UIPickerViewD
             NSLayoutConstraint.activateConstraints([pinBottom, pinLeft, pinRight, heightConstraint])
             MonthSelectionButton.isVisible = true
             
+            // Set the current view
+            MonthSelectionButton.monthSelectionView?.currentView = source as? ReloadView
+            
             return
         }
+        
+        // Set the current view
+        MonthSelectionButton.monthSelectionView?.currentView = source as? ReloadView
         
         if MonthSelectionButton.isVisible {
             MonthSelectionButton.monthSelectionView?.hidden = true
             MonthSelectionButton.isVisible = false
+            (source as? ReloadView)?.reloadView()
         }
         else {
             MonthSelectionButton.monthSelectionView?.hidden = false
             MonthSelectionButton.isVisible = true
         }
-
 
     }
     

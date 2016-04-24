@@ -25,8 +25,10 @@ class DAO {
     }
     
     func getAllFinances() -> [Finance] {
+        let request = NSFetchRequest(entityName: "Finance")
+        
         do {
-            return try managedContext.executeFetchRequest( NSFetchRequest(entityName: "Finance") ) as! [Finance]
+            return try managedContext.executeFetchRequest( request ) as! [Finance]
         } catch {}
         
         return []

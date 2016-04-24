@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FinanceController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class FinanceController: UIViewController, UITableViewDelegate, UITableViewDataSource, ReloadView {
 
     let dao = DAO.instance
     
@@ -33,7 +33,9 @@ class FinanceController: UIViewController, UITableViewDelegate, UITableViewDataS
     }
     
     func loadData() {
-        self.finances = dao.getAllFinances()
+        let month = MonthViewController.selectedMonth
+        
+        self.finances = month?.finances?.allObjects as! [Finance]
     }
 
     override func viewDidLoad() {
@@ -48,6 +50,10 @@ class FinanceController: UIViewController, UITableViewDelegate, UITableViewDataS
         expensesTableview.separatorColor = UIColor.clearColor()
         
         self.view.setDefaultBackground()
+        loadData()
+    }
+    
+    func reloadView() {
         loadData()
     }
 
