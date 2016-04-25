@@ -8,13 +8,18 @@
 
 import UIKit
 
-class FinanceDetailViewController: UIViewController {
+class FinanceDetailViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     let dao = DAO.instance
     
     @IBOutlet weak var descriptionTextfield: UITextField!
     @IBOutlet weak var amountTextfield: UITextField!
     @IBOutlet weak var dateTextfield: UITextField!
+    let datePickerView:UIPickerView = UIPickerView()
+    let calendar = NSCalendar.currentCalendar()
+    let currentDate = MonthViewController.selectedMonth?.date
+    var daysArr = [String]()
+
     
     @IBAction func amountTextFieldDidChange(sender: AnyObject) {
         formatAmount()
@@ -38,13 +43,20 @@ class FinanceDetailViewController: UIViewController {
     }
     
     @IBAction func textfieldEditingDate(sender: UITextField) {
-        let datePickerView:UIDatePicker = UIDatePicker()
-        
-        datePickerView.datePickerMode = UIDatePickerMode.Date
         
         sender.inputView = datePickerView
+        // select the current day in the pickerview
+        let strDate = dateTextfield.text
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.timeZone = NSTimeZone(name: "UTC")
+        dateFormatter.dateFormat = "dd/MM-yyyy"
+        let newDate = dateFormatter.dateFromString(strDate!)
+        let components = calendar.components([.Day], fromDate: newDate!)
+        let day = components.day
+        let index = daysArr.indexOf(String(day))
         
-        datePickerView.addTarget(self, action: #selector(FinanceDetailViewController.datePickerValueChanged), forControlEvents: UIControlEvents.ValueChanged)
+        datePickerView.selectRow(index!, inComponent: 0, animated: false)
+
     }
     
     var expenseBeingEdited: Expense?
@@ -58,8 +70,12 @@ class FinanceDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        datePickerView.delegate = self
+        datePickerView.dataSource = self
         self.view.setDefaultBackground()
+        createDaysArray()
+        calendar.timeZone = NSTimeZone(name: "UTC")!
+
         
         if isEditingExpense() {
             descriptionTextfield.text = expenseBeingEdited?.desc
@@ -157,6 +173,45 @@ class FinanceDetailViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    
+    func createDaysArray() {
+        
+        let days = calendar.rangeOfUnit(.Day, inUnit: .Month, forDate: currentDate!)
+        
+        for day in days.toRange()! {
+            self.daysArr.append(String(day))
+        }
+    }
+    
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        
+        let days = calendar.rangeOfUnit(.Day, inUnit: .Month, forDate: currentDate!)
+        
+        return days.length
+    }
+    
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        
+        return daysArr[row]
+    }
+    
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+        let selectedDay = daysArr[row]
+        let components = calendar.components([.Day, .Month, .Year], fromDate: currentDate!)
+        // set the selected day
+        components.day = Int(selectedDay)!
+        
+        selectedDate = calendar.dateFromComponents(components)!
+        
+        dateTextfield.text = selectedDate.formattedDate()
+        
     }
 
 }
