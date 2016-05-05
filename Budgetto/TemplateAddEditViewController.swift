@@ -20,26 +20,42 @@ class TemplateAddEditViewController: UIViewController {
     
     var creatingIncome = false
     var creatingExpense = false
+    var editingIncome = false
+    var editingExpense = false
+    
+    var incomeBeingEdited: Income?
+    var expenseBeingEdited: Expense?
     
     var templateBeingEdited: Template?
 
     @IBAction func addFinanceButton(sender: AnyObject) {
-        if creatingIncome == true {
-            // Create income and set values from textfields
-            let income = dao.createIncome()
-            income.desc = descriptionTextfield.text!
-            income.amount = Double(textfieldAmount.text!)
-            // Connect income to template.
-            income.template = templateBeingEdited
-            
-
-        } else if creatingExpense == true {
-            // Create expense and set values from textfields
-            let expense = dao.createExpense()
-            expense.desc = descriptionTextfield.text!
-            expense.amount = Double(textfieldAmount.text!)
-            // Connect expense to template
-            expense.template = templateBeingEdited
+        if validateTextfields() != false {
+            if creatingIncome == true {
+                // Create income and set values from textfields
+                let income = dao.createIncome()
+                income.desc = descriptionTextfield.text!
+                income.amount = Double(textfieldAmount.text!)
+                // Connect income to template.
+                income.template = templateBeingEdited
+                
+                
+            } else if creatingExpense == true {
+                // Create expense and set values from textfields
+                let expense = dao.createExpense()
+                expense.desc = descriptionTextfield.text!
+                expense.amount = Double(textfieldAmount.text!)
+                // Connect expense to template
+                expense.template = templateBeingEdited
+                
+            } else if editingIncome == true {
+                incomeBeingEdited?.desc = descriptionTextfield.text
+                incomeBeingEdited?.amount = Double(textfieldAmount.text!)
+                dao.save()
+            } else if editingExpense == true {
+                expenseBeingEdited?.desc = descriptionTextfield.text
+                expenseBeingEdited?.amount = Double(textfieldAmount.text!)
+                dao.save()
+            }
 
         }
     }
@@ -51,7 +67,7 @@ class TemplateAddEditViewController: UIViewController {
 
         self.title = titleForScene
         
-        print(templateBeingEdited)
+        setupFinance()
     }
 
     override func didReceiveMemoryWarning() {
@@ -63,6 +79,25 @@ class TemplateAddEditViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let destVC = segue.destinationViewController as! TemplateDetailViewController
         destVC.template = templateBeingEdited!
+    }
+    
+    func setupFinance () {
+        if expenseBeingEdited != nil {
+            descriptionTextfield.text = expenseBeingEdited?.desc
+            textfieldAmount.text = String((expenseBeingEdited?.amount)!)
+        }
+        if incomeBeingEdited != nil {
+            descriptionTextfield.text = incomeBeingEdited?.desc
+            textfieldAmount.text = String((incomeBeingEdited?.amount)!)
+        }
+    }
+    
+    func validateTextfields () -> Bool {
+        var allFieldsAreSet = false
+        if descriptionTextfield.text != "" && textfieldAmount.text != "" {
+            allFieldsAreSet = true
+        }
+        return allFieldsAreSet
     }
 
 

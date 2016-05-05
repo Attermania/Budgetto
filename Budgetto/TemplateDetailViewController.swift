@@ -102,6 +102,18 @@ class TemplateDetailViewController: UIViewController, UITableViewDataSource, UIT
         } else if segue.identifier == "createExpense" {
             destVC.titleForScene = "Ny udgift"
             destVC.creatingExpense = true
+        } else if segue.identifier == "editFinanceSegue" {
+            if finances[(financesTableView.indexPathForSelectedRow?.row)!] is Expense {
+                destVC.expenseBeingEdited = finances[(financesTableView.indexPathForSelectedRow?.row)!] as? Expense
+                destVC.titleForScene = "Rediger udgift"
+                destVC.editingExpense = true
+            }
+            if finances[(financesTableView.indexPathForSelectedRow?.row)!] is Income {
+                destVC.incomeBeingEdited = finances[(financesTableView.indexPathForSelectedRow?.row)!] as? Income
+                destVC.titleForScene = "Rediger indtægt"
+                destVC.editingIncome = true
+            }
+            
         }
     }
     
