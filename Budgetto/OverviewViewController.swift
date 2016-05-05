@@ -10,6 +10,8 @@ import UIKit
 
 class OverviewViewController: UIViewController, ReloadView {
     
+    @IBOutlet weak var expensesLabel: UILabel!
+    @IBOutlet weak var remainingLabel: UILabel!
     var totalExpenses = 0.0
     var totalIncome = 0.0
     let selectedMonth = MonthViewController.selectedMonth
@@ -18,7 +20,8 @@ class OverviewViewController: UIViewController, ReloadView {
             print(finances.count)
             getTotalExpenses()
             getTotalIncome()
-            
+            expensesLabel.text = "\(totalExpenses) kr."
+            remainingLabel.text = "+ \(totalIncome-totalExpenses) kr."
             financesBar.percentage = getStatsPercentage()
             print(getStatsPercentage())
             financesBar.setNeedsDisplay()
@@ -43,9 +46,11 @@ class OverviewViewController: UIViewController, ReloadView {
         
         monthSelectionButton = appDelegate.monthSelectionButton
         
-        loadData()
-        
         // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        loadData()
     }
     
     func loadData() {
@@ -79,9 +84,8 @@ class OverviewViewController: UIViewController, ReloadView {
     }
     
     func getStatsPercentage() -> CGFloat {
-        print(totalExpenses)
-        print(totalIncome)
-        return CGFloat(totalExpenses/totalIncome)
+        let percentage = totalExpenses/totalIncome
+        return percentage.isNaN ? CGFloat(0) : CGFloat(totalExpenses/totalIncome)
     }
     
     
