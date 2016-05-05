@@ -102,6 +102,16 @@ class DAO {
         return NSEntityDescription.insertNewObjectForEntityForName("Expense", inManagedObjectContext: managedContext) as! Expense
     }
     
+    func deleteFinance(finance: Finance) {
+        managedContext.deleteObject(finance)
+        
+        do {
+            try managedContext.save()
+        } catch {
+            
+        }
+    }
+    
     func save() {
         do {
             try managedContext.save()

@@ -141,8 +141,13 @@ class FinanceController: UIViewController, UITableViewDelegate, UITableViewDataS
     
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == UITableViewCellEditingStyle.Delete {
-            // numbers.removeAtIndex(indexPath.row)
-            // tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+            let finance = finances[indexPath.row]
+            
+            // Remove from tableview
+            finances.removeAtIndex(indexPath.row)
+            
+            // Delete from coredata
+            dao.deleteFinance(finance)
         }
     }
 
