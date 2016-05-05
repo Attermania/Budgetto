@@ -12,9 +12,11 @@ class OverviewViewController: UIViewController, ReloadView {
     
     @IBOutlet weak var expensesLabel: UILabel!
     @IBOutlet weak var remainingLabel: UILabel!
+    @IBOutlet weak var budgetMonthLabel: UILabel!
+    @IBOutlet weak var incomeLabel: UILabel!
     var totalExpenses = 0.0
     var totalIncome = 0.0
-    let selectedMonth = MonthViewController.selectedMonth
+    var selectedMonth = MonthViewController.selectedMonth
     var finances = [Finance]() {
         didSet {
             print(finances.count)
@@ -22,8 +24,9 @@ class OverviewViewController: UIViewController, ReloadView {
             getTotalIncome()
             expensesLabel.text = "\(totalExpenses) kr."
             remainingLabel.text = "+ \(totalIncome-totalExpenses) kr."
+            incomeLabel.text = "\(totalIncome) kr."
+            budgetMonthLabel.text = "Budget for \((selectedMonth!.date?.month())!)"
             financesBar.percentage = getStatsPercentage()
-            print(getStatsPercentage())
             financesBar.setNeedsDisplay()
         }
     }
@@ -35,17 +38,13 @@ class OverviewViewController: UIViewController, ReloadView {
     @IBAction func didTabMonthSelectionButton(sender: AnyObject) {
         monthSelectionButton.showMonthPickerView(self)
     }
-    @IBOutlet weak var containerView: UIView!
-    @IBOutlet weak var graphView: GraphView!
     @IBOutlet weak var financesBar: OverviewBar!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.setDefaultBackground()
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        
         monthSelectionButton = appDelegate.monthSelectionButton
-        
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -54,9 +53,8 @@ class OverviewViewController: UIViewController, ReloadView {
     }
     
     func loadData() {
-        let month = MonthViewController.selectedMonth
-        self.finances = month?.finances?.allObjects as! [Finance]
-        print(finances.count)
+        selectedMonth = MonthViewController.selectedMonth
+        self.finances = selectedMonth?.finances?.allObjects as! [Finance]
     }
     
     func reloadView() {
