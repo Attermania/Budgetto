@@ -26,18 +26,21 @@ class FinanceDetailViewController: UIViewController, UIPickerViewDelegate, UIPic
     }
     
     private func formatAmount() {
+        // If there is nothing in the textfield, we can silently return
         if amountTextfield.text == nil || amountTextfield.text == "" {
             return
         }
         
-        let textFieldText = amountTextfield.text!.stringByReplacingOccurrencesOfString(
-            ".",
-            withString: ""
-        )
+        // Remove everything that is not a digit from the amount
+        var textFieldText = amountTextfield.text?.componentsSeparatedByCharactersInSet(NSCharacterSet.decimalDigitCharacterSet().invertedSet).joinWithSeparator("")
         
+        // Remove anything over 6 digits
+        textFieldText = textFieldText?.characters.count > 6 ? textFieldText?.substringToIndex(textFieldText!.startIndex.advancedBy(6)) : textFieldText
+        
+        // Format thousands with seperator
         let formatter:NSNumberFormatter = NSNumberFormatter()
         formatter.numberStyle = NSNumberFormatterStyle.DecimalStyle
-        let formattedOutput = formatter.stringFromNumber(Int(textFieldText)!)
+        let formattedOutput = formatter.stringFromNumber(Int(textFieldText!)!)
         
         amountTextfield.text = formattedOutput
     }
