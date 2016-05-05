@@ -149,6 +149,20 @@ class TemplateDetailViewController: UIViewController, UITableViewDataSource, UIT
         return cell
 
     }
+    
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == UITableViewCellEditingStyle.Delete {
+            let finance = finances[indexPath.row]
+            
+            // Remove from tableview
+            finances.removeAtIndex(indexPath.row)
+            
+            // Delete from coredata
+            dao.deleteFinance(finance)
+            
+            financesTableView.reloadData()
+        }
+    }
 
 
 }
