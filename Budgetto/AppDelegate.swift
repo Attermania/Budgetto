@@ -18,7 +18,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     let monthSelectionButton = MonthSelectionButton()
     
+    var seperatedFinances = [Finance]()
+
     func loadMonth() {
+        
         var latestMonth = dao.getLatestMonth()
         
         // If this is the first time that we are launching the app, there is no month, so we'll create one
@@ -37,12 +40,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 let newMonth = dao.createMonth()
                 newMonth.date = NSDate()
                 
+                let financesFromTemplate = dao.getAllFinancesFromTemplate()
+                
+                for finance in financesFromTemplate {
+                    if finance is Income {
+                        let newIncome: Finance = dao.createIncome()
+                        newIncome.amount = finance.amount
+                        newIncome.desc = finance.desc
+                        seperatedFinances.append(newIncome)
+                    }
+                    if finance is Expense {
+                        let newExpense: Finance = dao.createExpense()
+                        newExpense.amount = finance.amount
+                        newExpense.desc = finance.desc
+                        seperatedFinances.append(newExpense)
+                    }
+                }
+                
+                newMonth.finances = NSSet(array: seperatedFinances)
+                
                 dao.save()
                 latestMonth = newMonth
             }
         }
             
         MonthViewController.selectedMonth = latestMonth
+
     }
     
     // Find path to sqlite file
@@ -53,6 +76,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         loadMonth()
+        
+//        let newMonth2 = dao.createMonth()
+//        newMonth2.date = NSCalendar.currentCalendar().dateByAddingUnit(.Month, value: -3, toDate: NSDate(), options: [])
+//        dao.save()
         
          print(applicationDirectoryPath())
         

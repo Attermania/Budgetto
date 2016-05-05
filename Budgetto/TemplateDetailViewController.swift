@@ -31,18 +31,15 @@ class TemplateDetailViewController: UIViewController, UITableViewDataSource, UIT
     
     
     @IBAction func saveButton(sender: AnyObject) {
-        //dao.update(templateNameTextfield.text!)
         if templateNameTextfield.text != "" {
             if dao.getAllTemplates().count == 0 {
                 save()
                 template = dao.getAllTemplates()[0]
                 //self.title = template?.title
-                setTitle()
             } else if dao.getAllTemplates().count > 0{
                 print("Test")
                 template = dao.getAllTemplates()[0]
                 dao.update(template!)
-                setTitle()
                 print(dao.getAllTemplates().count)
             }
 
@@ -90,7 +87,7 @@ class TemplateDetailViewController: UIViewController, UITableViewDataSource, UIT
     }
     
     func save() {
-        template = dao.createTemplate()        
+        template = dao.createTemplate()
         dao.save()
     }
     
@@ -106,12 +103,6 @@ class TemplateDetailViewController: UIViewController, UITableViewDataSource, UIT
             destVC.titleForScene = "Ny udgift"
             destVC.creatingExpense = true
         }
-    }
-    
-    func setTitle () {
-        self.title = template?.title
-        templateNameTextfield.text = ""
-        templateNameTextfield.placeholder = template?.title
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
