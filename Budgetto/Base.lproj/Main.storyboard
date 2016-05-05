@@ -286,13 +286,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b1F-KD-BHb" customClass="OverviewBar" customModule="Budgetto" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b1F-KD-BHb" customClass="OverviewBar" customModule="Budgetto" customModuleProvider="target">
                                 <rect key="frame" x="10" y="74" width="580" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="1RE-04-yCF"/>
                                 </constraints>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="GbG-K3-B0U">
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="GbG-K3-B0U">
                                 <rect key="frame" x="10" y="132" width="125" height="41"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Brugt:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZcL-CN-Bbo">
@@ -361,6 +361,7 @@
                             <constraint firstItem="waC-WA-G28" firstAttribute="top" secondItem="b1F-KD-BHb" secondAttribute="bottom" constant="8" id="317-SD-cVH"/>
                             <constraint firstAttribute="trailingMargin" secondItem="b1F-KD-BHb" secondAttribute="trailing" id="3pR-k2-V47"/>
                             <constraint firstAttribute="trailingMargin" secondItem="waC-WA-G28" secondAttribute="trailing" constant="-10" id="5YB-uf-Hyn"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="b1F-KD-BHb" secondAttribute="trailing" constant="-10" id="5uj-fz-aKa"/>
                             <constraint firstItem="b1F-KD-BHb" firstAttribute="top" secondItem="c4i-gq-bnB" secondAttribute="bottom" constant="10" id="73a-Lx-KJF"/>
                             <constraint firstItem="GbG-K3-B0U" firstAttribute="bottom" secondItem="waC-WA-G28" secondAttribute="bottom" id="BIl-5X-Ga9"/>
                             <constraint firstItem="GbG-K3-B0U" firstAttribute="leading" secondItem="RQk-Cg-Kuw" secondAttribute="leadingMargin" constant="-10" id="Cbn-zZ-AsD"/>
@@ -370,11 +371,15 @@
                             <constraint firstItem="b1F-KD-BHb" firstAttribute="leading" secondItem="RQk-Cg-Kuw" secondAttribute="leadingMargin" constant="-10" id="IbM-ZI-MY7"/>
                             <constraint firstItem="b1F-KD-BHb" firstAttribute="centerX" secondItem="RQk-Cg-Kuw" secondAttribute="centerX" id="KDi-Jb-Fas"/>
                             <constraint firstItem="GbG-K3-B0U" firstAttribute="top" secondItem="waC-WA-G28" secondAttribute="top" id="ONC-ub-mJ8"/>
+                            <constraint firstItem="b1F-KD-BHb" firstAttribute="leading" secondItem="RQk-Cg-Kuw" secondAttribute="leadingMargin" constant="-10" id="UNd-9H-seg"/>
+                            <constraint firstItem="waC-WA-G28" firstAttribute="top" secondItem="b1F-KD-BHb" secondAttribute="bottom" constant="10" id="WYv-xE-YJs"/>
                             <constraint firstItem="Bj8-T6-TIy" firstAttribute="top" secondItem="waC-WA-G28" secondAttribute="bottom" constant="378" id="XXQ-fW-sLg"/>
                             <constraint firstItem="b1F-KD-BHb" firstAttribute="top" secondItem="RQk-Cg-Kuw" secondAttribute="top" constant="378" id="ZP5-ec-pbr"/>
                             <constraint firstItem="GbG-K3-B0U" firstAttribute="top" secondItem="b1F-KD-BHb" secondAttribute="bottom" constant="8" id="Zu9-EA-JWZ"/>
                             <constraint firstItem="Bj8-T6-TIy" firstAttribute="top" secondItem="GbG-K3-B0U" secondAttribute="bottom" constant="378" id="ejW-Nk-sg3"/>
                             <constraint firstItem="GbG-K3-B0U" firstAttribute="leading" secondItem="RQk-Cg-Kuw" secondAttribute="leadingMargin" constant="-10" id="h4M-QN-Xhd"/>
+                            <constraint firstItem="b1F-KD-BHb" firstAttribute="top" secondItem="c4i-gq-bnB" secondAttribute="bottom" constant="10" id="heq-PV-eNp"/>
+                            <constraint firstItem="GbG-K3-B0U" firstAttribute="top" secondItem="b1F-KD-BHb" secondAttribute="bottom" constant="10" id="ike-Dz-g0W"/>
                             <constraint firstItem="GbG-K3-B0U" firstAttribute="top" secondItem="b1F-KD-BHb" secondAttribute="bottom" constant="8" symbolic="YES" id="iu8-b7-7io"/>
                             <constraint firstItem="waC-WA-G28" firstAttribute="top" secondItem="b1F-KD-BHb" secondAttribute="bottom" constant="8" symbolic="YES" id="jLL-Kc-MX5"/>
                             <constraint firstItem="Bj8-T6-TIy" firstAttribute="top" secondItem="b1F-KD-BHb" secondAttribute="bottom" constant="45" id="kFv-qR-C2x"/>
@@ -389,6 +394,7 @@
                             <mask key="constraints">
                                 <exclude reference="0sq-nB-iTY"/>
                                 <exclude reference="3pR-k2-V47"/>
+                                <exclude reference="73a-Lx-KJF"/>
                                 <exclude reference="IbM-ZI-MY7"/>
                                 <exclude reference="KDi-Jb-Fas"/>
                                 <exclude reference="ZP5-ec-pbr"/>
@@ -398,8 +404,10 @@
                                 <exclude reference="BIl-5X-Ga9"/>
                                 <exclude reference="Cbn-zZ-AsD"/>
                                 <exclude reference="ONC-ub-mJ8"/>
+                                <exclude reference="Zu9-EA-JWZ"/>
                                 <exclude reference="iu8-b7-7io"/>
                                 <exclude reference="mVc-30-jkf"/>
+                                <exclude reference="317-SD-cVH"/>
                                 <exclude reference="5YB-uf-Hyn"/>
                                 <exclude reference="EmS-7K-vRd"/>
                                 <exclude reference="I5P-zR-Bno"/>
