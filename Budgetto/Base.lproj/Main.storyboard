@@ -411,7 +411,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o3C-J4-1IQ">
-                                <rect key="frame" x="9" y="513" width="582" height="30"/>
+                                <rect key="frame" x="10" y="516" width="580" height="30"/>
                                 <color key="backgroundColor" red="0.25490196079999999" green="0.48627450979999998" blue="0.68627450980000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Tilføj udgift">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -421,21 +421,21 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hQ3-22-tbb">
-                                <rect key="frame" x="5" y="69" width="590" height="404"/>
+                                <rect key="frame" x="10" y="69" width="580" height="407"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="gZd-e9-FWj"/>
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="financecell" id="uH0-5I-WK7" customClass="BudgettoCell" customModule="Budgetto" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="590" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="580" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uH0-5I-WK7" id="5gw-te-EoX">
-                                            <rect key="frame" x="0.0" y="0.0" width="590" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="580" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- 40000 DKK" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KlY-uW-016">
-                                                    <rect key="frame" x="450" y="12" width="130" height="25"/>
+                                                    <rect key="frame" x="440" y="12" width="130" height="25"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="24.5" id="UJr-bQ-88a"/>
                                                         <constraint firstAttribute="width" constant="130" id="y8o-bz-VmT"/>
@@ -499,7 +499,7 @@
                                 </variation>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Np8-ub-bwf">
-                                <rect key="frame" x="9" y="480" width="582" height="30"/>
+                                <rect key="frame" x="10" y="481" width="580" height="30"/>
                                 <color key="backgroundColor" red="0.25490196079999999" green="0.48627450979999998" blue="0.68627450980000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Tilføj indtægt">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -512,17 +512,17 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="o3C-J4-1IQ" firstAttribute="leading" secondItem="2f1-Um-fK9" secondAttribute="leadingMargin" constant="10" id="3tJ-xT-66Y"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Np8-ub-bwf" secondAttribute="trailing" constant="-11" id="5JV-NU-MjB"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Np8-ub-bwf" secondAttribute="trailing" constant="-10" id="5JV-NU-MjB"/>
                             <constraint firstAttribute="trailingMargin" secondItem="o3C-J4-1IQ" secondAttribute="trailing" constant="10" id="7di-2F-BMt"/>
-                            <constraint firstItem="o3C-J4-1IQ" firstAttribute="top" secondItem="Np8-ub-bwf" secondAttribute="bottom" constant="3" id="OtN-2g-gh8"/>
-                            <constraint firstItem="hQ3-22-tbb" firstAttribute="leading" secondItem="2f1-Um-fK9" secondAttribute="leadingMargin" constant="-15" id="Qny-8V-VB4"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="hQ3-22-tbb" secondAttribute="trailing" constant="-15" id="Rpf-I6-f8g"/>
-                            <constraint firstItem="Np8-ub-bwf" firstAttribute="top" secondItem="hQ3-22-tbb" secondAttribute="bottom" constant="7" id="UEo-3D-gOp"/>
+                            <constraint firstItem="o3C-J4-1IQ" firstAttribute="top" secondItem="Np8-ub-bwf" secondAttribute="bottom" constant="5" id="OtN-2g-gh8"/>
+                            <constraint firstItem="hQ3-22-tbb" firstAttribute="leading" secondItem="2f1-Um-fK9" secondAttribute="leadingMargin" constant="-10" id="Qny-8V-VB4"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="hQ3-22-tbb" secondAttribute="trailing" constant="-10" id="Rpf-I6-f8g"/>
+                            <constraint firstItem="Np8-ub-bwf" firstAttribute="top" secondItem="hQ3-22-tbb" secondAttribute="bottom" constant="5" id="UEo-3D-gOp"/>
                             <constraint firstItem="hQ3-22-tbb" firstAttribute="top" secondItem="ugb-nu-OgK" secondAttribute="bottom" constant="5" id="YPl-95-74H"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="o3C-J4-1IQ" secondAttribute="trailing" constant="-11" id="YTe-sS-msa"/>
-                            <constraint firstItem="o3C-J4-1IQ" firstAttribute="leading" secondItem="2f1-Um-fK9" secondAttribute="leadingMargin" constant="-11" id="d0X-Eg-ESt"/>
-                            <constraint firstItem="FS5-14-fza" firstAttribute="top" secondItem="o3C-J4-1IQ" secondAttribute="bottom" constant="8" symbolic="YES" id="dY0-LK-2dW"/>
-                            <constraint firstItem="Np8-ub-bwf" firstAttribute="leading" secondItem="2f1-Um-fK9" secondAttribute="leadingMargin" constant="-11" id="dxk-5f-ocG"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="o3C-J4-1IQ" secondAttribute="trailing" constant="-10" id="YTe-sS-msa"/>
+                            <constraint firstItem="o3C-J4-1IQ" firstAttribute="leading" secondItem="2f1-Um-fK9" secondAttribute="leadingMargin" constant="-10" id="d0X-Eg-ESt"/>
+                            <constraint firstItem="FS5-14-fza" firstAttribute="top" secondItem="o3C-J4-1IQ" secondAttribute="bottom" constant="5" id="dY0-LK-2dW"/>
+                            <constraint firstItem="Np8-ub-bwf" firstAttribute="leading" secondItem="2f1-Um-fK9" secondAttribute="leadingMargin" constant="-10" id="dxk-5f-ocG"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -553,17 +553,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Beskrivelse" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xjU-Yk-f5f">
-                                <rect key="frame" x="30" y="74" width="540" height="30"/>
+                                <rect key="frame" x="10" y="69" width="580" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Beløb" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wTC-KO-SkJ">
-                                <rect key="frame" x="30" y="114" width="540" height="30"/>
+                                <rect key="frame" x="10" y="104" width="580" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nH8-Oz-HeW">
-                                <rect key="frame" x="30" y="154" width="540" height="30"/>
+                                <rect key="frame" x="10" y="139" width="580" height="30"/>
                                 <color key="backgroundColor" red="0.25490196079999999" green="0.48627450979999998" blue="0.68627450980000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Tilføj">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -576,16 +576,22 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="nH8-Oz-HeW" secondAttribute="trailing" constant="10" id="5ba-43-pNy"/>
-                            <constraint firstItem="xjU-Yk-f5f" firstAttribute="leading" secondItem="N6M-ai-fpP" secondAttribute="leadingMargin" constant="10" id="EF5-1o-Kvr"/>
-                            <constraint firstItem="nH8-Oz-HeW" firstAttribute="top" secondItem="wTC-KO-SkJ" secondAttribute="bottom" constant="10" id="KAU-Cl-P1P"/>
-                            <constraint firstItem="nH8-Oz-HeW" firstAttribute="leading" secondItem="N6M-ai-fpP" secondAttribute="leadingMargin" constant="10" id="Qc7-Ox-kce"/>
-                            <constraint firstItem="xjU-Yk-f5f" firstAttribute="top" secondItem="Rie-nv-KEh" secondAttribute="bottom" constant="10" id="WpU-xu-Af2"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="xjU-Yk-f5f" secondAttribute="trailing" constant="10" id="YF8-8f-cbr"/>
-                            <constraint firstItem="wTC-KO-SkJ" firstAttribute="leading" secondItem="N6M-ai-fpP" secondAttribute="leadingMargin" constant="10" id="c9n-vP-rAk"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="wTC-KO-SkJ" secondAttribute="trailing" constant="10" id="cp7-iu-bSp"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="nH8-Oz-HeW" secondAttribute="trailing" constant="-10" id="5ba-43-pNy"/>
+                            <constraint firstItem="xjU-Yk-f5f" firstAttribute="leading" secondItem="N6M-ai-fpP" secondAttribute="leadingMargin" constant="-10" id="EF5-1o-Kvr"/>
+                            <constraint firstItem="nH8-Oz-HeW" firstAttribute="top" secondItem="wTC-KO-SkJ" secondAttribute="bottom" constant="5" id="KAU-Cl-P1P"/>
+                            <constraint firstItem="nH8-Oz-HeW" firstAttribute="leading" secondItem="N6M-ai-fpP" secondAttribute="leadingMargin" constant="-10" id="Qc7-Ox-kce"/>
+                            <constraint firstItem="wTC-KO-SkJ" firstAttribute="top" secondItem="xjU-Yk-f5f" secondAttribute="bottom" constant="5" id="Ue3-ol-DnT"/>
+                            <constraint firstItem="xjU-Yk-f5f" firstAttribute="top" secondItem="Rie-nv-KEh" secondAttribute="bottom" constant="5" id="WpU-xu-Af2"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="xjU-Yk-f5f" secondAttribute="trailing" constant="-10" id="YF8-8f-cbr"/>
+                            <constraint firstItem="wTC-KO-SkJ" firstAttribute="leading" secondItem="N6M-ai-fpP" secondAttribute="leadingMargin" constant="-10" id="c9n-vP-rAk"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="wTC-KO-SkJ" secondAttribute="trailing" constant="-10" id="cp7-iu-bSp"/>
                             <constraint firstItem="wTC-KO-SkJ" firstAttribute="top" secondItem="xjU-Yk-f5f" secondAttribute="bottom" constant="10" id="syb-hh-1Vr"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="syb-hh-1Vr"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="descriptionTextfield" destination="xjU-Yk-f5f" id="yqU-g9-5x5"/>
