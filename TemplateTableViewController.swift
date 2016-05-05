@@ -61,16 +61,6 @@ class TemplateTableViewController: UITableViewController {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let destVC = segue.destinationViewController as! TemplateDetailViewController
-
-        if segue.identifier == "createTemplateSegue" {
-            destVC.titleForWindow = "Ny skabelon"
-            destVC.createNewTemplate = true
-        }
-        if segue.identifier == "editTemplateSegue" {
-            destVC.titleForWindow = "Rediger skabelon"
-            destVC.templateBeingEdited = templates[templateTableview.indexPathForSelectedRow!.row]
-        }
     }
     
     func loadData() {

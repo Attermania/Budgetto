@@ -91,5 +91,16 @@ class DAO {
         } catch {}
     }
     
+    func update(name: String, templateToUpdate : Template) {
+        let template = templateToUpdate as NSManagedObject
+        template.setValue(name, forKey: "title")
+        do {
+            try template.managedObjectContext?.save()
+        } catch {
+            let saveError = error as NSError
+            print(saveError)
+        }
+    }
+    
     private init() {}
 }

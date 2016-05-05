@@ -399,47 +399,6 @@
             </objects>
             <point key="canvasLocation" x="1223" y="1227"/>
         </scene>
-        <!--Skabeloner-->
-        <scene sceneID="mnN-7K-gwU">
-            <objects>
-                <tableViewController id="PVh-th-vHQ" customClass="TemplateTableViewController" customModule="Budgetto" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="BiM-xm-hnQ">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="templateCell" id="G6c-50-yHD">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="G6c-50-yHD" id="ebN-T0-2Nh">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="SNs-Mj-8dI" kind="show" identifier="editTemplateSegue" id="jTT-FG-ybn"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="PVh-th-vHQ" id="ZSD-Xq-nMz"/>
-                            <outlet property="delegate" destination="PVh-th-vHQ" id="wwq-fI-484"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Skabeloner" id="5gl-iX-6xx">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="5ud-eA-f6j">
-                            <connections>
-                                <segue destination="SNs-Mj-8dI" kind="show" identifier="createTemplateSegue" id="Ibj-r9-gpE"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="templateTableview" destination="BiM-xm-hnQ" id="W6c-DA-yYO"/>
-                    </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Gwf-Rh-Lof" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1105" y="1910"/>
-        </scene>
         <!--Template Detail View Controller-->
         <scene sceneID="VHY-wP-STX">
             <objects>
@@ -458,10 +417,30 @@
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="30" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aLz-Jz-w1a">
                                         <rect key="frame" x="0.0" y="166" width="600" height="166"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="expensecell" id="i2o-F0-Swp">
+                                                <rect key="frame" x="0.0" y="92" width="600" height="30"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="i2o-F0-Swp" id="PcC-PW-sKo">
+                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="29.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </tableViewCellContentView>
+                                            </tableViewCell>
+                                        </prototypes>
                                     </tableView>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="30" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5fP-mY-xP5">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="166"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="incomecell" id="mXQ-Il-O9H">
+                                                <rect key="frame" x="0.0" y="28" width="600" height="30"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mXQ-Il-O9H" id="mER-AG-8H2">
+                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="29.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </tableViewCellContentView>
+                                            </tableViewCell>
+                                        </prototypes>
                                     </tableView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -483,7 +462,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="mK8-66-4Dg" kind="show" id="xdL-c4-Pbl"/>
+                                    <segue destination="mK8-66-4Dg" kind="show" identifier="createExpense" id="xdL-c4-Pbl"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="89I-KE-VIJ">
@@ -501,6 +480,7 @@
                                     </mask>
                                 </variation>
                                 <connections>
+                                    <action selector="saveButton:" destination="SNs-Mj-8dI" eventType="touchUpInside" id="fFw-mb-guq"/>
                                     <segue destination="0Wx-Tb-A8r" kind="unwind" unwindAction="returnedFromTemplateDetailVC:" id="qEg-km-HG9"/>
                                 </connections>
                             </button>
@@ -554,14 +534,17 @@
                             </mask>
                         </variation>
                     </view>
+                    <navigationItem key="navigationItem" id="4NV-pm-2Bj"/>
                     <connections>
+                        <outlet property="expensesTableView" destination="aLz-Jz-w1a" id="sXl-Rl-0XC"/>
+                        <outlet property="incomeTableView" destination="5fP-mY-xP5" id="bTL-EY-8Vw"/>
                         <outlet property="templateNameTextfield" destination="K2U-gb-uXF" id="T9O-Q5-qc9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dre-1c-dZd" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="0Wx-Tb-A8r" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1760" y="1910"/>
+            <point key="canvasLocation" x="1217" y="1910"/>
         </scene>
         <!--Template Add Edit View Controller-->
         <scene sceneID="pJL-Kg-fCE">
@@ -587,11 +570,12 @@
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nH8-Oz-HeW">
                                 <rect key="frame" x="30" y="154" width="540" height="30"/>
-                                <color key="backgroundColor" red="0.078431372550000003" green="0.48627450979999998" blue="0.68627450980000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.25490196079999999" green="0.48627450979999998" blue="0.68627450980000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Tilføj">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="addFinanceButton:" destination="mK8-66-4Dg" eventType="touchUpInside" id="kma-zv-mxz"/>
                                     <segue destination="l1g-Uu-sCV" kind="unwind" unwindAction="returnedFromAddEditVC:" id="Ah0-7G-IXF"/>
                                 </connections>
                             </button>
@@ -609,11 +593,15 @@
                             <constraint firstItem="wTC-KO-SkJ" firstAttribute="top" secondItem="xjU-Yk-f5f" secondAttribute="bottom" constant="10" id="syb-hh-1Vr"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="descriptionTextfield" destination="xjU-Yk-f5f" id="yqU-g9-5x5"/>
+                        <outlet property="textfieldAmount" destination="wTC-KO-SkJ" id="A6V-g0-yHg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e0a-g2-AUQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="l1g-Uu-sCV" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2413" y="1910"/>
+            <point key="canvasLocation" x="1870" y="1910"/>
         </scene>
         <!--Skabeloner-->
         <scene sceneID="2B9-MJ-2JJ">
@@ -627,7 +615,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="PVh-th-vHQ" kind="relationship" relationship="rootViewController" id="zln-19-Umq"/>
+                        <segue destination="SNs-Mj-8dI" kind="relationship" relationship="rootViewController" id="Rx0-pg-xBL"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A2w-zD-v5w" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -661,8 +649,7 @@
         <image name="template" width="22" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="jTT-FG-ybn"/>
-        <segue reference="xdL-c4-Pbl"/>
         <segue reference="2Pn-ho-IfH"/>
+        <segue reference="xdL-c4-Pbl"/>
     </inferredMetricsTieBreakers>
 </document>

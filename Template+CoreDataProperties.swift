@@ -16,5 +16,11 @@ extension Template {
 
     @NSManaged var title: String?
     @NSManaged var finances: NSSet?
+    
+    func addToTemplate (finance : Finance) {
+        let template = self.valueForKeyPath("template")
+        template?.addObject(finance)
+        
+    }
 
 }
