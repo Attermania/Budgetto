@@ -38,6 +38,7 @@
 		F98C76031CB5203F00944144 /* TemplateAddEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98C76021CB5203F00944144 /* TemplateAddEditViewController.swift */; };
 		F98ED7401CC636C30013111A /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98ED73F1CC636C30013111A /* MainNavigationController.swift */; };
 		F98ED7441CC639F10013111A /* MonthSelectionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98ED7431CC639F10013111A /* MonthSelectionButton.swift */; };
+		F9A483811CD65062002294F1 /* OverviewBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A483801CD65062002294F1 /* OverviewBar.swift */; };
 		F9E9A32B1CB43FC600E10B2A /* BudgettoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E9A32A1CB43FC600E10B2A /* BudgettoCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +76,7 @@
 		F98C76021CB5203F00944144 /* TemplateAddEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemplateAddEditViewController.swift; sourceTree = "<group>"; };
 		F98ED73F1CC636C30013111A /* MainNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
 		F98ED7431CC639F10013111A /* MonthSelectionButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthSelectionButton.swift; sourceTree = "<group>"; };
+		F9A483801CD65062002294F1 /* OverviewBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverviewBar.swift; sourceTree = "<group>"; };
 		F9E9A32A1CB43FC600E10B2A /* BudgettoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BudgettoCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -145,6 +147,7 @@
 			children = (
 				B4EC7A4D1CB29D9700B1F613 /* OverviewViewController.swift */,
 				F94E2C401CC3E7DC00CDC502 /* GraphView.swift */,
+				F9A483801CD65062002294F1 /* OverviewBar.swift */,
 			);
 			name = Overview;
 			sourceTree = "<group>";
@@ -285,6 +288,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F98C76031CB5203F00944144 /* TemplateAddEditViewController.swift in Sources */,
+				F9A483811CD65062002294F1 /* OverviewBar.swift in Sources */,
 				B4EC7A4E1CB29D9700B1F613 /* OverviewViewController.swift in Sources */,
 				B41B0FB71CCB926800FDA0F9 /* DAO.swift in Sources */,
 				F93255151CC9849B0001F3CD /* MonthViewController.swift in Sources */,
