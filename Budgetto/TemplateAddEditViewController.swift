@@ -62,7 +62,7 @@ class TemplateAddEditViewController: UIViewController {
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let destVC = segue.destinationViewController as! TemplateDetailViewController
-        destVC.template = templateBeingEdited
+        destVC.template = templateBeingEdited!
     }
 
 

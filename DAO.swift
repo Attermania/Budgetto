@@ -34,6 +34,23 @@ class DAO {
         return []
     }
     
+    func getAllFinancesFromTemplate() -> [Finance] {
+        let request = NSFetchRequest(entityName: "Template")
+        
+        do {
+            let template = try managedContext.executeFetchRequest(request) as! [Template]
+            
+            if(template.count > 0) {
+                return template[0].finances?.allObjects as! [Finance]
+            }
+        } catch {
+            print("error in loading \(error)")
+        }
+        
+        return []
+
+    }
+    
     func getAllMonths() -> [Month] {
         
         let request = NSFetchRequest(entityName: "Month")
@@ -91,14 +108,12 @@ class DAO {
         } catch {}
     }
     
-    func update(name: String, templateToUpdate : Template) {
+    func update(templateToUpdate : Template) {
         let template = templateToUpdate as NSManagedObject
-        template.setValue(name, forKey: "title")
         do {
             try template.managedObjectContext?.save()
         } catch {
-            let saveError = error as NSError
-            print(saveError)
+            print(error)
         }
     }
     

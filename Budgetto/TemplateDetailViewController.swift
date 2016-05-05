@@ -14,22 +14,19 @@ class TemplateDetailViewController: UIViewController, UITableViewDataSource, UIT
     
     var template: Template?
     
-    var incomes: [Income] = []
-    var expenses: [Expense] = []
+    var finances: [Finance] = []
     
-    @IBOutlet weak var incomeTableView: UITableView!
-    @IBOutlet weak var expensesTableView: UITableView!
+    @IBOutlet weak var financesTableView: UITableView!
     
     @IBOutlet weak var templateNameTextfield: UITextField!
     
     @IBAction func returnedFromAddEditVC (segue:UIStoryboardSegue) {
         print("Start")
         print(template?.finances)
-        dao.update(self.title!, templateToUpdate: template!)
-
+        dao.update(template!)
         sortAndPlaceFinances()
-        self.expensesTableView.reloadData()
-        self.incomeTableView.reloadData()
+        financesTableView.reloadData()
+
     }
     
     
@@ -44,7 +41,7 @@ class TemplateDetailViewController: UIViewController, UITableViewDataSource, UIT
             } else if dao.getAllTemplates().count > 0{
                 print("Test")
                 template = dao.getAllTemplates()[0]
-                dao.update(templateNameTextfield.text!, templateToUpdate: template!)
+                dao.update(template!)
                 setTitle()
                 print(dao.getAllTemplates().count)
             }
@@ -54,50 +51,37 @@ class TemplateDetailViewController: UIViewController, UITableViewDataSource, UIT
     
     override func viewDidLoad() {
         
-        sortAndPlaceFinances()
+        self.title = "Skabelon"
         
-//        print("Number of finances: \(dao.getAllFinances().count)")
-//        
-//        print("Number of templates: \(dao.getAllTemplates().count)")
-//
-//        for finance in dao.getAllFinances() {
-//            if finance is Income {
-//                print("We got an income")
-//            }
-//            if finance is Expense {
-//                print("We got an expense")
-//            }
-//        }
+        financesTableView.delegate = self
+        financesTableView.dataSource = self
         
-        incomeTableView.delegate = self
-        incomeTableView.dataSource = self
-        incomeTableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "incomecell")
-        expensesTableView.delegate = self
-        expensesTableView.dataSource = self
-        expensesTableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "expensecell")
-        
-        template = dao.getAllTemplates().first
+        if dao.getAllTemplates().count == 0 {
+            save()
+        } else {
+            template = dao.getAllTemplates().first
+        }
         
         super.viewDidLoad()
         
         self.view.setDefaultBackground()
         
-        self.title = template?.title
+        sortAndPlaceFinances()
         
     }
     
     func sortAndPlaceFinances () {
-        for finance in dao.getAllFinances() {
+        finances.removeAll()
+        for finance in dao.getAllFinancesFromTemplate() {
             if finance is Income {
                 let convertedFinance = finance as! Income
-                incomes.append(convertedFinance)
+                finances.append(convertedFinance)
             }
             if finance is Expense {
                 let convertedFinance = finance as! Expense
-                expenses.append(convertedFinance)
+                finances.append(convertedFinance)
             }
         }
-
     }
 
     override func didReceiveMemoryWarning() {
@@ -106,9 +90,7 @@ class TemplateDetailViewController: UIViewController, UITableViewDataSource, UIT
     }
     
     func save() {
-        template = dao.createTemplate()
-        template!.title = templateNameTextfield.text
-        
+        template = dao.createTemplate()        
         dao.save()
     }
     
@@ -137,38 +119,32 @@ class TemplateDetailViewController: UIViewController, UITableViewDataSource, UIT
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        var count:Int?
-        
-        if tableView == self.incomeTableView {
-            count = incomes.count
-        }
-        
-        if tableView == self.expensesTableView {
-            count = expenses.count
-        }
-        
-        return count!
+        return finances.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("financecell", forIndexPath: indexPath) as! BudgettoCell
+        let finance = finances[indexPath.row]
         
-        var cell:UITableViewCell?
+        let amount = (finance.amount?.stringValue != nil ? finance.amount?.stringValue : "")!
+
+        if finance is Expense {
+            cell.descLabel.text = finance.desc
+            cell.amountLabel.text = " - " + amount + " kr"
+            cell.dateLabel.text = finance.date?.formattedDate()
+            cell.amountLabel.textColor = UIColor.redColor()
+        }
         
-        if tableView == self.incomeTableView {
-            cell = tableView.dequeueReusableCellWithIdentifier("incomecell", forIndexPath: indexPath)
-            let specificIncome = incomes[indexPath.row]
-            cell!.textLabel!.text = specificIncome.desc
+        if finance is Income {
+            cell.descLabel.text = finance.desc
+            cell.amountLabel.text = " + " + amount + " kr"
+            cell.dateLabel.text = finance.date?.formattedDate()
+            cell.amountLabel.textColor = UIColor.greenColor()
             
         }
         
-        if tableView == self.expensesTableView {
-            cell = tableView.dequeueReusableCellWithIdentifier("expensecell", forIndexPath: indexPath)
-            let specificExpense = expenses[indexPath.row]
-            cell!.textLabel!.text = specificExpense.desc
-            
-        }
-        
-        return cell!
+        return cell
+
     }
 
 
