@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="HVf-JI-LFl">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="HVf-JI-LFl">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -296,13 +296,13 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="GbG-K3-B0U">
                                 <rect key="frame" x="10" y="184" width="125" height="41"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Brugt:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZcL-CN-Bbo">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Brugt:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZcL-CN-Bbo">
                                         <rect key="frame" x="0.0" y="0.0" width="47" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0 kr." lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CSV-kS-0DG">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="0 kr." lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CSV-kS-0DG">
                                         <rect key="frame" x="0.0" y="21" width="125" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="125" id="BLE-F1-EJ8"/>
@@ -325,13 +325,13 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="waC-WA-G28">
                                 <rect key="frame" x="465" y="184" width="125" height="41"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Tilbage:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pDB-4J-4tQ">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Tilbage:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pDB-4J-4tQ">
                                         <rect key="frame" x="0.0" y="0.0" width="125" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="+ 0 kr" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C6a-zR-hlP">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="+ 0 kr" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C6a-zR-hlP">
                                         <rect key="frame" x="0.0" y="21" width="125" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="125" id="qEt-MH-Ou0"/>
@@ -611,14 +611,60 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" id="4NV-pm-2Bj"/>
+                    <navigationItem key="navigationItem" id="4NV-pm-2Bj">
+                        <barButtonItem key="rightBarButtonItem" title="Info" id="tag-Da-aUd">
+                            <connections>
+                                <action selector="popover:" destination="SNs-Mj-8dI" id="w1t-4B-Sqj"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="financesTableView" destination="hQ3-22-tbb" id="XKO-Z8-Cao"/>
+                        <segue destination="5te-iq-5YC" kind="popoverPresentation" identifier="showpopover" popoverAnchorBarButtonItem="tag-Da-aUd" id="doe-ix-tak">
+                            <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                        </segue>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dre-1c-dZd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1217" y="1910"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="mep-dq-YAR">
+            <objects>
+                <viewController id="5te-iq-5YC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5Ee-Wz-i50"/>
+                        <viewControllerLayoutGuide type="bottom" id="nLd-7G-8Eu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Kyd-Ux-lFN">
+                        <rect key="frame" x="0.0" y="0.0" width="200" height="150"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="d4v-Pb-kLh">
+                                <rect key="frame" x="6" y="0.0" width="188" height="150"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Skabelon bruges til at definere dit månedlige budget. Indtast dine faste indtægter og udgifter her. Indtægter/udgifter vil blive oprettet i Finanssektion i starten af hver måned. </string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="d4v-Pb-kLh" firstAttribute="leading" secondItem="Kyd-Ux-lFN" secondAttribute="leadingMargin" constant="-10" id="SLW-Oa-xmO"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="d4v-Pb-kLh" secondAttribute="trailing" constant="-10" id="Xdj-Se-FfP"/>
+                            <constraint firstItem="nLd-7G-8Eu" firstAttribute="top" secondItem="d4v-Pb-kLh" secondAttribute="bottom" id="aCB-Mj-J0L"/>
+                            <constraint firstItem="d4v-Pb-kLh" firstAttribute="top" secondItem="5Ee-Wz-i50" secondAttribute="bottom" id="gHa-9C-bWj"/>
+                        </constraints>
+                    </view>
+                    <value key="contentSizeForViewInPopover" type="size" width="190" height="150"/>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="200" height="150"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="M0k-he-exq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1725" y="1408"/>
         </scene>
         <!--Template Add Edit View Controller-->
         <scene sceneID="pJL-Kg-fCE">

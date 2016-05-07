@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TemplateDetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class TemplateDetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIPopoverPresentationControllerDelegate {
     
     let dao = DAO.instance
     
@@ -29,6 +29,11 @@ class TemplateDetailViewController: UIViewController, UITableViewDataSource, UIT
 
     }
     
+    @IBAction func popover(sender: AnyObject) {
+        
+        self.performSegueWithIdentifier("showpopover", sender: self)
+        
+    }
     
     @IBAction func saveButton(sender: AnyObject) {
         if templateNameTextfield.text != "" {
@@ -92,29 +97,51 @@ class TemplateDetailViewController: UIViewController, UITableViewDataSource, UIT
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let destVC = segue.destinationViewController as! TemplateAddEditViewController
-        destVC.templateBeingEdited = template
         
-        if segue.identifier == "createIncome" {
+        if segue.identifier == "showpopover" {
+            let vc = segue.destinationViewController as UIViewController
+            let contoller = vc.popoverPresentationController
+            if contoller != nil {
+                contoller?.delegate = self
+            }
+        }
+        
+        if segue.identifier == "createIncome" || segue.identifier == "createExpense" || segue.identifier == "editFinanceSegue" {
+            let destVC = segue.destinationViewController as! TemplateAddEditViewController
+        
+            if segue.identifier == "createIncome" {
             destVC.titleForScene = "Ny indtægt"
             destVC.creatingIncome = true
+            destVC.templateBeingEdited = template
+
             
         } else if segue.identifier == "createExpense" {
             destVC.titleForScene = "Ny udgift"
             destVC.creatingExpense = true
+            destVC.templateBeingEdited = template
+
+                
         } else if segue.identifier == "editFinanceSegue" {
-            if finances[(financesTableView.indexPathForSelectedRow?.row)!] is Expense {
+                
+                destVC.templateBeingEdited = template
+                
+                if finances[(financesTableView.indexPathForSelectedRow?.row)!] is Expense {
                 destVC.expenseBeingEdited = finances[(financesTableView.indexPathForSelectedRow?.row)!] as? Expense
                 destVC.titleForScene = "Rediger udgift"
                 destVC.editingExpense = true
-            }
-            if finances[(financesTableView.indexPathForSelectedRow?.row)!] is Income {
+                }
+                if finances[(financesTableView.indexPathForSelectedRow?.row)!] is Income {
                 destVC.incomeBeingEdited = finances[(financesTableView.indexPathForSelectedRow?.row)!] as? Income
                 destVC.titleForScene = "Rediger indtægt"
                 destVC.editingIncome = true
-            }
+                }
             
+            }
         }
+    }
+    
+    func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle {
+        return .None
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
