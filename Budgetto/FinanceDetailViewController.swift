@@ -105,7 +105,11 @@ class FinanceDetailViewController: UIViewController, UIPickerViewDelegate, UIPic
     }
     
     @IBAction func didTapSave(sender: AnyObject) {
-        save()
+        let saved = save()
+        
+        if saved {
+            self.navigationController?.popViewControllerAnimated(true)
+        }
     }
     
     func datePickerValueChanged(sender:UIDatePicker) {
@@ -125,8 +129,13 @@ class FinanceDetailViewController: UIViewController, UIPickerViewDelegate, UIPic
     }
     
     
-    func save() {
-        let amount = Double( amountTextfield.text!.stringByReplacingOccurrencesOfString(".", withString: "") )
+    func save() -> Bool {
+        if amountTextfield.text == nil || amountTextfield.text == "" {
+            return false
+        }
+        
+        // Remove everything that is not a digit from the amount
+        let amount = Double( (amountTextfield.text?.componentsSeparatedByCharactersInSet(NSCharacterSet.decimalDigitCharacterSet().invertedSet).joinWithSeparator(""))! )
         
         if isEditingExpense() {
             expenseBeingEdited!.desc = descriptionTextfield.text
@@ -155,6 +164,8 @@ class FinanceDetailViewController: UIViewController, UIPickerViewDelegate, UIPic
         dao.save()
         
         reset()
+        
+        return true
     }
     
     func reset() {

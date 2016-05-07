@@ -35,7 +35,9 @@ class FinanceController: UIViewController, UITableViewDelegate, UITableViewDataS
     func loadData() {
         let month = MonthViewController.selectedMonth
         
-        self.finances = month?.finances?.allObjects as! [Finance]
+        if month != nil {
+            self.finances = dao.getAllFinancesInMonth(month!)
+        }
     }
 
     override func viewDidLoad() {

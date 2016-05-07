@@ -24,8 +24,10 @@ class DAO {
         return []
     }
     
-    func getAllFinances() -> [Finance] {
+    func getAllFinancesInMonth(month: Month) -> [Finance] {
         let request = NSFetchRequest(entityName: "Finance")
+        request.sortDescriptors = [NSSortDescriptor(key: "date", ascending: false)]
+        request.predicate = NSPredicate(format: "month = %@", month)
         
         do {
             return try managedContext.executeFetchRequest( request ) as! [Finance]
@@ -116,15 +118,6 @@ class DAO {
         do {
             try managedContext.save()
         } catch {}
-    }
-    
-    func update(templateToUpdate : Template) {
-        let template = templateToUpdate as NSManagedObject
-        do {
-            try template.managedObjectContext?.save()
-        } catch {
-            print(error)
-        }
     }
     
     private init() {}

@@ -57,8 +57,10 @@ class OverviewViewController: UIViewController, ReloadView {
     
     func loadData() {
         selectedMonth = MonthViewController.selectedMonth
-        self.finances = selectedMonth?.finances?.allObjects as! [Finance]
-        print("selectedMonth: \(selectedMonth?.date)")
+        
+        if(selectedMonth != nil) {
+            self.finances = dao.getAllFinancesInMonth(selectedMonth!)
+        }
     }
     
     func reloadView() {

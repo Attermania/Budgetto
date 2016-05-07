@@ -13,43 +13,19 @@ class TemplateDetailViewController: UIViewController, UITableViewDataSource, UIT
     let dao = DAO.instance
     
     var template: Template?
-    
-    var finances: [Finance] = []
-    
-    @IBOutlet weak var financesTableView: UITableView!
-    
-    @IBOutlet weak var templateNameTextfield: UITextField!
-    
-    @IBAction func returnedFromAddEditVC (segue:UIStoryboardSegue) {
-        print("Start")
-        print(template?.finances)
-        dao.update(template!)
-        sortAndPlaceFinances()
-        financesTableView.reloadData()
 
-    }
     
     @IBAction func popover(sender: AnyObject) {
-        
         self.performSegueWithIdentifier("showpopover", sender: self)
-        
     }
     
-    @IBAction func saveButton(sender: AnyObject) {
-        if templateNameTextfield.text != "" {
-            if dao.getAllTemplates().count == 0 {
-                save()
-                template = dao.getAllTemplates()[0]
-                //self.title = template?.title
-            } else if dao.getAllTemplates().count > 0{
-                print("Test")
-                template = dao.getAllTemplates()[0]
-                dao.update(template!)
-                print(dao.getAllTemplates().count)
-            }
-
+    var finances: [Finance] = [] {
+        didSet {
+            self.financesTableView.reloadData()
         }
     }
+    
+    @IBOutlet weak var financesTableView: UITableView!
     
     override func viewDidLoad() {
         
@@ -58,32 +34,16 @@ class TemplateDetailViewController: UIViewController, UITableViewDataSource, UIT
         financesTableView.delegate = self
         financesTableView.dataSource = self
         
-        if dao.getAllTemplates().count == 0 {
-            save()
-        } else {
-            template = dao.getAllTemplates().first
-        }
+        createTemplateIfNonExistant()
         
         super.viewDidLoad()
         
         self.view.setDefaultBackground()
         
-        sortAndPlaceFinances()
-        
     }
     
-    func sortAndPlaceFinances () {
-        finances.removeAll()
-        for finance in dao.getAllFinancesFromTemplate() {
-            if finance is Income {
-                let convertedFinance = finance as! Income
-                finances.append(convertedFinance)
-            }
-            if finance is Expense {
-                let convertedFinance = finance as! Expense
-                finances.append(convertedFinance)
-            }
-        }
+    override func viewWillAppear(animated: Bool) {
+        self.finances = dao.getAllFinancesFromTemplate()
     }
 
     override func didReceiveMemoryWarning() {
@@ -91,9 +51,14 @@ class TemplateDetailViewController: UIViewController, UITableViewDataSource, UIT
         // Dispose of any resources that can be recreated.
     }
     
-    func save() {
-        template = dao.createTemplate()
-        dao.save()
+    func createTemplateIfNonExistant() {
+        
+        if dao.getAllTemplates().count == 0 {
+            template = dao.createTemplate()
+            dao.save()
+        } else {
+            template = dao.getAllTemplates().first
+        }
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

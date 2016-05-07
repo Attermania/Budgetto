@@ -33,35 +33,48 @@ class TemplateAddEditViewController: UIViewController {
     }
     
     @IBAction func addFinanceButton(sender: AnyObject) {
-        if validateTextfields() != false {
-            if creatingIncome == true {
-                // Create income and set values from textfields
-                let income = dao.createIncome()
-                income.desc = descriptionTextfield.text!
-                income.amount = Double(textfieldAmount.text!)
-                // Connect income to template.
-                income.template = templateBeingEdited
-                
-                
-            } else if creatingExpense == true {
-                // Create expense and set values from textfields
-                let expense = dao.createExpense()
-                expense.desc = descriptionTextfield.text!
-                expense.amount = Double(textfieldAmount.text!)
-                // Connect expense to template
-                expense.template = templateBeingEdited
-                
-            } else if editingIncome == true {
-                incomeBeingEdited?.desc = descriptionTextfield.text
-                incomeBeingEdited?.amount = Double(textfieldAmount.text!)
-                dao.save()
-            } else if editingExpense == true {
-                expenseBeingEdited?.desc = descriptionTextfield.text
-                expenseBeingEdited?.amount = Double(textfieldAmount.text!)
-                dao.save()
-            }
-
+        let saved = save()
+        
+        if saved {
+            self.navigationController?.popViewControllerAnimated(true)
         }
+    }
+    
+    func save() -> Bool {
+        
+        if !validateTextfields() {
+            return false
+        }
+        
+        // Remove everything that is not a digit from the amount
+        let amount = Double( (textfieldAmount.text?.componentsSeparatedByCharactersInSet(NSCharacterSet.decimalDigitCharacterSet().invertedSet).joinWithSeparator(""))! )
+        
+        if creatingIncome == true {
+            // Create income and set values from textfields
+            let income = dao.createIncome()
+            income.desc = descriptionTextfield.text!
+            income.amount = amount
+            // Connect income to template.
+            income.template = templateBeingEdited
+        } else if creatingExpense == true {
+            // Create expense and set values from textfields
+            let expense = dao.createExpense()
+            expense.desc = descriptionTextfield.text!
+            expense.amount = amount
+            // Connect expense to template
+            expense.template = templateBeingEdited
+            
+        } else if editingIncome == true {
+            incomeBeingEdited?.desc = descriptionTextfield.text
+            incomeBeingEdited?.amount = amount
+        } else if editingExpense == true {
+            expenseBeingEdited?.desc = descriptionTextfield.text
+            expenseBeingEdited?.amount = amount
+        }
+        
+        dao.save()
+        
+        return true
     }
     
     override func viewDidLoad() {
@@ -98,9 +111,11 @@ class TemplateAddEditViewController: UIViewController {
     
     func validateTextfields () -> Bool {
         var allFieldsAreSet = false
+        
         if descriptionTextfield.text != "" && textfieldAmount.text != "" {
             allFieldsAreSet = true
         }
+        
         return allFieldsAreSet
     }
     
