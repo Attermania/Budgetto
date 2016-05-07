@@ -161,14 +161,12 @@ class TemplateDetailViewController: UIViewController, UITableViewDataSource, UIT
         if finance is Expense {
             cell.descLabel.text = finance.desc
             cell.amountLabel.text = " - " + amount + " kr"
-            cell.dateLabel.text = finance.date?.formattedDate()
             cell.amountLabel.textColor = UIColor.redColor()
         }
         
         if finance is Income {
             cell.descLabel.text = finance.desc
             cell.amountLabel.text = " + " + amount + " kr"
-            cell.dateLabel.text = finance.date?.formattedDate()
             cell.amountLabel.textColor = UIColor.greenColor()
             
         }
