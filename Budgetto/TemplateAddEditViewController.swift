@@ -28,6 +28,10 @@ class TemplateAddEditViewController: UIViewController {
     
     var templateBeingEdited: Template?
 
+    @IBAction func amountEditingChanged(sender: AnyObject) {
+        formatAmount()
+    }
+    
     @IBAction func addFinanceButton(sender: AnyObject) {
         if validateTextfields() != false {
             if creatingIncome == true {
@@ -98,6 +102,26 @@ class TemplateAddEditViewController: UIViewController {
             allFieldsAreSet = true
         }
         return allFieldsAreSet
+    }
+    
+    private func formatAmount() {
+        // If there is nothing in the textfield, we can silently return
+        if textfieldAmount.text == nil || textfieldAmount.text == "" {
+            return
+        }
+        
+        // Remove everything that is not a digit from the amount
+        var textFieldText = textfieldAmount.text?.componentsSeparatedByCharactersInSet(NSCharacterSet.decimalDigitCharacterSet().invertedSet).joinWithSeparator("")
+        
+        // Remove anything over 6 digits
+        textFieldText = textFieldText?.characters.count > 6 ? textFieldText?.substringToIndex(textFieldText!.startIndex.advancedBy(6)) : textFieldText
+        
+        // Format thousands with seperator
+        let formatter:NSNumberFormatter = NSNumberFormatter()
+        formatter.numberStyle = NSNumberFormatterStyle.DecimalStyle
+        let formattedOutput = formatter.stringFromNumber(Int(textFieldText!)!)
+        
+        textfieldAmount.text = formattedOutput
     }
 
 
