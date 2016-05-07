@@ -85,7 +85,7 @@ class FinanceDetailViewController: UIViewController, UIPickerViewDelegate, UIPic
             amountTextfield.text = expenseBeingEdited?.amount?.stringValue
             title = titleForView
             dateTextfield.text = expenseBeingEdited?.date?.formattedDate()
-            
+            selectedDate = (expenseBeingEdited?.date)!
             formatAmount()
             
             return
@@ -94,7 +94,7 @@ class FinanceDetailViewController: UIViewController, UIPickerViewDelegate, UIPic
             amountTextfield.text = incomeBeingEdited?.amount?.stringValue
             title = titleForView
             dateTextfield.text = incomeBeingEdited?.date?.formattedDate()
-            
+            selectedDate = (incomeBeingEdited?.date)!
             formatAmount()
             
             return
