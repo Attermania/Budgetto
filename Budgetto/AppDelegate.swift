@@ -22,13 +22,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func loadMonth() {
         
+        let calendar = NSCalendar.currentCalendar()
+        calendar.timeZone = NSTimeZone(name: "UTC")!
+        let components: NSDateComponents = calendar.components([.Year, .Month], fromDate: NSDate())
+        
         var latestMonth = dao.getLatestMonth()
         
         // If this is the first time that we are launching the app, there is no month, so we'll create one
         if latestMonth == nil {
             let newMonth = dao.createMonth()
-            newMonth.date = NSDate()
-            
+            newMonth.date = calendar.dateFromComponents(components)
             dao.save()
             latestMonth = newMonth
         } else { // Else we'll compare the latest month in database with the current month, and if the current month is greater, we create the new month in db
@@ -38,7 +41,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             if dateFormatter.stringFromDate(currentMonth) != dateFormatter.stringFromDate((latestMonth?.date)!) {
                 let newMonth = dao.createMonth()
-                newMonth.date = NSDate()
+                newMonth.date = calendar.dateFromComponents(components)
                 
                 let financesFromTemplate = dao.getAllFinancesFromTemplate()
                 
