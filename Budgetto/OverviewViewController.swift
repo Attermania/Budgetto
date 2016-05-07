@@ -48,7 +48,7 @@ class OverviewViewController: UIViewController, ReloadView {
         // Do any additional setup after loading the view, typically from a nib.
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewWillAppear(animated: Bool) {
         loadData()
     }
     
