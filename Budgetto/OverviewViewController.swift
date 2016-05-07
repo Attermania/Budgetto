@@ -121,8 +121,7 @@ class OverviewViewController: UIViewController, ReloadView {
         disposableIncomeDay.text = "\(getAmountToSpendDaily()) kr."
         
         // average label
-        let days = calendar.component(.Day, fromDate: NSDate())
-        averageUsedLabel.text = "Du har i gennemsnit brugt \(getDailySpent()) kroner hver dag de sidste \(days) dage"
+        averageUsedLabel.text = "Du har i gennemsnit brugt \(getDailySpent()) kroner hver dag denne måned."
     }
     
     
