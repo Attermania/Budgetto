@@ -119,21 +119,21 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rRs-e5-qxq">
                                 <rect key="frame" x="10" y="481" width="580" height="30"/>
                                 <color key="backgroundColor" red="0.25490196078431371" green="0.48627450980392156" blue="0.68627450980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Ny Udgift">
+                                <state key="normal" title="Tilføj indtægt">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="h54-oy-Iwc" kind="show" identifier="createExpenseSegue" id="2Pn-ho-IfH"/>
+                                    <segue destination="h54-oy-Iwc" kind="show" identifier="createIncomeSegue" id="2Pn-ho-IfH"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cx1-uR-Bx2">
                                 <rect key="frame" x="10" y="516" width="580" height="30"/>
                                 <color key="backgroundColor" red="0.25490196079999999" green="0.48627450979999998" blue="0.68627450980000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Ny Indtægt">
+                                <state key="normal" title="Tilføj udgift">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="h54-oy-Iwc" kind="show" identifier="createIncomeSegue" id="ANm-nr-o0F"/>
+                                    <segue destination="h54-oy-Iwc" kind="show" identifier="createExpenseSegue" id="ANm-nr-o0F"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -832,7 +832,7 @@
         <image name="template" width="22" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="2Pn-ho-IfH"/>
         <segue reference="viw-B0-J9t"/>
+        <segue reference="ANm-nr-o0F"/>
     </inferredMetricsTieBreakers>
 </document>

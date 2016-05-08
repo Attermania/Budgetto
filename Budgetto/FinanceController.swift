@@ -51,7 +51,6 @@ class FinanceController: UIViewController, UITableViewDelegate, UITableViewDataS
         expensesTableview.dataSource = self
         expensesTableview.separatorColor = UIColor.clearColor()
         
-        self.view.setDefaultBackground()
     }
     
     override func viewWillAppear(animated: Bool) {

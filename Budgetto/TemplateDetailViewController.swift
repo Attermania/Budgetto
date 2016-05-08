@@ -38,7 +38,6 @@ class TemplateDetailViewController: UIViewController, UITableViewDataSource, UIT
         
         super.viewDidLoad()
         
-        self.view.setDefaultBackground()
         
     }
     

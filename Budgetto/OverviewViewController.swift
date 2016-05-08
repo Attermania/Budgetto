@@ -44,7 +44,6 @@ class OverviewViewController: UIViewController, ReloadView {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.setDefaultBackground()
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         monthSelectionButton = appDelegate.monthSelectionButton
         

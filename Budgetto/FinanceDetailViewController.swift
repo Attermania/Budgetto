@@ -50,7 +50,6 @@ class FinanceDetailViewController: UIViewController, UIPickerViewDelegate, UIPic
         super.viewDidLoad()
         datePickerView.delegate = self
         datePickerView.dataSource = self
-        self.view.setDefaultBackground()
         createDaysArray()
         calendar.timeZone = NSTimeZone(name: "UTC")!
 

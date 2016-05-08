@@ -75,7 +75,6 @@ class TemplateAddEditViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.setDefaultBackground()
 
         self.title = titleForScene
         
