@@ -703,13 +703,11 @@
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="d4v-Pb-kLh">
                                 <rect key="frame" x="6" y="0.0" width="188" height="150"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">Skabelon bruges til at definere dit månedlige budget. Indtast dine faste indtægter og udgifter her. Indtægter/udgifter vil blive oprettet i Finanssektion i starten af hver måned. </string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="d4v-Pb-kLh" firstAttribute="leading" secondItem="Kyd-Ux-lFN" secondAttribute="leadingMargin" constant="-10" id="SLW-Oa-xmO"/>
                             <constraint firstAttribute="trailingMargin" secondItem="d4v-Pb-kLh" secondAttribute="trailing" constant="-10" id="Xdj-Se-FfP"/>
