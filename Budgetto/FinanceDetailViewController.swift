@@ -13,7 +13,7 @@ class FinanceDetailViewController: UIViewController, UIPickerViewDelegate, UIPic
     let dao = DAO.instance
     
     @IBOutlet weak var descriptionTextfield: UITextField!
-    @IBOutlet weak var amountTextfield: UITextField!
+    @IBOutlet weak var amountTextfield: AmountTextField!
     @IBOutlet weak var dateTextfield: UITextField!
     let datePickerView:UIPickerView = UIPickerView()
     let calendar = NSCalendar.currentCalendar()
@@ -101,9 +101,17 @@ class FinanceDetailViewController: UIViewController, UIPickerViewDelegate, UIPic
         
     }
     
+    func validForSaving() -> Bool {
+        if descriptionTextfield.text == nil || descriptionTextfield.text == "" || amountTextfield.asDouble() == nil {
+            return false
+        }
+        
+        return true
+    }
+    
     
     func save() -> Bool {
-        if amountTextfield.text == nil || amountTextfield.text == "" {
+        if !validForSaving() {
             return false
         }
         
