@@ -50,12 +50,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                         let newIncome: Finance = dao.createIncome()
                         newIncome.amount = finance.amount
                         newIncome.desc = finance.desc
+                        newIncome.date = calendar.dateFromComponents(components)
                         seperatedFinances.append(newIncome)
                     }
-                    if finance is Expense {
+                    else if finance is Expense {
                         let newExpense: Finance = dao.createExpense()
                         newExpense.amount = finance.amount
                         newExpense.desc = finance.desc
+                        newExpense.date = calendar.dateFromComponents(components)
                         seperatedFinances.append(newExpense)
                     }
                 }
