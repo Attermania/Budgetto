@@ -12,7 +12,7 @@ import CoreData
 class TemplateAddEditViewController: UIViewController {
     
     @IBOutlet weak var descriptionTextfield: UITextField!
-    @IBOutlet weak var textfieldAmount: UITextField!
+    @IBOutlet weak var textfieldAmount: AmountTextField!
     
     var titleForScene = ""
     
@@ -27,10 +27,6 @@ class TemplateAddEditViewController: UIViewController {
     var expenseBeingEdited: Expense?
     
     var templateBeingEdited: Template?
-
-    @IBAction func amountEditingChanged(sender: AnyObject) {
-        formatAmount()
-    }
     
     @IBAction func addFinanceButton(sender: AnyObject) {
         let saved = save()
@@ -46,8 +42,7 @@ class TemplateAddEditViewController: UIViewController {
             return false
         }
         
-        // Remove everything that is not a digit from the amount
-        let amount = Double( (textfieldAmount.text?.componentsSeparatedByCharactersInSet(NSCharacterSet.decimalDigitCharacterSet().invertedSet).joinWithSeparator(""))! )
+        let amount = textfieldAmount.asDouble()!
         
         if creatingIncome == true {
             // Create income and set values from textfields
@@ -110,34 +105,12 @@ class TemplateAddEditViewController: UIViewController {
     }
     
     func validateTextfields () -> Bool {
-        var allFieldsAreSet = false
         
-        if descriptionTextfield.text != "" && textfieldAmount.text != "" {
-            allFieldsAreSet = true
+        if descriptionTextfield.text == "" || textfieldAmount.asDouble() == nil {
+            return true
         }
         
-        return allFieldsAreSet
+        return true
     }
-    
-    private func formatAmount() {
-        // If there is nothing in the textfield, we can silently return
-        if textfieldAmount.text == nil || textfieldAmount.text == "" {
-            return
-        }
-        
-        // Remove everything that is not a digit from the amount
-        var textFieldText = textfieldAmount.text?.componentsSeparatedByCharactersInSet(NSCharacterSet.decimalDigitCharacterSet().invertedSet).joinWithSeparator("")
-        
-        // Remove anything over 6 digits
-        textFieldText = textFieldText?.characters.count > 6 ? textFieldText?.substringToIndex(textFieldText!.startIndex.advancedBy(6)) : textFieldText
-        
-        // Format thousands with seperator
-        let formatter:NSNumberFormatter = NSNumberFormatter()
-        formatter.numberStyle = NSNumberFormatterStyle.DecimalStyle
-        let formattedOutput = formatter.stringFromNumber(Int(textFieldText!)!)
-        
-        textfieldAmount.text = formattedOutput
-    }
-
 
 }

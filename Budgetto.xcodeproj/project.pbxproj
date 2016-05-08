@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B41B0FB71CCB926800FDA0F9 /* DAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41B0FB61CCB926800FDA0F9 /* DAO.swift */; };
+		B43577521CDEBF9A0071CFBC /* AmountTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B43577511CDEBF9A0071CFBC /* AmountTextField.swift */; };
 		B495C4E21CCCECB3000A4833 /* Finance+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B495C4D81CCCECB3000A4833 /* Finance+CoreDataProperties.swift */; };
 		B495C4E31CCCECB3000A4833 /* Finance.swift in Sources */ = {isa = PBXBuildFile; fileRef = B495C4D91CCCECB3000A4833 /* Finance.swift */; };
 		B495C4E41CCCECB3000A4833 /* Income+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B495C4DA1CCCECB3000A4833 /* Income+CoreDataProperties.swift */; };
@@ -44,6 +45,7 @@
 
 /* Begin PBXFileReference section */
 		B41B0FB61CCB926800FDA0F9 /* DAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAO.swift; sourceTree = "<group>"; };
+		B43577511CDEBF9A0071CFBC /* AmountTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AmountTextField.swift; sourceTree = "<group>"; };
 		B495C4D81CCCECB3000A4833 /* Finance+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Finance+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		B495C4D91CCCECB3000A4833 /* Finance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Finance.swift; sourceTree = "<group>"; };
 		B495C4DA1CCCECB3000A4833 /* Income+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Income+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 		B41B0FB41CCB8EE000FDA0F9 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				B43577501CDEBF690071CFBC /* Misc */,
 				B41B0FF61CCBD77A00FDA0F9 /* Finances */,
 				B41B0FF71CCBD7A800FDA0F9 /* Overview */,
 				B41B0FF51CCBD75700FDA0F9 /* Templates */,
@@ -160,6 +163,14 @@
 				F98ED7431CC639F10013111A /* MonthSelectionButton.swift */,
 			);
 			name = Month;
+			sourceTree = "<group>";
+		};
+		B43577501CDEBF690071CFBC /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				B43577511CDEBF9A0071CFBC /* AmountTextField.swift */,
+			);
+			name = Misc;
 			sourceTree = "<group>";
 		};
 		B4CD632E1CB3B63100CEDD58 /* Models */ = {
@@ -290,6 +301,7 @@
 				F98C76031CB5203F00944144 /* TemplateAddEditViewController.swift in Sources */,
 				F9A483811CD65062002294F1 /* OverviewBar.swift in Sources */,
 				B4EC7A4E1CB29D9700B1F613 /* OverviewViewController.swift in Sources */,
+				B43577521CDEBF9A0071CFBC /* AmountTextField.swift in Sources */,
 				B41B0FB71CCB926800FDA0F9 /* DAO.swift in Sources */,
 				F93255151CC9849B0001F3CD /* MonthViewController.swift in Sources */,
 				B495C4E41CCCECB3000A4833 /* Income+CoreDataProperties.swift in Sources */,

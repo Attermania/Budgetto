@@ -19,31 +19,6 @@ class FinanceDetailViewController: UIViewController, UIPickerViewDelegate, UIPic
     let calendar = NSCalendar.currentCalendar()
     let currentDate = MonthViewController.selectedMonth?.date
     var daysArr = [String]()
-
-    
-    @IBAction func amountTextFieldDidChange(sender: AnyObject) {
-        formatAmount()
-    }
-    
-    private func formatAmount() {
-        // If there is nothing in the textfield, we can silently return
-        if amountTextfield.text == nil || amountTextfield.text == "" {
-            return
-        }
-        
-        // Remove everything that is not a digit from the amount
-        var textFieldText = amountTextfield.text?.componentsSeparatedByCharactersInSet(NSCharacterSet.decimalDigitCharacterSet().invertedSet).joinWithSeparator("")
-        
-        // Remove anything over 6 digits
-        textFieldText = textFieldText?.characters.count > 6 ? textFieldText?.substringToIndex(textFieldText!.startIndex.advancedBy(6)) : textFieldText
-        
-        // Format thousands with seperator
-        let formatter:NSNumberFormatter = NSNumberFormatter()
-        formatter.numberStyle = NSNumberFormatterStyle.DecimalStyle
-        let formattedOutput = formatter.stringFromNumber(Int(textFieldText!)!)
-        
-        amountTextfield.text = formattedOutput
-    }
     
     @IBAction func textfieldEditingDate(sender: UITextField) {
         
@@ -86,7 +61,6 @@ class FinanceDetailViewController: UIViewController, UIPickerViewDelegate, UIPic
             title = titleForView
             dateTextfield.text = expenseBeingEdited?.date?.formattedDate()
             selectedDate = (expenseBeingEdited?.date)!
-            formatAmount()
             
             return
         } else if isEditingIncome() {
@@ -95,7 +69,6 @@ class FinanceDetailViewController: UIViewController, UIPickerViewDelegate, UIPic
             title = titleForView
             dateTextfield.text = incomeBeingEdited?.date?.formattedDate()
             selectedDate = (incomeBeingEdited?.date)!
-            formatAmount()
             
             return
         }
