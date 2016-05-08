@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="HVf-JI-LFl">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="HVf-JI-LFl">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -38,7 +38,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="45" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nYo-UL-vmc">
-                                <rect key="frame" x="5" y="0.0" width="590" height="476"/>
+                                <rect key="frame" x="5" y="0.0" width="590" height="466"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="465" id="HBM-fV-mdW"/>
@@ -116,21 +116,25 @@
                                     </mask>
                                 </variation>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rRs-e5-qxq">
-                                <rect key="frame" x="10" y="481" width="580" height="30"/>
-                                <color key="backgroundColor" red="0.25490196078431371" green="0.48627450980392156" blue="0.68627450980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rRs-e5-qxq" customClass="BudgettoUIButton" customModule="Budgetto" customModuleProvider="target">
+                                <rect key="frame" x="182" y="471" width="236" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="236" id="1vz-4H-iyD"/>
+                                </constraints>
                                 <state key="normal" title="Tilføj indtægt">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <segue destination="h54-oy-Iwc" kind="show" identifier="createIncomeSegue" id="2Pn-ho-IfH"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cx1-uR-Bx2">
-                                <rect key="frame" x="10" y="516" width="580" height="30"/>
-                                <color key="backgroundColor" red="0.25490196079999999" green="0.48627450979999998" blue="0.68627450980000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cx1-uR-Bx2" customClass="BudgettoUIButton" customModule="Budgetto" customModuleProvider="target">
+                                <rect key="frame" x="182" y="511" width="236" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="236" id="Y8c-0t-m9H"/>
+                                </constraints>
                                 <state key="normal" title="Tilføj udgift">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <segue destination="h54-oy-Iwc" kind="show" identifier="createExpenseSegue" id="ANm-nr-o0F"/>
@@ -140,7 +144,8 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="rRs-e5-qxq" secondAttribute="trailing" constant="-10" id="0QF-4u-bfg"/>
-                            <constraint firstItem="Cx1-uR-Bx2" firstAttribute="top" secondItem="rRs-e5-qxq" secondAttribute="bottom" constant="5" id="5co-KC-oI9"/>
+                            <constraint firstItem="Cx1-uR-Bx2" firstAttribute="top" secondItem="rRs-e5-qxq" secondAttribute="bottom" constant="10" id="5co-KC-oI9"/>
+                            <constraint firstItem="Cx1-uR-Bx2" firstAttribute="centerX" secondItem="xHQ-cE-Sj7" secondAttribute="centerX" id="5hj-z5-AKG"/>
                             <constraint firstAttribute="trailingMargin" secondItem="nYo-UL-vmc" secondAttribute="trailing" constant="-20" id="DvJ-35-obb"/>
                             <constraint firstItem="nYo-UL-vmc" firstAttribute="leading" secondItem="xHQ-cE-Sj7" secondAttribute="leading" constant="5" id="FQd-uN-QP4"/>
                             <constraint firstItem="rRs-e5-qxq" firstAttribute="leading" secondItem="xHQ-cE-Sj7" secondAttribute="leadingMargin" constant="-10" id="FWn-9m-lrF"/>
@@ -148,13 +153,14 @@
                             <constraint firstAttribute="trailing" secondItem="nYo-UL-vmc" secondAttribute="trailing" id="JWD-Yr-aDz"/>
                             <constraint firstItem="Cx1-uR-Bx2" firstAttribute="leading" secondItem="xHQ-cE-Sj7" secondAttribute="leadingMargin" constant="-10" id="JcO-yx-avO"/>
                             <constraint firstItem="nYo-UL-vmc" firstAttribute="leading" secondItem="xHQ-cE-Sj7" secondAttribute="leading" id="bLJ-5Z-fHf"/>
-                            <constraint firstItem="bu9-9n-woS" firstAttribute="top" secondItem="Cx1-uR-Bx2" secondAttribute="bottom" constant="5" id="bYZ-nH-cOm"/>
+                            <constraint firstItem="bu9-9n-woS" firstAttribute="top" secondItem="Cx1-uR-Bx2" secondAttribute="bottom" constant="10" id="bYZ-nH-cOm"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Cx1-uR-Bx2" secondAttribute="trailing" constant="-10" id="don-i3-Bsh"/>
                             <constraint firstItem="rRs-e5-qxq" firstAttribute="top" secondItem="nYo-UL-vmc" secondAttribute="bottom" constant="5" id="eqI-gz-NFr"/>
                             <constraint firstItem="nYo-UL-vmc" firstAttribute="leading" secondItem="xHQ-cE-Sj7" secondAttribute="leadingMargin" constant="-20" id="gH8-GV-C3R"/>
                             <constraint firstItem="Cx1-uR-Bx2" firstAttribute="top" secondItem="rRs-e5-qxq" secondAttribute="bottom" constant="10" id="tCw-ER-nRJ"/>
                             <constraint firstItem="nYo-UL-vmc" firstAttribute="top" secondItem="xHQ-cE-Sj7" secondAttribute="topMargin" id="vE7-YG-rAg"/>
                             <constraint firstAttribute="trailing" secondItem="nYo-UL-vmc" secondAttribute="trailing" constant="5" id="wbo-0q-zqP"/>
+                            <constraint firstItem="rRs-e5-qxq" firstAttribute="centerX" secondItem="xHQ-cE-Sj7" secondAttribute="centerX" id="xPe-kV-41D"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -162,7 +168,11 @@
                                 <exclude reference="JWD-Yr-aDz"/>
                                 <exclude reference="bLJ-5Z-fHf"/>
                                 <exclude reference="gH8-GV-C3R"/>
+                                <exclude reference="0QF-4u-bfg"/>
+                                <exclude reference="FWn-9m-lrF"/>
                                 <exclude reference="IvV-Gi-a3o"/>
+                                <exclude reference="JcO-yx-avO"/>
+                                <exclude reference="don-i3-Bsh"/>
                                 <exclude reference="tCw-ER-nRJ"/>
                             </mask>
                         </variation>
@@ -195,29 +205,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Beskrivelse" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gs6-ad-BnC">
-                                <rect key="frame" x="10" y="30" width="580" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Beskrivelse" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gs6-ad-BnC">
+                                <rect key="frame" x="10" y="74" width="580" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Beløb" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tso-PU-RHC" customClass="AmountTextField" customModule="Budgetto" customModuleProvider="target">
-                                <rect key="frame" x="10" y="70" width="580" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Beløb" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tso-PU-RHC" customClass="AmountTextField" customModule="Budgetto" customModuleProvider="target">
+                                <rect key="frame" x="10" y="114" width="580" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="04/04-2016" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SeV-Vy-gkw">
-                                <rect key="frame" x="10" y="110" width="580" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="04/04-2016" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SeV-Vy-gkw">
+                                <rect key="frame" x="10" y="154" width="580" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <action selector="textfieldEditingDate:" destination="h54-oy-Iwc" eventType="editingDidBegin" id="Egj-gg-BcT"/>
                                 </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rdh-NH-iib">
-                                <rect key="frame" x="10" y="150" width="580" height="30"/>
-                                <color key="backgroundColor" red="0.25490196079999999" green="0.48627450979999998" blue="0.68627450980000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rdh-NH-iib" customClass="BudgettoUIButton" customModule="Budgetto" customModuleProvider="target">
+                                <rect key="frame" x="182" y="204" width="236" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="236" id="Hkx-cB-o6P"/>
+                                </constraints>
                                 <state key="normal" title="Gem">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="didTapSave:" destination="h54-oy-Iwc" eventType="touchUpInside" id="J2I-Yh-DmZ"/>
@@ -226,10 +238,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="rdh-NH-iib" firstAttribute="centerX" secondItem="IsP-fU-lsA" secondAttribute="centerX" id="4GM-Vi-m9s"/>
                             <constraint firstItem="SeV-Vy-gkw" firstAttribute="top" secondItem="tso-PU-RHC" secondAttribute="bottom" constant="10" id="BdJ-8q-uZq"/>
                             <constraint firstAttribute="trailing" secondItem="gs6-ad-BnC" secondAttribute="trailing" constant="10" id="D93-aJ-GIa"/>
                             <constraint firstAttribute="trailing" secondItem="SeV-Vy-gkw" secondAttribute="trailing" constant="10" id="FPD-Ou-8wC"/>
-                            <constraint firstItem="rdh-NH-iib" firstAttribute="top" secondItem="SeV-Vy-gkw" secondAttribute="bottom" constant="10" id="IFj-Xb-blt"/>
+                            <constraint firstItem="rdh-NH-iib" firstAttribute="top" secondItem="SeV-Vy-gkw" secondAttribute="bottom" constant="20" id="IFj-Xb-blt"/>
                             <constraint firstAttribute="trailing" secondItem="tso-PU-RHC" secondAttribute="trailing" constant="10" id="O46-fH-rve"/>
                             <constraint firstAttribute="trailing" secondItem="rdh-NH-iib" secondAttribute="trailing" constant="10" id="Oov-HJ-7NS"/>
                             <constraint firstItem="SeV-Vy-gkw" firstAttribute="leading" secondItem="IsP-fU-lsA" secondAttribute="leading" constant="10" id="YJh-b2-Cbu"/>
@@ -239,6 +252,12 @@
                             <constraint firstItem="rdh-NH-iib" firstAttribute="leading" secondItem="IsP-fU-lsA" secondAttribute="leading" constant="10" id="xH5-yr-Ps6"/>
                             <constraint firstItem="tso-PU-RHC" firstAttribute="leading" secondItem="IsP-fU-lsA" secondAttribute="leading" constant="10" id="yC5-Uy-WfE"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Oov-HJ-7NS"/>
+                                <exclude reference="xH5-yr-Ps6"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="amountTextfield" destination="tso-PU-RHC" id="gFS-NY-Frq"/>
@@ -559,18 +578,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o3C-J4-1IQ">
-                                <rect key="frame" x="10" y="516" width="580" height="30"/>
-                                <color key="backgroundColor" red="0.25490196079999999" green="0.48627450979999998" blue="0.68627450980000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o3C-J4-1IQ" customClass="BudgettoUIButton" customModule="Budgetto" customModuleProvider="target">
+                                <rect key="frame" x="182" y="507" width="236" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="236" id="pcw-T4-48u"/>
+                                </constraints>
                                 <state key="normal" title="Tilføj udgift">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <segue destination="mK8-66-4Dg" kind="show" identifier="createExpense" id="xdL-c4-Pbl"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hQ3-22-tbb">
-                                <rect key="frame" x="10" y="69" width="580" height="407"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hQ3-22-tbb">
+                                <rect key="frame" x="10" y="69" width="580" height="384"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="gZd-e9-FWj"/>
@@ -580,7 +601,7 @@
                                         <rect key="frame" x="0.0" y="28" width="580" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uH0-5I-WK7" id="5gw-te-EoX">
-                                            <rect key="frame" x="0.0" y="0.0" width="580" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="580" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- 40000 DKK" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KlY-uW-016">
@@ -638,11 +659,13 @@
                                     </mask>
                                 </variation>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Np8-ub-bwf">
-                                <rect key="frame" x="10" y="481" width="580" height="30"/>
-                                <color key="backgroundColor" red="0.25490196079999999" green="0.48627450979999998" blue="0.68627450980000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Np8-ub-bwf" customClass="BudgettoUIButton" customModule="Budgetto" customModuleProvider="target">
+                                <rect key="frame" x="182" y="463" width="236" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="236" id="Gq1-yP-jaA"/>
+                                </constraints>
                                 <state key="normal" title="Tilføj indtægt">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <segue destination="mK8-66-4Dg" kind="show" identifier="createIncome" id="tWa-X6-evg"/>
@@ -652,22 +675,34 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="o3C-J4-1IQ" firstAttribute="leading" secondItem="2f1-Um-fK9" secondAttribute="leadingMargin" constant="10" id="3tJ-xT-66Y"/>
+                            <constraint firstItem="Np8-ub-bwf" firstAttribute="trailing" secondItem="o3C-J4-1IQ" secondAttribute="trailing" id="52C-mh-nk0"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Np8-ub-bwf" secondAttribute="trailing" constant="-10" id="5JV-NU-MjB"/>
                             <constraint firstAttribute="trailingMargin" secondItem="o3C-J4-1IQ" secondAttribute="trailing" constant="10" id="7di-2F-BMt"/>
-                            <constraint firstItem="o3C-J4-1IQ" firstAttribute="top" secondItem="Np8-ub-bwf" secondAttribute="bottom" constant="5" id="OtN-2g-gh8"/>
+                            <constraint firstItem="Np8-ub-bwf" firstAttribute="centerX" secondItem="2f1-Um-fK9" secondAttribute="centerX" id="DT5-vS-LfH"/>
+                            <constraint firstItem="Np8-ub-bwf" firstAttribute="leading" secondItem="o3C-J4-1IQ" secondAttribute="leading" id="K9q-92-Wxz"/>
+                            <constraint firstItem="o3C-J4-1IQ" firstAttribute="top" secondItem="Np8-ub-bwf" secondAttribute="bottom" constant="10" id="OtN-2g-gh8"/>
                             <constraint firstItem="hQ3-22-tbb" firstAttribute="leading" secondItem="2f1-Um-fK9" secondAttribute="leadingMargin" constant="-10" id="Qny-8V-VB4"/>
+                            <constraint firstItem="o3C-J4-1IQ" firstAttribute="leading" secondItem="hQ3-22-tbb" secondAttribute="leading" id="RfK-qA-wPv"/>
                             <constraint firstAttribute="trailingMargin" secondItem="hQ3-22-tbb" secondAttribute="trailing" constant="-10" id="Rpf-I6-f8g"/>
-                            <constraint firstItem="Np8-ub-bwf" firstAttribute="top" secondItem="hQ3-22-tbb" secondAttribute="bottom" constant="5" id="UEo-3D-gOp"/>
+                            <constraint firstItem="Np8-ub-bwf" firstAttribute="top" secondItem="hQ3-22-tbb" secondAttribute="bottom" constant="10" id="UEo-3D-gOp"/>
                             <constraint firstItem="hQ3-22-tbb" firstAttribute="top" secondItem="ugb-nu-OgK" secondAttribute="bottom" constant="5" id="YPl-95-74H"/>
                             <constraint firstAttribute="trailingMargin" secondItem="o3C-J4-1IQ" secondAttribute="trailing" constant="-10" id="YTe-sS-msa"/>
                             <constraint firstItem="o3C-J4-1IQ" firstAttribute="leading" secondItem="2f1-Um-fK9" secondAttribute="leadingMargin" constant="-10" id="d0X-Eg-ESt"/>
-                            <constraint firstItem="FS5-14-fza" firstAttribute="top" secondItem="o3C-J4-1IQ" secondAttribute="bottom" constant="5" id="dY0-LK-2dW"/>
+                            <constraint firstItem="FS5-14-fza" firstAttribute="top" secondItem="o3C-J4-1IQ" secondAttribute="bottom" constant="10" id="dY0-LK-2dW"/>
                             <constraint firstItem="Np8-ub-bwf" firstAttribute="leading" secondItem="2f1-Um-fK9" secondAttribute="leadingMargin" constant="-10" id="dxk-5f-ocG"/>
+                            <constraint firstItem="o3C-J4-1IQ" firstAttribute="centerX" secondItem="2f1-Um-fK9" secondAttribute="centerX" id="yIT-Dl-NUq"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="52C-mh-nk0"/>
+                                <exclude reference="5JV-NU-MjB"/>
+                                <exclude reference="K9q-92-Wxz"/>
+                                <exclude reference="dxk-5f-ocG"/>
                                 <exclude reference="3tJ-xT-66Y"/>
                                 <exclude reference="7di-2F-BMt"/>
+                                <exclude reference="RfK-qA-wPv"/>
+                                <exclude reference="YTe-sS-msa"/>
+                                <exclude reference="d0X-Eg-ESt"/>
                             </mask>
                         </variation>
                     </view>
@@ -742,15 +777,17 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Beløb" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wTC-KO-SkJ" customClass="AmountTextField" customModule="Budgetto" customModuleProvider="target">
-                                <rect key="frame" x="10" y="104" width="580" height="30"/>
+                                <rect key="frame" x="10" y="109" width="580" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nH8-Oz-HeW">
-                                <rect key="frame" x="10" y="139" width="580" height="30"/>
-                                <color key="backgroundColor" red="0.25490196079999999" green="0.48627450979999998" blue="0.68627450980000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nH8-Oz-HeW" customClass="BudgettoUIButton" customModule="Budgetto" customModuleProvider="target">
+                                <rect key="frame" x="182" y="159" width="236" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="236" id="6oo-Pv-RoT"/>
+                                </constraints>
                                 <state key="normal" title="Gem">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="addFinanceButton:" destination="mK8-66-4Dg" eventType="touchUpInside" id="kma-zv-mxz"/>
@@ -761,9 +798,10 @@
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="nH8-Oz-HeW" secondAttribute="trailing" constant="-10" id="5ba-43-pNy"/>
                             <constraint firstItem="xjU-Yk-f5f" firstAttribute="leading" secondItem="N6M-ai-fpP" secondAttribute="leadingMargin" constant="-10" id="EF5-1o-Kvr"/>
-                            <constraint firstItem="nH8-Oz-HeW" firstAttribute="top" secondItem="wTC-KO-SkJ" secondAttribute="bottom" constant="5" id="KAU-Cl-P1P"/>
+                            <constraint firstItem="nH8-Oz-HeW" firstAttribute="centerX" secondItem="N6M-ai-fpP" secondAttribute="centerX" id="InJ-T8-PCO"/>
+                            <constraint firstItem="nH8-Oz-HeW" firstAttribute="top" secondItem="wTC-KO-SkJ" secondAttribute="bottom" constant="20" id="KAU-Cl-P1P"/>
                             <constraint firstItem="nH8-Oz-HeW" firstAttribute="leading" secondItem="N6M-ai-fpP" secondAttribute="leadingMargin" constant="-10" id="Qc7-Ox-kce"/>
-                            <constraint firstItem="wTC-KO-SkJ" firstAttribute="top" secondItem="xjU-Yk-f5f" secondAttribute="bottom" constant="5" id="Ue3-ol-DnT"/>
+                            <constraint firstItem="wTC-KO-SkJ" firstAttribute="top" secondItem="xjU-Yk-f5f" secondAttribute="bottom" constant="10" id="Ue3-ol-DnT"/>
                             <constraint firstItem="xjU-Yk-f5f" firstAttribute="top" secondItem="Rie-nv-KEh" secondAttribute="bottom" constant="5" id="WpU-xu-Af2"/>
                             <constraint firstAttribute="trailingMargin" secondItem="xjU-Yk-f5f" secondAttribute="trailing" constant="-10" id="YF8-8f-cbr"/>
                             <constraint firstItem="wTC-KO-SkJ" firstAttribute="leading" secondItem="N6M-ai-fpP" secondAttribute="leadingMargin" constant="-10" id="c9n-vP-rAk"/>
@@ -773,6 +811,8 @@
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="syb-hh-1Vr"/>
+                                <exclude reference="5ba-43-pNy"/>
+                                <exclude reference="Qc7-Ox-kce"/>
                             </mask>
                         </variation>
                     </view>

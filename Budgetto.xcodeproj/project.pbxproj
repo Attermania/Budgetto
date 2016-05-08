@@ -39,6 +39,7 @@
 		F98C76031CB5203F00944144 /* TemplateAddEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98C76021CB5203F00944144 /* TemplateAddEditViewController.swift */; };
 		F98ED7401CC636C30013111A /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98ED73F1CC636C30013111A /* MainNavigationController.swift */; };
 		F98ED7441CC639F10013111A /* MonthSelectionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98ED7431CC639F10013111A /* MonthSelectionButton.swift */; };
+		F9A1BD421CDFC61F00D555B2 /* BudgettoUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A1BD411CDFC61F00D555B2 /* BudgettoUIButton.swift */; };
 		F9A483811CD65062002294F1 /* OverviewBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A483801CD65062002294F1 /* OverviewBar.swift */; };
 		F9E9A32B1CB43FC600E10B2A /* BudgettoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E9A32A1CB43FC600E10B2A /* BudgettoCell.swift */; };
 /* End PBXBuildFile section */
@@ -78,6 +79,7 @@
 		F98C76021CB5203F00944144 /* TemplateAddEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemplateAddEditViewController.swift; sourceTree = "<group>"; };
 		F98ED73F1CC636C30013111A /* MainNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
 		F98ED7431CC639F10013111A /* MonthSelectionButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthSelectionButton.swift; sourceTree = "<group>"; };
+		F9A1BD411CDFC61F00D555B2 /* BudgettoUIButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BudgettoUIButton.swift; sourceTree = "<group>"; };
 		F9A483801CD65062002294F1 /* OverviewBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverviewBar.swift; sourceTree = "<group>"; };
 		F9E9A32A1CB43FC600E10B2A /* BudgettoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BudgettoCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -169,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				B43577511CDEBF9A0071CFBC /* AmountTextField.swift */,
+				F9A1BD411CDFC61F00D555B2 /* BudgettoUIButton.swift */,
 			);
 			name = Misc;
 			sourceTree = "<group>";
@@ -321,6 +324,7 @@
 				B4EC7A631CB29EBE00B1F613 /* FinanceDetailViewController.swift in Sources */,
 				B495C4E21CCCECB3000A4833 /* Finance+CoreDataProperties.swift in Sources */,
 				B495C4E81CCCECB3000A4833 /* Month+CoreDataProperties.swift in Sources */,
+				F9A1BD421CDFC61F00D555B2 /* BudgettoUIButton.swift in Sources */,
 				F94E2C411CC3E7DC00CDC502 /* GraphView.swift in Sources */,
 				B4EC7A6C1CB2B26300B1F613 /* UIViewExtension.swift in Sources */,
 				F90067EA1CB3FD0A00B7075D /* TemplateTableViewController.swift in Sources */,
