@@ -40,6 +40,9 @@
 		F98ED7401CC636C30013111A /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98ED73F1CC636C30013111A /* MainNavigationController.swift */; };
 		F98ED7441CC639F10013111A /* MonthSelectionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98ED7431CC639F10013111A /* MonthSelectionButton.swift */; };
 		F9A1BD421CDFC61F00D555B2 /* BudgettoUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A1BD411CDFC61F00D555B2 /* BudgettoUIButton.swift */; };
+		F9A1BD4A1CE008F200D555B2 /* BudgettoTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A1BD491CE008F200D555B2 /* BudgettoTabBarController.swift */; };
+		F9A1BD4C1CE0097400D555B2 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A1BD4B1CE0097400D555B2 /* UIImageExtension.swift */; };
+		F9A1BD501CE00E9C00D555B2 /* BudgettoNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A1BD4F1CE00E9C00D555B2 /* BudgettoNavigationController.swift */; };
 		F9A483811CD65062002294F1 /* OverviewBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A483801CD65062002294F1 /* OverviewBar.swift */; };
 		F9E9A32B1CB43FC600E10B2A /* BudgettoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E9A32A1CB43FC600E10B2A /* BudgettoCell.swift */; };
 /* End PBXBuildFile section */
@@ -80,6 +83,9 @@
 		F98ED73F1CC636C30013111A /* MainNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
 		F98ED7431CC639F10013111A /* MonthSelectionButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthSelectionButton.swift; sourceTree = "<group>"; };
 		F9A1BD411CDFC61F00D555B2 /* BudgettoUIButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BudgettoUIButton.swift; sourceTree = "<group>"; };
+		F9A1BD491CE008F200D555B2 /* BudgettoTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BudgettoTabBarController.swift; sourceTree = "<group>"; };
+		F9A1BD4B1CE0097400D555B2 /* UIImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
+		F9A1BD4F1CE00E9C00D555B2 /* BudgettoNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BudgettoNavigationController.swift; sourceTree = "<group>"; };
 		F9A483801CD65062002294F1 /* OverviewBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverviewBar.swift; sourceTree = "<group>"; };
 		F9E9A32A1CB43FC600E10B2A /* BudgettoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BudgettoCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -172,6 +178,8 @@
 			children = (
 				B43577511CDEBF9A0071CFBC /* AmountTextField.swift */,
 				F9A1BD411CDFC61F00D555B2 /* BudgettoUIButton.swift */,
+				F9A1BD491CE008F200D555B2 /* BudgettoTabBarController.swift */,
+				F9A1BD4F1CE00E9C00D555B2 /* BudgettoNavigationController.swift */,
 			);
 			name = Misc;
 			sourceTree = "<group>";
@@ -224,6 +232,7 @@
 				B4EC7A691CB2AEBB00B1F613 /* UIColorExtension.swift */,
 				B4EC7A6B1CB2B26300B1F613 /* UIViewExtension.swift */,
 				B4F60B061CCA4D4F005B4862 /* NSDateExtension.swift */,
+				F9A1BD4B1CE0097400D555B2 /* UIImageExtension.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -308,6 +317,7 @@
 				B41B0FB71CCB926800FDA0F9 /* DAO.swift in Sources */,
 				F93255151CC9849B0001F3CD /* MonthViewController.swift in Sources */,
 				B495C4E41CCCECB3000A4833 /* Income+CoreDataProperties.swift in Sources */,
+				F9A1BD4A1CE008F200D555B2 /* BudgettoTabBarController.swift in Sources */,
 				B495C4E71CCCECB3000A4833 /* Template.swift in Sources */,
 				F98ED7441CC639F10013111A /* MonthSelectionButton.swift in Sources */,
 				B4EC7A4C1CB29D9700B1F613 /* AppDelegate.swift in Sources */,
@@ -319,6 +329,7 @@
 				F98ED7401CC636C30013111A /* MainNavigationController.swift in Sources */,
 				F9E9A32B1CB43FC600E10B2A /* BudgettoCell.swift in Sources */,
 				B495C4E61CCCECB3000A4833 /* Template+CoreDataProperties.swift in Sources */,
+				F9A1BD501CE00E9C00D555B2 /* BudgettoNavigationController.swift in Sources */,
 				B495C4E31CCCECB3000A4833 /* Finance.swift in Sources */,
 				B495C4ED1CCCF805000A4833 /* ReloadView.swift in Sources */,
 				B4EC7A631CB29EBE00B1F613 /* FinanceDetailViewController.swift in Sources */,
@@ -326,6 +337,7 @@
 				B495C4E81CCCECB3000A4833 /* Month+CoreDataProperties.swift in Sources */,
 				F9A1BD421CDFC61F00D555B2 /* BudgettoUIButton.swift in Sources */,
 				F94E2C411CC3E7DC00CDC502 /* GraphView.swift in Sources */,
+				F9A1BD4C1CE0097400D555B2 /* UIImageExtension.swift in Sources */,
 				B4EC7A6C1CB2B26300B1F613 /* UIViewExtension.swift in Sources */,
 				F90067EA1CB3FD0A00B7075D /* TemplateTableViewController.swift in Sources */,
 				B4EC7A541CB29D9700B1F613 /* Budgetto.xcdatamodeld in Sources */,
