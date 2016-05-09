@@ -50,6 +50,17 @@ class FinanceDetailViewController: UIViewController, UIPickerViewDelegate, UIPic
         super.viewDidLoad()
         datePickerView.delegate = self
         datePickerView.dataSource = self
+        datePickerView.backgroundColor = UIColor.whiteColor()
+        let toolBar = UIToolbar()
+        toolBar.barStyle = .Default
+        toolBar.sizeToFit()
+        
+        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(FinanceDetailViewController.donePicker))
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil)
+        
+        toolBar.setItems([spaceButton, doneButton], animated: false)
+        toolBar.userInteractionEnabled = true
+        dateTextfield.inputAccessoryView = toolBar
         createDaysArray()
         calendar.timeZone = NSTimeZone(name: "UTC")!
 
@@ -196,7 +207,6 @@ class FinanceDetailViewController: UIViewController, UIPickerViewDelegate, UIPic
     }
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        
         let selectedDay = daysArr[row]
         let components = calendar.components([.Day, .Month, .Year], fromDate: currentDate!)
         // set the selected day
@@ -206,6 +216,10 @@ class FinanceDetailViewController: UIViewController, UIPickerViewDelegate, UIPic
         
         dateTextfield.text = selectedDate.formattedDate()
         
+    }
+    
+    func donePicker() {
+        dateTextfield.resignFirstResponder()
     }
 
 }

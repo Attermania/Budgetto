@@ -124,14 +124,14 @@ class TemplateDetailViewController: UIViewController, UITableViewDataSource, UIT
 
         if finance is Expense {
             cell.descLabel.text = finance.desc
-            cell.amountLabel.text = " - " + amount + " kr"
-            cell.amountLabel.textColor = UIColor.redColor()
+            cell.amountLabel.text = " - " + formatAmount(amount)
+            cell.amountLabel.textColor = UIColor(hexString: "#FE4040")
         }
         
         if finance is Income {
             cell.descLabel.text = finance.desc
-            cell.amountLabel.text = " + " + amount + " kr"
-            cell.amountLabel.textColor = UIColor.greenColor()
+            cell.amountLabel.text = " + " + formatAmount(amount)
+            cell.amountLabel.textColor = UIColor(hexString: "#75BA5F")
             
         }
         
@@ -151,6 +151,28 @@ class TemplateDetailViewController: UIViewController, UITableViewDataSource, UIT
             
             financesTableView.reloadData()
         }
+    }
+    
+    private func formatAmount(amount: String?) -> String {
+        let charSet = NSCharacterSet(charactersInString: "0123456789").invertedSet
+        
+        // Remove everything that is not a digit from the amount
+        var amountText = amount?.componentsSeparatedByCharactersInSet(charSet).joinWithSeparator("")
+        
+        // If there is nothing in the textfield, we can silently return
+        if amountText == nil || amountText == "" {
+            return ""
+        }
+        
+        // Remove anything over 6 digits
+        amountText = amountText?.characters.count > 6 ? amountText?.substringToIndex(amountText!.startIndex.advancedBy(6)) : amountText
+        
+        // Format thousands with seperator
+        let formatter:NSNumberFormatter = NSNumberFormatter()
+        formatter.numberStyle = NSNumberFormatterStyle.DecimalStyle
+        let formattedOutput = formatter.stringFromNumber(Int(amountText!)!)
+        
+        return formattedOutput!
     }
 
 
