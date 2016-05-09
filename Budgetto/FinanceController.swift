@@ -49,7 +49,6 @@ class FinanceController: UIViewController, UITableViewDelegate, UITableViewDataS
         
         expensesTableview.delegate = self
         expensesTableview.dataSource = self
-        expensesTableview.separatorColor = UIColor.clearColor()
         
     }
     
@@ -101,7 +100,7 @@ class FinanceController: UIViewController, UITableViewDelegate, UITableViewDataS
     }
     
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return cellSpacingHeight
+        return 0
     }
 
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
