@@ -106,7 +106,7 @@ class TemplateAddEditViewController: UIViewController {
     func validateTextfields () -> Bool {
         
         if descriptionTextfield.text == "" || textfieldAmount.asDouble() == nil {
-            return true
+            return false
         }
         
         return true
