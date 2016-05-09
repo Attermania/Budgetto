@@ -10,10 +10,13 @@ import UIKit
 
 class OverviewViewController: UIViewController, ReloadView {
     
+    @IBOutlet weak var remainingLabelUnderBar: UILabel!
+    @IBOutlet weak var usedLabel: UILabel!
+    @IBOutlet weak var disposableFinancesLabel: UILabel!
+    @IBOutlet weak var dayRect: OverviewRectangle!
+    @IBOutlet weak var monthRect: OverviewRectangle!
+    @IBOutlet weak var weekRect: OverviewRectangle!
     @IBOutlet weak var averageUsedLabel: UILabel!
-    @IBOutlet weak var disposableIncomeDay: UILabel!
-    @IBOutlet weak var disposableIncomeWeek: UILabel!
-    @IBOutlet weak var disposableIncomeMonth: UILabel!
     @IBOutlet weak var expensesLabel: UILabel!
     @IBOutlet weak var remainingLabel: UILabel!
     @IBOutlet weak var budgetMonthLabel: UILabel!
@@ -46,7 +49,10 @@ class OverviewViewController: UIViewController, ReloadView {
         super.viewDidLoad()
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         monthSelectionButton = appDelegate.monthSelectionButton
-        
+        // letter spacing
+        disposableFinancesLabel.addTextSpacing(5)
+        usedLabel.addTextSpacing(2.0)
+        remainingLabelUnderBar.addTextSpacing(2.0)
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -110,16 +116,16 @@ class OverviewViewController: UIViewController, ReloadView {
     func setupLabels() {
         
         // top labels
-        expensesLabel.text = "\(Int(totalExpenses)) kr."
+        expensesLabel.text = "\(Int(totalExpenses))"
         let remainingAmount = Int(totalIncome-totalExpenses)
-        remainingAmount > 0 ? (remainingLabel.text = "+ \(remainingAmount) kr.") : (remainingLabel.text = " \(remainingAmount) kr.")
-        incomeLabel.text = "\(Int(totalIncome)) kr."
+        remainingAmount > 0 ? (remainingLabel.text = "\(remainingAmount)") : (remainingLabel.text = " \(remainingAmount)")
+        incomeLabel.text = "\(Int(totalIncome))"
         budgetMonthLabel.text = "Budget for \((selectedMonth!.date?.month())!)"
         
         // disposable labels
-        disposableIncomeMonth.text = "\(Int(totalIncome-totalExpenses)) kr."
-        disposableIncomeWeek.text = "\(getAmountToSpendDaily()*7) kr."
-        disposableIncomeDay.text = "\(getAmountToSpendDaily()) kr."
+        monthRect.amountLabel.text = "\(Int(totalIncome-totalExpenses)) kr."
+        weekRect.amountLabel.text = "\(getAmountToSpendDaily()*7) kr."
+        dayRect.amountLabel.text = "\(getAmountToSpendDaily()) kr."
         
         // average label
         averageUsedLabel.text = "Du har i gennemsnit brugt \(getDailySpent()) kroner hver dag denne måned."

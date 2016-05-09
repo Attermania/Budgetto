@@ -33,6 +33,8 @@
 		B4F60B071CCA4D4F005B4862 /* NSDateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F60B061CCA4D4F005B4862 /* NSDateExtension.swift */; };
 		F90067EA1CB3FD0A00B7075D /* TemplateTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90067E91CB3FD0A00B7075D /* TemplateTableViewController.swift */; };
 		F90067EC1CB402D500B7075D /* TemplateDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90067EB1CB402D500B7075D /* TemplateDetailViewController.swift */; };
+		F91EEE791CE0EFA100F1703E /* OverviewRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91EEE781CE0EFA100F1703E /* OverviewRectangle.swift */; };
+		F91EEE7D1CE1254F00F1703E /* UILabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91EEE7C1CE1254F00F1703E /* UILabelExtension.swift */; };
 		F93255131CC983F00001F3CD /* MonthView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F93255121CC983F00001F3CD /* MonthView.xib */; };
 		F93255151CC9849B0001F3CD /* MonthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93255141CC9849B0001F3CD /* MonthViewController.swift */; };
 		F94E2C411CC3E7DC00CDC502 /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94E2C401CC3E7DC00CDC502 /* GraphView.swift */; };
@@ -76,6 +78,8 @@
 		B4F60B061CCA4D4F005B4862 /* NSDateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateExtension.swift; sourceTree = "<group>"; };
 		F90067E91CB3FD0A00B7075D /* TemplateTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TemplateTableViewController.swift; path = ../TemplateTableViewController.swift; sourceTree = "<group>"; };
 		F90067EB1CB402D500B7075D /* TemplateDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemplateDetailViewController.swift; sourceTree = "<group>"; };
+		F91EEE781CE0EFA100F1703E /* OverviewRectangle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverviewRectangle.swift; sourceTree = "<group>"; };
+		F91EEE7C1CE1254F00F1703E /* UILabelExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILabelExtension.swift; sourceTree = "<group>"; };
 		F93255121CC983F00001F3CD /* MonthView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MonthView.xib; sourceTree = "<group>"; };
 		F93255141CC9849B0001F3CD /* MonthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthViewController.swift; sourceTree = "<group>"; };
 		F94E2C401CC3E7DC00CDC502 /* GraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
@@ -159,6 +163,7 @@
 				B4EC7A4D1CB29D9700B1F613 /* OverviewViewController.swift */,
 				F94E2C401CC3E7DC00CDC502 /* GraphView.swift */,
 				F9A483801CD65062002294F1 /* OverviewBar.swift */,
+				F91EEE781CE0EFA100F1703E /* OverviewRectangle.swift */,
 			);
 			name = Overview;
 			sourceTree = "<group>";
@@ -233,6 +238,7 @@
 				B4EC7A6B1CB2B26300B1F613 /* UIViewExtension.swift */,
 				B4F60B061CCA4D4F005B4862 /* NSDateExtension.swift */,
 				F9A1BD4B1CE0097400D555B2 /* UIImageExtension.swift */,
+				F91EEE7C1CE1254F00F1703E /* UILabelExtension.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -326,9 +332,11 @@
 				B4F60B071CCA4D4F005B4862 /* NSDateExtension.swift in Sources */,
 				F90067EC1CB402D500B7075D /* TemplateDetailViewController.swift in Sources */,
 				B4EC7A651CB2A16D00B1F613 /* FinanceController.swift in Sources */,
+				F91EEE7D1CE1254F00F1703E /* UILabelExtension.swift in Sources */,
 				F98ED7401CC636C30013111A /* MainNavigationController.swift in Sources */,
 				F9E9A32B1CB43FC600E10B2A /* BudgettoCell.swift in Sources */,
 				B495C4E61CCCECB3000A4833 /* Template+CoreDataProperties.swift in Sources */,
+				F91EEE791CE0EFA100F1703E /* OverviewRectangle.swift in Sources */,
 				F9A1BD501CE00E9C00D555B2 /* BudgettoNavigationController.swift in Sources */,
 				B495C4E31CCCECB3000A4833 /* Finance.swift in Sources */,
 				B495C4ED1CCCF805000A4833 /* ReloadView.swift in Sources */,
