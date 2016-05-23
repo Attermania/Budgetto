@@ -83,7 +83,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         loadMonth()
         
 //        let newMonth2 = dao.createMonth()
-//        newMonth2.date = NSCalendar.currentCalendar().dateByAddingUnit(.Month, value: -3, toDate: NSDate(), options: [])
+//        newMonth2.date = NSCalendar.currentCalendar().dateByAddingUnit(.Month, value: -1, toDate: NSDate(), options: [])
 //        dao.save()
         
          print(applicationDirectoryPath())

@@ -128,7 +128,7 @@ class OverviewViewController: UIViewController, ReloadView {
         dayRect.amountLabel.text = "\(getAmountToSpendDaily()) kr."
         
         // average label
-        averageUsedLabel.text = "Du har i gennemsnit brugt \(getDailySpent()) kroner hver dag denne måned."
+        averageUsedLabel.text = "Gennemsnitligt brugt pr. dag i denne måned: \(getDailySpent()) kr."
     }
     
     
